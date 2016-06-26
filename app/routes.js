@@ -9,13 +9,13 @@ import NotFoundPage from './components/NotFoundPage';
 import { validateLanguageCode } from './utils/LangUtils';
 
 export default (
-	<Route path="/">
+	<Route path="/" component={Root}>
 		<IndexRedirect to="/en" />
-		<Route path=":lang" component={Root} onEnter={validateLanguageCode}>
+		<Route path=":lang" onEnter={validateLanguageCode}>
 			<IndexRoute component={AboutPage} />
 			<Route path="projects" component={ProjectsPage} />
 			<Route path="contacts" component={ContactsPage} />
-			<Route path="*" component={NotFoundPage} />
 		</Route>
+		<Route path="*" component={NotFoundPage} />
 	</Route>
 );
