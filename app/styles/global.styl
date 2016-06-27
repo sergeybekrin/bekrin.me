@@ -1,9 +1,27 @@
+@import './palette.styl'
+
 :root
+	font 100%/1.5 sans-serif
+	min-height 100%
 	cursor default
+	display flex
+
+::selection
+	background-color #B3D4FC
+	text-shadow none
 
 body
 	display flex
+	font-size 18px
+	flex 1
 
 main
 	display flex
 	flex 1
+
+a
+	text-decoration none
+	color palette('blue')
+
+	&:hover
+		color palette('red')
