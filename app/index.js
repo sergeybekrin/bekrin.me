@@ -10,6 +10,8 @@ import './styles/global.styl';
 
 // Render site on client
 if (typeof document !== 'undefined') {
+	require('./utils/FontUtils').loadFonts();
+
 	const root = document.querySelector('main');
 	const history = browserHistory;
 

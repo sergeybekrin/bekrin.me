@@ -10,7 +10,12 @@ import { validateLanguageCode } from './utils/LangUtils';
 
 export default (
 	<Route path="/" component={Root}>
-		<IndexRedirect to="/en" />
+		{
+			/* Redirect to `/en` on client, render about page on server */
+			typeof document === 'undefined' ?
+			<IndexRoute component={AboutPage} /> :
+			<IndexRedirect to="/en" />
+		}
 		<Route path=":lang" onEnter={validateLanguageCode}>
 			<IndexRoute component={AboutPage} />
 			<Route path="projects" component={ProjectsPage} />
