@@ -2,6 +2,10 @@
   "name": "bekrin.me",
   "version": "0.1.0",
   "description": "Source code of bekrin.me website",
+  "repository": {
+    "type": "git",
+    "url": "https://sbekrin@bitbucket.org/sbekrin/bekrin.me.git"
+  },
   "main": "./dist/index.js",
   "scripts": {
     "clean": "del ./dist",
