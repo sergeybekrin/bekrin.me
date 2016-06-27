@@ -36,7 +36,11 @@ export default {
 		new StaticSiteGeneratorPlugin('main', [
 			'/',
 			'/en',
-			'/ru'
+			'/en/projects',
+			'/en/contacts',
+			'/ru',
+			'/ru/projects',
+			'/ru/contacts'
 		]),
 		new webpack.ProvidePlugin({
 			_: 'underscore'
