@@ -2,8 +2,7 @@ import React from 'react';
 import { Link } from 'react-router';
 
 export default (props) => (
-	<Link
-		className="navigation__item"
-		to={props.to}
-	>{props.label}</Link>
+	<span className="navigation__item">
+		<Link className="navigation__link" to={props.to}>{props.label}</Link>
+	</span>
 );

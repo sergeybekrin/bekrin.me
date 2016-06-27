@@ -1,0 +1,36 @@
+.content
+	background #f6f6f6
+	position relative
+	display flex
+	flex 1
+
+.animated
+	&--appear,
+	&--enter
+		transition transform 300ms ease, opacity 300ms ease
+		transition-delay 300ms
+		transform translateY(-10%)
+		position absolute
+		width 100%
+		opacity 0
+		top: 0
+
+	&--appear-active,
+	&--enter-active
+		transform none
+		top 0
+		opacity 1
+
+	&--leave
+		transition transform 300ms ease, opacity 300ms ease
+		transform none
+		position absolute
+		width 100%
+		top: 0
+		opacity 1
+
+	&--leave-active
+		transform translateY(10%)
+		position absolute
+		opacity 0
+		top: 0

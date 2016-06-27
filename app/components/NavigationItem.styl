@@ -1,6 +1,21 @@
 @import '../styles/palette.styl'
 
 .navigation__item
+	vertical-align middle
+	display inline-flex
+	align-items center
+
+	& + &::before
+		background-color: #f6f6f6
+		margin: 0 1.5rem
+		height: 2.25rem
+		bottom: 0
+		display: inline-block
+		position: relative
+		content: ''
+		width: 2px
+
+.navigation__link
 	transition color 200ms ease
 	text-decoration none
 	color palette('blue')
