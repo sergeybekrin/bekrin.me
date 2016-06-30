@@ -2,7 +2,6 @@ import React from 'react';
 import { render } from 'react-dom';
 import { renderToString } from 'react-dom/server';
 import { browserHistory, createMemoryHistory, Router, RouterContext, match } from 'react-router';
-import 'normalize.css';
 
 import routes from './routes';
 import template from './template.ejs';
@@ -10,12 +9,23 @@ import './styles/global.styl';
 
 // Render site on client
 if (typeof document !== 'undefined') {
-	require('./utils/FontUtils').loadFonts();
+	const { loadFonts } = require('./utils/FontUtils');
+	const { initializeGA, trackGA } = require('./utils/GoogleAnalyticsUtils');
+
+	loadFonts();
+	initializeGA();
 
 	const root = document.querySelector('main');
 	const history = browserHistory;
 
-	render(<Router history={history} routes={routes} />, root);
+	render(
+		<Router
+			history={history}
+			routes={routes}
+			onUpdate={trackGA}
+		/>,
+		root
+	);
 }
 
 // Render site to static markup
