@@ -18,6 +18,10 @@ export default {
 		loaders: [
 			...baseConfig.module.loaders,
 			{
+				test: /\.(png|jpg|jpeg|ico|ttf|eot|svg|woff(2)?)(\?[a-z0-9]+)?$/,
+				loader: 'file?name=/[hash].[ext]'
+			},
+			{
 				test: /\.css$/,
 				loader: ExtractTextPlugin.extract('style', 'css')
 			},
