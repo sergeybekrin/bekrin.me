@@ -21,7 +21,7 @@ export default {
 			},
 			{
 				test: /\.(png|jpg|jpeg|ico|ttf|eot|svg|woff(2)?)(\?[a-z0-9]+)?$/,
-				loader: 'file'
+				loader: 'file?name=/[hash].[ext]'
 			},
 			{
 				test: /\.ejs$/,
