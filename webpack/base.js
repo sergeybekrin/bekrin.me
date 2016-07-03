@@ -16,7 +16,7 @@ export default {
 		loaders: [
 			{
 				test: /\.jsx?$/,
-				loader: 'babel?cacheDirectory&presets=es2015',
+				loader: 'babel?cacheDirectory',
 				exclude: /node_modules/
 			},
 			{
