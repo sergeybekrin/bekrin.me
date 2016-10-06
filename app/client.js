@@ -1,4 +1,3 @@
-/* eslint-disable global-require */
 import React from 'react';
 import { render } from 'react-dom';
 import { browserHistory, Router } from 'react-router';
