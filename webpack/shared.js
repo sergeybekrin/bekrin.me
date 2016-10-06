@@ -1,9 +1,6 @@
 import path from 'path';
 import webpack from 'webpack';
 
-// const HOST = process.env.HOST || '0.0.0.0';
-// const PORT = process.env.PORT || 3000;
-
 export default {
     output: {
         filename: 'bundle.js',
