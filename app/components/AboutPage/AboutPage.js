@@ -15,6 +15,29 @@ export const AboutPage = () => (
                 <Formatter>Saratov State Technical University</Formatter>
             </Link>
         </ContentSection>
+        <ContentSection title={<h2><Formatter>Experience</Formatter></h2>}>
+            <b><Formatter>Technologies</Formatter></b>
+            <ul>
+                <li>JavaScript</li>
+                <li>React, Redux &amp; Angular 1.x</li>
+                <li>Node.js (express, mongoose) &amp; Electron</li>
+                <li>Stylus, SASS</li>
+                <li>webpack, gulp</li>
+                <li>Java (Spring, Jetty)</li>
+                <li>Microdata and <abbr title="Server-side rendering">SSR</abbr> for SEO</li>
+                <li>WAI-ARIA for accessibility</li>
+                <li>MongoDB, PostgreSQL &amp; MySQL</li>
+            </ul>
+            <b>Environment and tools</b>
+            <ul>
+                <li>nvm &amp; npm</li>
+                <li>Travis, AppVeyor</li>
+                <li>Git, Perforce</li>
+                <li>Docker</li>
+                <li>Digital Ocean, AWS (EB, S3)</li>
+                <li>UNIX (Debian, CentOS)</li>
+            </ul>
+        </ContentSection>
     </Page>
 );
 
