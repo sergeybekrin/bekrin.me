@@ -16,10 +16,10 @@ export default () => (
         <ContentSection title={<Formatter>The original idea</Formatter>}>
             <p>
                 It all started with wish to have visual feedback of my Gulp tasks running in
-                background and ability to edit it visually. I've failed pretty quickly,
+                background and ability to edit it visually. I&apos;ve failed pretty quickly,
                 considering that Gulp uses code-over-configuration setup. I even spent some
                 time trying monkey patch Gulp to hook it up to receive some useful information
-                in real-time, but that did't help much.
+                in real-time, but that did&apos;t help much.
             </p>
             <p>
                 At this point I decided to change the path and switch to npm as task runner
@@ -51,7 +51,7 @@ export default () => (
                     <span>
                         With notifications and error reporting out-of-box.
                         Despite the fact that this supposed to be core feature,
-                        it does't look like one so far.
+                        it does&apos;t look like one so far.
                     </span>
                 </li>
                 <li>
@@ -67,7 +67,7 @@ export default () => (
                 What sounds simple, but took me about 3 months to implement. As far as I can
                 tell, Electron was great choice for cross-platform app. React and Redux
                 are great for building UI (even for desktop apps). I faced some bottlenecks when
-                dealing with rapid updates of dependencies, but I'll tell more later.
+                dealing with rapid updates of dependencies, but I&apos;ll tell more later.
             </p>
         </ContentSection>
     </Page>
