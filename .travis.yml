@@ -26,4 +26,5 @@ script:
 - npm run build
 
 after_success:
+- echo "bekrin.me" > dist/CNAME # prevent gh-pages to reset custom domain
 - npm run deploy
