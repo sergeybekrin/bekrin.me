@@ -1,0 +1,27 @@
+@import '~styles/mixins.styl'
+
+.NpmkitProjectCard
+	background-color rgba(224, 140, 143, 0.20)
+	transition background-color 200ms ease
+	text-decoration none
+	border-radius 4px
+	margin-bottom 2em
+	padding 2em
+	display block
+	max-width 40em
+
+	+mobile()
+		text-align center
+		padding 5vmin
+
+	&:hover
+		background-color rgba(224, 140, 143, 0.30)
+
+	&-label
+		font-size 1.2em
+		color black
+		display block
+
+	&-description
+		font-weight 400
+		color #333

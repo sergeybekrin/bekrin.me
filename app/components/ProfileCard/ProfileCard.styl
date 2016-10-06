@@ -1,0 +1,41 @@
+@import '~styles/variables.styl'
+@import '~styles/mixins.styl'
+
+.ProfileCard
+	display flex
+	flex-direction column
+
+	&-image
+		pointer-events none
+		border-radius 50%
+
+		+mobile()
+			width 82px
+			height 82px
+
+	&-headline
+		max-width 700px
+		font-family Helvetica, Arial, sans-serif
+		letter-spacing -.08em
+		position relative
+		font-weight 700
+		font-size 3em
+		margin 0
+		color #2e2e2e
+		line-height 1.5
+		margin-bottom .25em
+
+		+mobile()
+			letter-spacing -.06em
+			font-size 2em
+
+	&-paragraph
+		font-family monospace
+		font-weight 300
+		font-size 1.35em
+		max-width 700px
+
+		roboto-mono-ready('300')
+
+		+mobile()
+			font-size 1em

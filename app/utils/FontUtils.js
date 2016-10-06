@@ -1,12 +1,28 @@
-import fontLoader from 'webfontloader';
+import FontFaceObserver from 'fontfaceobserver';
 
 /**
- * Loads required fonts
+ * @param {Array<string>} fonts
  */
-export function loadFonts () {
-	fontLoader.load({
-		google: {
-			families: [ 'Roboto+Mono:300,400,700:latin,cyrillic' ]
-		}
-	});
+export function waitFontsToLoad (fonts = []) {
+    fonts.forEach((font) => {
+        const [
+            family,
+            style = 'normal',
+            weight = 'normal'
+        ] = font.split(':');
+
+        const observer = new FontFaceObserver(family, { style, weight });
+
+        observer.load()
+            .then(() => {
+                document.body.classList.add([
+                    'font',
+                    family.replace(/\s+/g, '').toLowerCase(),
+                    style,
+                    weight,
+                    'ready'
+                ].join('-'));
+            })
+            .catch(() => {});
+    });
 }

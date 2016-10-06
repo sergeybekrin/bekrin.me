@@ -1,0 +1,16 @@
+@import '~styles/mixins.styl'
+@import '~styles/palette.styl'
+
+.Page
+	width 100%
+	flex 1
+	display flex
+	flex-direction column
+
+	&-contents
+		background-color palette('gray', '200')
+		padding 0 10vmin
+		flex 1
+
+		+mobile()
+			padding 0 5vmin

@@ -1,0 +1,47 @@
+@import '~styles/variables.styl'
+@import '~styles/mixins.styl'
+
+.Section
+	display flex
+	font-family Monaco, monospace
+	margin 10vmin 0
+
+	roboto-mono-ready()
+
+	+desktop()
+		flex-direction row
+
+	+tablet()
+		flex-direction column
+
+	&-aside
+		font-weight 700
+		margin 0
+		margin-right $layout-horizontal-spacing
+		font-size 1.5em
+		line-height 1.2
+		flex 1
+		text-transform capitalize
+
+		+desktop()
+			text-align right
+
+		+mobile()
+			margin-right 0
+
+	&-content
+		font-weight 300
+		line-height 2em
+		margin 0
+		flex 3
+
+		+tablet()
+			padding-top 1em
+
+		p + p
+			margin-top 1.5em
+
+		ul:not([class])
+			margin 1em 0 1em 2em
+			padding 0
+			list-style-type square

@@ -1,11 +1,18 @@
-import ga from 'react-ga';
+import { initialize, set, pageview } from 'react-ga';
 
-export function initializeGA () {
-	ga.initialize('UA-19088106-7', {
-		debug: process.env.NODE_ENV === 'development'
-	});
+/**
+ * @param {string} id
+ */
+export function initializeGA (id) {
+    initialize(id, {
+        debug: __DEV__
+    });
 }
 
+/**
+ * @param {string} path
+ */
 export function trackGA (path = window.location.pathname) {
-	ga.pageview(path);
+    set({ page: path });
+    pageview(path);
 }

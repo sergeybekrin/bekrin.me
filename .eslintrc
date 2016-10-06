@@ -1,0 +1,39 @@
+{
+  "parser": "babel-eslint",
+  "extends": "airbnb",
+  "globals": {
+    "__DEV__": true,
+    "__PROD__": true
+  },
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "plugins": [
+    "react",
+    "jsx-a11y",
+    "import"
+  ],
+  "settings": {
+    "import/resolver": {
+      "webpack": {
+        "config": "webpack/eslint.js"
+      }
+    }
+  },
+  "rules": {
+    "arrow-parens": [ "error", "always" ],
+    "array-bracket-spacing": [ "error", "always" ],
+    "comma-dangle": [ "error", "never" ],
+    "indent": [ "error", 4 ],
+    "no-underscore-dangle": "off",
+    "import/prefer-default-export": "off",
+    "import/order": [ "error", { "newlines-between": "never", "groups": [ "builtin", "external", "internal", "parent", "sibling", "index" ] }],
+    "import/no-named-as-default": "off",
+    "import/no-extraneous-dependencies": [ "error", { "devDependencies": [ "!webpack/**/*.js", "!server.js" ]}],
+    "space-before-function-paren": [ "error", "always" ],
+    "react/jsx-filename-extension": [ 1, { "extensions": [ ".js", ".jsx" ] }],
+    "react/jsx-indent": [ "error", 4 ],
+    "react/jsx-indent-props": [ "error", 4 ]
+  }
+}

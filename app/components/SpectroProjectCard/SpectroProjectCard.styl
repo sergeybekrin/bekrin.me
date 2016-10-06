@@ -1,0 +1,25 @@
+@import '~styles/mixins.styl'
+
+.SpectroProjectCard
+	background-color rgba(66, 129, 243, 0.1)
+	transition background-color 200ms ease
+	border-radius .2em
+	padding 2em
+	display block
+	max-width 40em
+
+	+mobile()
+		text-align center
+		padding 5vmin
+
+	&:hover
+		background-color rgba(66, 129, 243, 0.2)
+
+	&-image
+		max-width 150px
+		max-height 75px
+		width 100%
+
+	&-label
+		font-weight 400
+		color #333

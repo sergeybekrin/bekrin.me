@@ -1,0 +1,47 @@
+@import '~styles/palette.styl'
+
+$offset = 2em
+
+.Content
+	background palette('gray', '200')
+	position relative
+	display flex
+	flex-direction column
+	flex 1
+
+.animated
+	&--appear,
+	&--enter
+		transition transform 300ms ease, opacity 300ms ease
+		transition-delay 300ms
+		transform translateY(-1 * $offset)
+		position absolute
+		height 100%
+		pointer-events none
+		opacity 0
+		left 0
+		top 0
+
+	&--appear-active,
+	&--enter-active
+		transform none
+		opacity 1
+		left 0
+		top 0
+
+	&--leave
+		transition transform 300ms ease, opacity 300ms ease
+		transform none
+		position absolute
+		pointer-events none
+		height 100%
+		opacity 1
+		left 0
+		top: 0
+
+	&--leave-active
+		transform translateY($offset)
+		position absolute
+		opacity 0
+		left 0
+		top 0

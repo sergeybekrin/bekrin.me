@@ -1,0 +1,47 @@
+@import './variables.styl'
+
+/**
+ * Font Loader block mixin
+ */
+font-ready($font-family, $font-style = 'normal', $font-weight = '400')
+	.font-{$font-family + '-' + $font-style + '-' + $font-weight}-ready &
+		{block}
+
+/**
+ * Roboto Mono mixin
+ */
+roboto-mono-ready($font-weight = '400')
+	+font-ready('robotomono', 'normal', $font-weight)
+		font-family 'Roboto Mono', monospace
+
+/**
+ * Convert px value to em
+ */
+convertToEm($value)
+	$unit = unit($value)
+
+	if $unit is 'px'
+		return unit($value / $base-font-size, 'em')
+
+	return unit($value, $unit)
+
+/**
+ * Mobile block mixin
+ */
+mobile()
+	@media screen and (max-width: convertToEm(425px))
+		{block}
+
+/**
+ * Tablet block mixin
+ */
+tablet()
+	@media screen and (max-width: convertToEm(768px))
+		{block}
+
+/**
+ * Desktop block mixin
+ */
+desktop()
+	@media screen and (min-width: convertToEm(769px))
+		{block}

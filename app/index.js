@@ -1,44 +1,27 @@
+/* eslint-disable global-require */
 import React from 'react';
-import { render } from 'react-dom';
-import { renderToString } from 'react-dom/server';
-import { browserHistory, createMemoryHistory, Router, RouterContext, match } from 'react-router';
+import { createMemoryHistory, RouterContext, match } from 'react-router';
+import { renderToStaticMarkup } from 'react-dom/server';
+import ServerRoot from 'components/ServerRoot';
+import routes from 'components/Routes';
 
-import routes from './routes';
-import template from './template.ejs';
-import './styles/global.styl';
-
-// Render site on client
-if (typeof document !== 'undefined') {
-	const { loadFonts } = require('./utils/FontUtils');
-	const { initializeGA, trackGA } = require('./utils/GoogleAnalyticsUtils');
-
-	loadFonts();
-	initializeGA();
-
-	const root = document.querySelector('main');
-	const history = browserHistory;
-
-	render(
-		<Router
-			history={history}
-			routes={routes}
-			onUpdate={trackGA}
-		/>,
-		root
-	);
+// Enable client side renderer
+if (typeof window !== 'undefined') {
+    require('./client');
 }
 
-// Render site to static markup
-export default function renderStatic (locals, callback) {
-	const history = createMemoryHistory();
-	const location = history.createLocation(locals.path);
+// Export static site renderer
+export default function render (locals, callback) {
+    const history = createMemoryHistory();
+    const location = history.createLocation(locals.path);
 
-	match({ routes, location }, (error, redirectLocation, renderProps) => {
-		callback(null, template({
-			html: renderToString(<RouterContext {...renderProps} />),
-			dev: false,
-			lang: 'en',
-			assets: locals.assets
-		}));
-	});
+    match({ routes, location }, (error, redirectLocation, renderProps) => {
+        const serverContainerMarkup = renderToStaticMarkup(
+            <ServerRoot publicPath={locals.publicPath}>
+                <RouterContext {...renderProps} />
+            </ServerRoot>
+        );
+
+        callback(null, `<!doctype html>${serverContainerMarkup}`);
+    });
 }
