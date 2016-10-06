@@ -1,11 +1,15 @@
 import React from 'react';
-import { Link } from 'react-router';
+import Link from 'components/Link';
 import Formatter from 'components/Formatter';
 import npmkitLogoPath from 'assets/project-npmkit-logo.svg';
 import './NpmkitProjectCard.styl';
 
 const NpmkitProjectCard = () => (
-    <Link className="NpmkitProjectCard" to="/projects/npmkit">
+    <Link
+        className="NpmkitProjectCard"
+        eventLabel="npmkit-lnik"
+        to="//github.com/sergeybekrin/npmkit"
+    >
         <img
             src={npmkitLogoPath}
             alt="npmkit logo"
