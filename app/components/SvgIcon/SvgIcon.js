@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react';
 import iconsPath from 'assets/icons.svg';
 
 const Icon = ({ code, ...props }) => (
-    <svg {...props} className={`svg-icon svg-icon--${code}`}>
+    <svg {...props} className={`SvgIcon SvgIcon--${code}`}>
         <use xlinkHref={`${iconsPath}#${code}`} />
     </svg>
 );
