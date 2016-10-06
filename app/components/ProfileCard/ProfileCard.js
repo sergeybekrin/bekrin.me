@@ -27,12 +27,14 @@ const ProfileCard = () => (
             </h1>
             <p className="ProfileCard-paragraph">
                 <Formatter>
-                    Currently work at
+                    Currently working at
                     <Link to="http://griddynamics.com" eventLabel="gd-link" className="gd-link">
                         <SvgIcon code="gd-logo" />
                         <Formatter eol={false}>Grid Dynamics</Formatter>
-                    </Link> as UI&nbsp;Developer.
-                    Love wild world of Open Source and do contributions to it sometimes.
+                    </Link> as a UI Developer.
+                    I care about user and developer experience.
+                    Not afraid of learning new.
+                    Love Open Source and make contributions sometimes.
                 </Formatter>
             </p>
         </div>
