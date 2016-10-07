@@ -17,11 +17,11 @@ const SpectroProjectCard = () => (
             src={spectroLogoPath}
             alt="Spectro"
         />
-        <h2 className="SpectroProjectCard-label">
+        <p className="SpectroProjectCard-label">
             <Formatter>
                 Spectro is experimental modular content editor build in “pre-React era”
             </Formatter>
-        </h2>
+        </p>
     </Link>
 );
 
