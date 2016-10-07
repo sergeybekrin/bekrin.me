@@ -21,7 +21,7 @@ convertToEm($value)
 	$unit = unit($value)
 
 	if $unit is 'px'
-		return unit($value / $base-font-size, 'em')
+		return unit($value / $root-font-size, 'em')
 
 	return unit($value, $unit)
 
