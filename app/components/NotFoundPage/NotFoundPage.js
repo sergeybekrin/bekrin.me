@@ -1,5 +1,12 @@
 import React from 'react';
+import Page from 'components/Page';
+import './NotFoundPage.styl';
 
 export default () => (
-    <h1>404</h1>
+    <Page title="404">
+        <div className="NotFoundPage">
+            <div>{'\ud83d\ude31'}</div>
+            <h1 className="">404</h1>
+        </div>
+    </Page>
 );
