@@ -2,6 +2,7 @@
 import React, { Component, PropTypes } from 'react';
 import Header from 'components/Header';
 import Content from 'components/Content';
+import Footer from 'components/Footer';
 import './RootContainer.styl';
 
 /**
@@ -11,19 +12,15 @@ import './RootContainer.styl';
  */
 export default class RootContainer extends Component {
     static propTypes = {
-        children: PropTypes.node.isRequired,
-        location: PropTypes.shape({
-            pathname: PropTypes.string // eslint-disable-line react/no-unused-prop-types
-        })
+        children: PropTypes.node.isRequired
     };
 
     render () {
-        const { children, location } = this.props;
-
         return (
             <div className="Root">
                 <Header />
-                <Content pathname={location.pathname}>{children}</Content>
+                <Content>{this.props.children}</Content>
+                <Footer />
             </div>
         );
     }
