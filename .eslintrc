@@ -22,18 +22,19 @@
     }
   },
   "rules": {
-    "arrow-parens": [ "error", "always" ],
     "array-bracket-spacing": [ "error", "always" ],
+    "arrow-parens": [ "error", "always" ],
     "comma-dangle": [ "error", "never" ],
     "indent": [ "error", 4 ],
-    "no-underscore-dangle": "off",
-    "import/prefer-default-export": "off",
-    "import/order": [ "error", { "newlines-between": "never", "groups": [ "builtin", "external", "internal", "parent", "sibling", "index" ] }],
     "import/no-named-as-default": "off",
     "import/no-extraneous-dependencies": [ "error", { "devDependencies": [ "!webpack/**/*.js", "!server.js" ]}],
-    "space-before-function-paren": [ "error", "always" ],
+    "import/order": [ "error", { "newlines-between": "never", "groups": [ "builtin", "external", "internal", "parent", "sibling", "index" ] }],
+    "import/prefer-default-export": "off",
+    "jsx-a11y/html-has-lang": "off",
+    "no-underscore-dangle": "off",
     "react/jsx-filename-extension": [ 1, { "extensions": [ ".js", ".jsx" ] }],
     "react/jsx-indent": [ "error", 4 ],
-    "react/jsx-indent-props": [ "error", 4 ]
+    "react/jsx-indent-props": [ "error", 4 ],
+    "space-before-function-paren": [ "error", "always" ]
   }
 }
