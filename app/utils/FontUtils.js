@@ -15,7 +15,7 @@ export function waitFontsToLoad (fonts = []) {
 
         observer.load()
             .then(() => {
-                document.body.classList.add([
+                document.documentElement.classList.add([
                     'font',
                     family.replace(/\s+/g, '').toLowerCase(),
                     style,
