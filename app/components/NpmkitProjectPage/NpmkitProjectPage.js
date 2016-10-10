@@ -5,7 +5,7 @@ import Formatter from 'components/Formatter';
 import ContentSection from 'components/ContentSection';
 
 export default () => (
-    <Page title="npmkit — Sergey Bekrin">
+    <Page title="npmkit Project">
         <ContentSection title={<Formatter>Key technologies</Formatter>}>
             <p>
                 <Link to="//github.com/electron/electron" eventLabel="electron-link">Electron</Link>,{' '}

@@ -1,16 +1,16 @@
 import React, { PropTypes } from 'react';
-import DocumentTitle from 'react-document-title';
+import Helmet from 'react-helmet';
 import './Page.styl';
 
-const Page = ({ title, children }) => (
-    <DocumentTitle title={title}>
-        <div className="Page">{children}</div>
-    </DocumentTitle>
+const Page = ({ children, ...props }) => (
+    <div className="Page">
+        <Helmet {...props} />
+        {children}
+    </div>
 );
 
 Page.propTypes = {
-    children: PropTypes.node,
-    title: PropTypes.string.isRequired
+    children: PropTypes.node
 };
 
 export default Page;

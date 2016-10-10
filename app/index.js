@@ -1,7 +1,8 @@
 /* eslint-disable global-require */
 import React from 'react';
 import { createMemoryHistory, RouterContext, match } from 'react-router';
-import { renderToStaticMarkup } from 'react-dom/server';
+import { renderToString, renderToStaticMarkup } from 'react-dom/server';
+import Helmet from 'react-helmet';
 import ServerRoot from 'components/ServerRoot';
 import routes from 'components/Routes';
 
@@ -16,10 +17,16 @@ export default function render (locals, callback) {
     const location = history.createLocation(locals.path);
 
     match({ routes, location }, (error, redirectLocation, renderProps) => {
+        // Render application itself
+        const applicationMarkup = renderToString(
+            <RouterContext {...renderProps} />
+        );
+
+        // Render static markup wrapper
+        const head = Helmet.rewind();
+
         const serverContainerMarkup = renderToStaticMarkup(
-            <ServerRoot publicPath={locals.publicPath}>
-                <RouterContext {...renderProps} />
-            </ServerRoot>
+            <ServerRoot {...head}>{applicationMarkup}</ServerRoot>
         );
 
         callback(null, `<!doctype html>${serverContainerMarkup}`);

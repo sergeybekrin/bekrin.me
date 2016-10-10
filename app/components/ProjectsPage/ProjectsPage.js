@@ -6,7 +6,7 @@ import NpmkitProjectCard from 'components/NpmkitProjectCard';
 import SpectroProjectCard from 'components/SpectroProjectCard';
 
 export const ProjectsPage = () => (
-    <Page title="Projects — Sergey Bekrin">
+    <Page title="Projects">
         <ContentSection title={<Formatter>Projects</Formatter>}>
             <NpmkitProjectCard />
             <SpectroProjectCard />

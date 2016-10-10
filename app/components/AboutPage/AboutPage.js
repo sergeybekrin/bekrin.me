@@ -6,7 +6,7 @@ import ContentSection from 'components/ContentSection';
 import ProfileCard from 'components/ProfileCard';
 
 export const AboutPage = () => (
-    <Page title="Sergey Bekrin">
+    <Page>
         <ProfileCard />
         <ContentSection title={<h2><Formatter>Education</Formatter></h2>}>
             <b><Formatter>Bachelor in Applied Informatics</Formatter></b>

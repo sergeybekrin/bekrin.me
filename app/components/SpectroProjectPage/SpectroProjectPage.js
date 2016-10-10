@@ -1,5 +1,8 @@
 import React from 'react';
+import Page from 'components/Page';
 
 export default () => (
-    <h1>Spectro Project</h1>
+    <Page title="Spectro Project">
+        <h1>Spectro</h1>
+    </Page>
 );

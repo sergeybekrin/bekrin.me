@@ -29,7 +29,7 @@ const contactsData = [
 ];
 
 const ContactsPage = () => (
-    <Page title="Contacts — Sergey Bekrin">
+    <Page title="Contacts">
         <ContentSection title={<Formatter>Contacts</Formatter>}>
             <ul className="ContactsList">
                 {contactsData.map((item) =>
