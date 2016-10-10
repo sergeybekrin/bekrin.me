@@ -1,12 +1,12 @@
-/* eslint-disable react/no-danger, react/forbid-prop-types */
+/* eslint-disable react/no-danger, react/no-unused-prop-types */
 import React, { PropTypes } from 'react';
 
-const ServerRoot = ({ htmlAttributes, title, meta, link, children }) => (
-    <html {...htmlAttributes.toComponent()}>
+const ServerRoot = ({ head, children }) => (
+    <html {...head.htmlAttributes.toComponent()}>
         <head>
-            {title.toComponent()}
-            {meta.toComponent()}
-            {link.toComponent()}
+            {head.title.toComponent()}
+            {head.meta.toComponent()}
+            {head.link.toComponent()}
         </head>
         <body>
             <div data-approot dangerouslySetInnerHTML={{ __html: children || '' }} />
@@ -15,11 +15,18 @@ const ServerRoot = ({ htmlAttributes, title, meta, link, children }) => (
     </html>
 );
 
+const HelmetPropType = PropTypes.shape({
+    toComponent: PropTypes.func.isRequired,
+    toString: PropTypes.func.isRequired
+});
+
 ServerRoot.propTypes = {
-    htmlAttributes: PropTypes.object.isRequired,
-    title: PropTypes.object.isRequired,
-    meta: PropTypes.object.isRequired,
-    link: PropTypes.object.isRequired,
+    head: PropTypes.shape({
+        htmlAttributes: HelmetPropType,
+        title: HelmetPropType,
+        meta: HelmetPropType,
+        link: HelmetPropType
+    }),
     children: PropTypes.string
 };
 

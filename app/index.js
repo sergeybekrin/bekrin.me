@@ -23,10 +23,8 @@ export default function render (locals, callback) {
         );
 
         // Render static markup wrapper
-        const head = Helmet.rewind();
-
         const serverContainerMarkup = renderToStaticMarkup(
-            <ServerRoot {...head}>{applicationMarkup}</ServerRoot>
+            <ServerRoot head={Helmet.rewind()}>{applicationMarkup}</ServerRoot>
         );
 
         callback(null, `<!doctype html>${serverContainerMarkup}`);
