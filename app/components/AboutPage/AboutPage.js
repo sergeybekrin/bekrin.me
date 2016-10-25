@@ -20,7 +20,7 @@ export const AboutPage = () => (
             <ul>
                 <li>JavaScript</li>
                 <li>React, Redux &amp; Angular 1.x</li>
-                <li>Node.js (express, mongoose) &amp; Electron</li>
+                <li>Node.js &amp; Electron</li>
                 <li>Stylus, SASS</li>
                 <li>webpack, gulp</li>
                 <li>Java (Spring, Jetty)</li>
