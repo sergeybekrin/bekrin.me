@@ -32,7 +32,7 @@ const ProfileCard = () => (
                         <SvgIcon code="gd-logo" />
                         <Formatter eol={false}>Grid Dynamics</Formatter>
                     </Link> as a UI Developer.
-                    I care about user and developer experience.
+                    I care about User and Developer Experience.
                     Not afraid of learning new.
                     Love Open Source and make contributions sometimes.
                 </Formatter>
