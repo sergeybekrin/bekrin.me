@@ -4,7 +4,7 @@ import moment from 'moment';
 import webpack from 'webpack';
 
 const lastCommitDate = execSync('git log -1 --format=%ai').toString();
-const formattedLastCommitDate = moment(lastCommitDate).fromNow();
+const formattedLastCommitDate = moment(lastCommitDate).format('MMM. Do YYYY');
 
 export default {
     output: {
