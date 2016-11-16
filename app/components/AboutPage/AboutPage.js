@@ -18,10 +18,10 @@ export const AboutPage = () => (
         <ContentSection title={<h2><Formatter>Experience</Formatter></h2>}>
             <b><Formatter>Technologies</Formatter></b>
             <ul>
-                <li>JavaScript</li>
+                <li>JavaScript (es2015, Flow)</li>
                 <li>React, Redux &amp; Angular 1.x</li>
                 <li>Node.js &amp; Electron</li>
-                <li>Stylus, SASS</li>
+                <li>Radium, Stylus, SASS</li>
                 <li>webpack, gulp</li>
                 <li>Java (Spring, Jetty)</li>
                 <li>Microdata and <abbr title="Server-side rendering">SSR</abbr> for SEO</li>
@@ -32,7 +32,7 @@ export const AboutPage = () => (
             <ul>
                 <li>nvm &amp; npm</li>
                 <li>Travis, AppVeyor</li>
-                <li>Git, Perforce</li>
+                <li>Git</li>
                 <li>Docker</li>
                 <li>Digital Ocean, AWS (EB, S3)</li>
                 <li>UNIX (Debian, CentOS)</li>
