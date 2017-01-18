@@ -25,8 +25,7 @@ app.use(webpackHotMiddleware(compiler));
 // static html output for production build
 app.use((request, response) => {
     load(webpack(serverConfig)).then((files) => {
-        const render = files[serverConfig.output.filename];
-
+        const render = files[serverConfig.output.filename].default;
         const locals = {
             path: request.url,
             publicPath: clientConfig.output.publicPath

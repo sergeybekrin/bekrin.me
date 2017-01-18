@@ -25,10 +25,10 @@ export default merge(baseConfig, {
         server: './app/index.js'
     },
     module: {
-        loaders: [
+        rules: [
             {
-                test: /\.jsx?$/,
-                loader: 'babel',
+                test: /\.js$/,
+                loader: 'babel-loader',
                 exclude: /node_modules/,
                 query: {
                     presets: [ 'react-optimize' ]
@@ -36,30 +36,50 @@ export default merge(baseConfig, {
             },
             {
                 test: /\.(json|png|jpg|jpeg|ico|ttf|eot|svg|woff(2)?)(\?[a-z0-9]+)?$/,
-                loader: 'file?context=app&name=[path][name]-[hash:6].[ext]'
+                loader: 'file-loader',
+                options: {
+                    context: 'app',
+                    name: '[path][name]-[hash:6].[ext]'
+                }
             },
             {
                 test: /\.css$/,
-                loader: ExtractTextPlugin.extract('style', 'css')
+                loader: ExtractTextPlugin.extract({
+                    fallbackLoader: 'style-loader',
+                    loader: 'css-loader'
+                })
             },
             {
                 test: /\.styl$/,
-                loader: ExtractTextPlugin.extract('style', 'css?importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!stylus')
+                loader: ExtractTextPlugin.extract({
+                    fallbackLoader: 'style-loader',
+                    loader: [
+                        {
+                            loader: 'css-loader',
+                            options: {
+                                importLoaders: 1,
+                                localIdentName: '[name]__[local]___[hash:base64:5]'
+                            }
+                        },
+                        { loader: 'stylus-loader' }
+                    ]
+                })
             }
         ]
     },
     plugins: [
         new CleanupPlugin(),
-        new StaticSiteGeneratorPlugin('server', paths, {
-            publicPath
-        }),
+        new StaticSiteGeneratorPlugin('server', paths, { publicPath }),
         new webpack.optimize.UglifyJsPlugin({
             compress: {
                 screw_ie8: true,
                 warnings: false
             },
-            sourceMap: false
+            minimize: true
         }),
-        new ExtractTextPlugin('bundle.css', { allChunks: true })
+        new ExtractTextPlugin({
+            filename: 'bundle.css',
+            allChunks: true
+        })
     ]
 });

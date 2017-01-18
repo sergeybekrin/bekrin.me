@@ -3,7 +3,7 @@ import path from 'path';
 import moment from 'moment';
 import webpack from 'webpack';
 
-const lastCommitDate = execSync('git log -1 --format=%ai').toString();
+const lastCommitDate = execSync('git log -1 --date=short --pretty=format:%cd').toString();
 const formattedLastCommitDate = moment(lastCommitDate).format('MMM. Do YYYY');
 
 export default {
@@ -13,11 +13,11 @@ export default {
         publicPath: '/'
     },
     resolve: {
-        root: [
+        modules: [
             path.resolve(__dirname, '..', 'app'),
             path.resolve(__dirname, '..', 'node_modules')
         ],
-        extensions: [ '', '.js' ]
+        extensions: [ '.js' ]
     },
     plugins: [
         new webpack.DefinePlugin({
