@@ -13,4 +13,8 @@ Page.propTypes = {
     children: PropTypes.node
 };
 
+Page.defaultProps = {
+    children: null
+};
+
 export default Page;

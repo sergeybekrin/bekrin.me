@@ -1,3 +1,3 @@
 require('babel-register');
 
-module.exports = require('./development');
+module.exports = require('./development').default;

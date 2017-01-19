@@ -30,4 +30,9 @@ ServerRoot.propTypes = {
     children: PropTypes.string
 };
 
+ServerRoot.defaultProps = {
+    head: {},
+    children: null
+};
+
 export default ServerRoot;

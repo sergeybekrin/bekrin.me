@@ -27,6 +27,7 @@
     "arrow-parens": [ "error", "always" ],
     "comma-dangle": [ "error", "never" ],
     "indent": [ "error", 4 ],
+    "import/extensions": [ "error", { "js": "never" } ],
     "import/no-named-as-default": "off",
     "import/no-extraneous-dependencies": [ "error", { "devDependencies": [ "!webpack/**/*.js", "!server.js" ]}],
     "import/order": [ "error", { "newlines-between": "never", "groups": [ "builtin", "external", "internal", "parent", "sibling", "index" ] }],

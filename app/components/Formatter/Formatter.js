@@ -1,4 +1,4 @@
-/* eslint-disable no-plusplus */
+/* eslint-disable no-plusplus, react/no-array-index-key */
 import React, { Component, PropTypes } from 'react';
 import './Formatter.styl';
 
@@ -44,15 +44,15 @@ export default class Formatter extends Component {
         // Recursively proceed children
         const result = (
             children.length > 1 ?
-                children.reduce(
-                    (previousValue, currentValue, index) => [
-                        index > 0 ? [ ...previousValue ] : null,
-                        index > 0 ? <WhitespaceCharacter key={`whitespace-${index}`} /> : null,
-                        this._formatIfString(currentValue)
-                    ],
-                    this._formatIfString(children[0])
-                ) :
-                children
+            children.reduce(
+                (previousValue, currentValue, index) => [
+                    index > 0 ? [ ...previousValue ] : null,
+                    index > 0 ? <WhitespaceCharacter key={`whitespace-${index}`} /> : null,
+                    this._formatIfString(currentValue)
+                ],
+                this._formatIfString(children[0])
+            ) :
+            children
         );
 
         // Append EOL character if required
