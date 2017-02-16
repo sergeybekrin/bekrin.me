@@ -19,7 +19,7 @@ export const AboutPage = () => (
             <b><Formatter>Technologies</Formatter></b>
             <ul>
                 <li>JavaScript (es2015, Flow)</li>
-                <li>React, Redux &amp; Angular 1.x</li>
+                <li>React &amp; Redux, Angular 1.x</li>
                 <li>Node.js &amp; Electron</li>
                 <li>Radium, Stylus, SASS</li>
                 <li>webpack, gulp</li>
@@ -28,7 +28,7 @@ export const AboutPage = () => (
                 <li>WAI-ARIA for accessibility</li>
                 <li>MongoDB, PostgreSQL &amp; MySQL</li>
             </ul>
-            <b>Environment and tools</b>
+            <b><Formatter>Environment and tools</Formatter></b>
             <ul>
                 <li>nvm &amp; npm</li>
                 <li>Travis, AppVeyor</li>
