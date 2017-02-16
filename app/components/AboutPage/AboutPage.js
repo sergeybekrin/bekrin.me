@@ -18,11 +18,11 @@ export const AboutPage = () => (
         <ContentSection title={<h2><Formatter>Experience</Formatter></h2>}>
             <b><Formatter>Technologies</Formatter></b>
             <ul>
-                <li>JavaScript (es2015, Flow)</li>
+                <li>JavaScript (ES2015, Flow)</li>
                 <li>React &amp; Redux, Angular 1.x</li>
                 <li>Node.js &amp; Electron</li>
                 <li>Radium, Stylus, SASS</li>
-                <li>webpack, gulp</li>
+                <li>webpack, Gulp</li>
                 <li>Jasmine, Protractor</li>
                 <li>Java (Spring, Jetty)</li>
                 <li>Microdata and <abbr title="Server-side rendering">SSR</abbr> for SEO</li>
