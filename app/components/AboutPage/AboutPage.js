@@ -8,13 +8,6 @@ import ProfileCard from 'components/ProfileCard';
 export const AboutPage = () => (
     <Page>
         <ProfileCard />
-        <ContentSection title={<h2><Formatter>Education</Formatter></h2>}>
-            <b><Formatter>Bachelor in Applied Informatics</Formatter></b>
-            <div><Formatter>2012 – 2016</Formatter></div>
-            <Link eventLabel="sstu-link" to="http://en.sstu.ru">
-                <Formatter>Saratov State Technical University</Formatter>
-            </Link>
-        </ContentSection>
         <ContentSection title={<h2><Formatter>Experience</Formatter></h2>}>
             <b><Formatter>Technologies</Formatter></b>
             <ul>
@@ -38,6 +31,13 @@ export const AboutPage = () => (
                 <li>Digital Ocean, AWS (EB, S3)</li>
                 <li>UNIX (Debian, CentOS)</li>
             </ul>
+        </ContentSection>
+        <ContentSection title={<h2><Formatter>Education</Formatter></h2>}>
+            <b><Formatter>Bachelor in Applied Informatics</Formatter></b>
+            <div><Formatter>2012 – 2016</Formatter></div>
+            <Link eventLabel="sstu-link" to="http://en.sstu.ru">
+                <Formatter>Saratov State Technical University</Formatter>
+            </Link>
         </ContentSection>
     </Page>
 );
