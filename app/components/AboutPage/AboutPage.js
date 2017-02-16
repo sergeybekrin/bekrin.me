@@ -11,7 +11,7 @@ export const AboutPage = () => (
         <ContentSection title={<h2><Formatter>Experience</Formatter></h2>}>
             <b><Formatter>Technologies</Formatter></b>
             <ul>
-                <li>JavaScript (ES2015, Flow)</li>
+                <li>JavaScript (ES5, ES2015+, Flow)</li>
                 <li>React &amp; Redux, Angular 1.x</li>
                 <li>Node.js &amp; Electron</li>
                 <li>Radium, Stylus, SASS</li>

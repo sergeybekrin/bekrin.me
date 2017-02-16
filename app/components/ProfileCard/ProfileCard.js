@@ -33,8 +33,8 @@ const ProfileCard = () => (
                         <Formatter eol={false}>Grid Dynamics</Formatter>
                     </Link> as a UI Developer.
                     I care about User and Developer Experience.
-                    Not afraid of learning new.
                     Love Open Source and make contributions sometimes.
+                    Always open to share &amp; learn.
                 </Formatter>
             </p>
         </div>
