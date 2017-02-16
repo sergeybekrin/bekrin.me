@@ -31,7 +31,7 @@ export const AboutPage = () => (
             <b><Formatter>Environment and tools</Formatter></b>
             <ul>
                 <li>nvm &amp; npm</li>
-                <li>Travis, AppVeyor</li>
+                <li>Jenkins, Travis, AppVeyor</li>
                 <li>Git</li>
                 <li>Docker</li>
                 <li>Digital Ocean, AWS (EB, S3)</li>
