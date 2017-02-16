@@ -23,6 +23,7 @@ export const AboutPage = () => (
                 <li>Node.js &amp; Electron</li>
                 <li>Radium, Stylus, SASS</li>
                 <li>webpack, gulp</li>
+                <li>Jasmine, Protractor</li>
                 <li>Java (Spring, Jetty)</li>
                 <li>Microdata and <abbr title="Server-side rendering">SSR</abbr> for SEO</li>
                 <li>WAI-ARIA for accessibility</li>
