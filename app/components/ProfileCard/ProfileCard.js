@@ -16,6 +16,8 @@ const ProfileCard = () => (
                 src={userpicPath}
                 alt="Sergey Bekrin"
                 itemProp="image"
+                width={162}
+                height={162}
             />
         }
     >
