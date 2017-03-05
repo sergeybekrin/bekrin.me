@@ -46,7 +46,7 @@
     "stylus": "^0.54.5",
     "stylus-loader": "^2.4.0",
     "webpack": "^2.2.0",
-    "webpack-cleanup-plugin": "^0.4.1",
+    "webpack-cleanup-plugin": "^0.4.2",
     "webpack-dashboard": "^0.2.1",
     "webpack-dev-middleware": "^1.8.3",
     "webpack-hot-middleware": "^2.15.0",
@@ -54,10 +54,10 @@
     "webpack-to-memory": "^1.0.0"
   },
   "dependencies": {
-    "fontfaceobserver": "^2.0.4",
+    "fontfaceobserver": "^2.0.9",
     "history": "^2.1.2",
-    "react": "^15.3.2",
-    "react-dom": "^15.3.2",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2",
     "react-ga": "^2.1.2",
     "react-helmet": "^3.1.0",
     "react-router": "^2.5.1"
