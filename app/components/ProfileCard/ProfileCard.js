@@ -3,7 +3,7 @@ import Link from 'components/Link';
 import ContentSection from 'components/ContentSection';
 import Formatter from 'components/Formatter';
 import SvgIcon from 'components/SvgIcon';
-import userpicPath from 'assets/userpic.jpg';
+import userpicPath from 'assets/userpic.png';
 import './ProfileCard.styl';
 
 const ProfileCard = () => (
