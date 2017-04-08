@@ -19,6 +19,7 @@ const paths = [
 export default merge(baseConfig, {
     output: {
         libraryTarget: 'umd',
+        filename: 'bundle-[hash:6].js',
         publicPath
     },
     entry: {
@@ -78,7 +79,7 @@ export default merge(baseConfig, {
             minimize: true
         }),
         new ExtractTextPlugin({
-            filename: 'bundle.css',
+            filename: 'bundle-[hash:6].css',
             allChunks: true
         })
     ]
