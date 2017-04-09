@@ -28,10 +28,8 @@ export default merge(baseConfig, {
     module: {
         rules: [
             {
-                test: /\.js$/,
                 loader: 'babel-loader',
-                exclude: /node_modules/,
-                query: {
+                options: {
                     presets: [ 'react-optimize' ]
                 }
             },

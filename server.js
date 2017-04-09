@@ -24,22 +24,18 @@ app.use(webpackHotMiddleware(compiler));
 // on each request to achieve same result as
 // static html output for production build
 app.use((request, response) => {
-    load(webpack(serverConfig)).then((files) => {
-        const render = files[serverConfig.output.filename].default;
-        const locals = {
-            path: request.url,
-            publicPath: clientConfig.output.publicPath
-        };
+    load(webpack(serverConfig))
+        .then((files) => {
+            const render = files[serverConfig.output.filename].default;
+            const locals = {
+                path: request.url,
+                publicPath: clientConfig.output.publicPath
+            };
 
-        render(locals, (error, output) => {
-            if (error) {
-                response.send(`Error building bundle:\n${error}`);
-                return;
-            }
-
-            response.send(output);
-        });
-    });
+            return render(locals);
+        })
+        .then((output) => response.send(output))
+        .catch((error) => response.send(`Error building bundle:\n${error}`));
 });
 
 app.listen(PORT, HOST, (error) => {

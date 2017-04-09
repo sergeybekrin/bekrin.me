@@ -11,14 +11,6 @@ export default merge(baseConfig, {
     module: {
         rules: [
             {
-                test: /\.js$/,
-                exclude: /node_modules/,
-                loader: 'babel-loader',
-                options: {
-                    cacheDirectory: true
-                }
-            },
-            {
                 test: /\.(json|png|jpg|jpeg|ico|ttf|eot|svg|woff(2)?)(\?[a-z0-9]+)?$/,
                 loader: 'file-loader',
                 options: {

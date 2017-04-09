@@ -1,6 +1,5 @@
 import webpack from 'webpack';
 import merge from 'webpack-merge';
-import DashboardPlugin from 'webpack-dashboard/plugin';
 import baseConfig from './shared';
 
 export default merge(baseConfig, {
@@ -12,11 +11,8 @@ export default merge(baseConfig, {
     module: {
         rules: [
             {
-                test: /\.js$/,
-                exclude: /node_modules/,
                 loader: 'babel-loader',
-                                options: {
-                    cacheDirectory: true,
+                options: {
                     presets: [ 'react-hmre' ]
                 }
             },

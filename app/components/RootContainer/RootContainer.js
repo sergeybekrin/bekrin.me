@@ -4,7 +4,6 @@ import Helmet from 'react-helmet';
 import Header from 'components/Header';
 import Content from 'components/Content';
 import Footer from 'components/Footer';
-import * as HeadTagsConstants from 'constants/HeadTagsConstants';
 import './RootContainer.styl';
 
 /**
@@ -21,11 +20,8 @@ export default class RootContainer extends Component {
         return (
             <div className="Root">
                 <Helmet
-                    htmlAttributes={{ lang: 'en' }}
                     titleTemplate="%s — Sergey Bekrin"
                     defaultTitle="Sergey Bekrin, Software Engineer"
-                    meta={HeadTagsConstants.DEFAULT_META_TAGS}
-                    link={HeadTagsConstants.DEFAULT_LINK_TAGS}
                 />
                 <Header />
                 <Content>{this.props.children}</Content>

@@ -12,6 +12,13 @@ export default {
         path: path.join(__dirname, '..', 'dist'),
         publicPath: '/'
     },
+    module: {
+        rules: [{
+            test: /\.js$/,
+            loader: 'babel-loader',
+            exclude: /node_modules/
+        }]
+    },
     resolve: {
         modules: [
             path.resolve(__dirname, '..', 'app'),
