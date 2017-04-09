@@ -10,7 +10,7 @@
   "scripts": {
     "lint": "eslint app webpack",
     "test": "npm run lint",
-    "start": "cross-env NODE_ENV=development webpack-dashboard -- node -r babel-register server.js",
+    "start": "cross-env NODE_ENV=development node -r babel-register server.js",
     "build": "cross-env NODE_ENV=production node -r babel-register ./node_modules/webpack/bin/webpack --config webpack/production.js --progress --profile --colors",
     "deploy": "gh-pages-travis"
   },
@@ -48,7 +48,6 @@
     "stylus-loader": "^3.0.1",
     "webpack": "^2.3.3",
     "webpack-cleanup-plugin": "^0.5.1",
-    "webpack-dashboard": "^0.3.0",
     "webpack-dev-middleware": "^1.10.1",
     "webpack-hot-middleware": "^2.18.0",
     "webpack-merge": "^0.14.1",

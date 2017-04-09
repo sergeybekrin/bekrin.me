@@ -15,7 +15,7 @@ export default merge(baseConfig, {
                 test: /\.js$/,
                 exclude: /node_modules/,
                 loader: 'babel-loader',
-                options: {
+                                options: {
                     cacheDirectory: true,
                     presets: [ 'react-hmre' ]
                 }
@@ -58,7 +58,6 @@ export default merge(baseConfig, {
         ]
     },
     plugins: [
-        new DashboardPlugin(),
         new webpack.LoaderOptionsPlugin({ debug: true }),
         new webpack.HotModuleReplacementPlugin(),
         new webpack.NoEmitOnErrorsPlugin()
