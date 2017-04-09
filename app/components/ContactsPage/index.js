@@ -1,1 +1,2 @@
-export default from './ContactsPage';
+import ContactsPage from './ContactsPage';
+export default ContactsPage;

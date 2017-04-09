@@ -1,1 +1,2 @@
-export default from './FormattedHeading';
+import FormattedHeading from './FormattedHeading';
+export default FormattedHeading;

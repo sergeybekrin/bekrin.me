@@ -1,1 +1,2 @@
-export default from './ContentSection';
+import ContentSection from './ContentSection';
+export default ContentSection;

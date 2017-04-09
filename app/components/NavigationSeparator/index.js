@@ -1,1 +1,2 @@
-export default from './NavigationSeparator';
+import NavigationSeparator from './NavigationSeparator';
+export default NavigationSeparator;

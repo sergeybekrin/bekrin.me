@@ -1,1 +1,2 @@
-export default from './SpectroProjectPage';
+import SpectroProjectPage from './SpectroProjectPage';
+export default SpectroProjectPage;

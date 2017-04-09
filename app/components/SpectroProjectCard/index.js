@@ -1,1 +1,2 @@
-export default from './SpectroProjectCard';
+import SpectroProjectCard from './SpectroProjectCard';
+export default SpectroProjectCard;

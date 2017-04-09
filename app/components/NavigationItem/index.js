@@ -1,1 +1,2 @@
-export default from './NavigationItem';
+import NavigationItem from './NavigationItem';
+export default NavigationItem;

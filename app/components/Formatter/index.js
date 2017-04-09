@@ -1,1 +1,2 @@
-export default from './Formatter';
+import Formatter from './Formatter';
+export default Formatter;

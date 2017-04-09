@@ -1,1 +1,2 @@
-export default from './ProjectsPage';
+import ProjectsPage from './ProjectsPage';
+export default ProjectsPage;

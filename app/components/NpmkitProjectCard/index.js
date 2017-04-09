@@ -1,1 +1,2 @@
-export default from './NpmkitProjectCard';
+import NpmkitProjectCard from './NpmkitProjectCard';
+export default NpmkitProjectCard;

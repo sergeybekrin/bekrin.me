@@ -1,1 +1,2 @@
-export default from './ServerRoot';
+import ServerRoot from './ServerRoot';
+export default ServerRoot;
