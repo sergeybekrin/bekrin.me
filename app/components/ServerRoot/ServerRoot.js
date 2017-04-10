@@ -36,12 +36,12 @@ ServerRoot.propTypes = {
         title: HelmetPropType,
         meta: HelmetPropType,
         link: HelmetPropType
-    }),
+    }).isRequired,
     children: PropTypes.string,
     assets: PropTypes.shape({
         css: PropTypes.arrayOf(PropTypes.string),
         js: PropTypes.arrayOf(PropTypes.string)
-    })
+    }).isRequired
 };
 
 ServerRoot.defaultProps = {

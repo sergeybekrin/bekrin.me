@@ -25,7 +25,7 @@ export default class Formatter extends Component {
 
     static eolIndex = 0;
 
-    _formatIfString (input) {
+    _formatIfString(input) {
         return (
             typeof input === 'string' ?
                 this._format(input, false) :
@@ -33,7 +33,7 @@ export default class Formatter extends Component {
         );
     }
 
-    _format (input, eol = true) {
+    _format(input, eol = true) {
         // Split sentences by words
         const children = (
             typeof input === 'string' ?
@@ -63,7 +63,7 @@ export default class Formatter extends Component {
         );
     }
 
-    render () {
+    render() {
         return (
             <span className="Formatter">
                 {this._format(this.props.children, this.props.eol)}

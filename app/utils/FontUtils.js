@@ -3,7 +3,7 @@ import FontFaceObserver from 'fontfaceobserver';
 /**
  * @param {Array<string>} fonts
  */
-export function waitFontsToLoad (fonts = []) {
+export function waitFontsToLoad(fonts = []) {
     fonts.forEach((font) => {
         const [
             family,

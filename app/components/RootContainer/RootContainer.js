@@ -16,7 +16,7 @@ export default class RootContainer extends Component {
         children: PropTypes.node.isRequired
     };
 
-    render () {
+    render() {
         return (
             <div className="Root">
                 <Helmet

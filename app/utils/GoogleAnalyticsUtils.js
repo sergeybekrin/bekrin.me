@@ -3,7 +3,7 @@ import { initialize, set, pageview } from 'react-ga';
 /**
  * @param {string} id
  */
-export function initializeGA (id) {
+export function initializeGA(id) {
     initialize(id, {
         debug: __DEV__
     });
@@ -12,7 +12,7 @@ export function initializeGA (id) {
 /**
  * @param {string} path
  */
-export function trackGA (path = window.location.pathname) {
+export function trackGA(path = window.location.pathname) {
     set({ page: path });
     pageview(path);
 }
