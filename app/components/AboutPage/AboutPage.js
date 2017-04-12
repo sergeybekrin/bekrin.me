@@ -5,7 +5,7 @@ import Formatter from 'components/Formatter';
 import ContentSection from 'components/ContentSection';
 import ProfileCard from 'components/ProfileCard';
 
-export const AboutPage = () => (
+const AboutPage = () => (
     <Page>
         <ProfileCard />
         <ContentSection title={<h2><Formatter>Experience</Formatter></h2>}>
@@ -17,7 +17,10 @@ export const AboutPage = () => (
                 <li>Radium, Stylus, SASS</li>
                 <li>webpack, Gulp</li>
                 <li>AVA, Jasmine, Protractor</li>
-                <li>Microdata and <abbr title="Server-side rendering">SSR</abbr> for SEO</li>
+                <li>
+                    Microdata and <abbr title="Server-side rendering">SSR</abbr>
+                    for SEO
+                </li>
                 <li>WAI-ARIA for accessibility</li>
                 <li>MongoDB, PostgreSQL &amp; MySQL</li>
             </ul>

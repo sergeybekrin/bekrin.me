@@ -30,7 +30,11 @@ const ProfileCard = () => (
             <p className="ProfileCard-paragraph">
                 <Formatter>
                     Currently working at
-                    <Link to="http://griddynamics.com" eventLabel="gd-link" className="gd-link">
+                    <Link
+                        to="http://griddynamics.com"
+                        eventLabel="gd-link"
+                        className="gd-link"
+                    >
                         <SvgIcon code="gd-logo" />
                         <Formatter eol={false}>Grid Dynamics</Formatter>
                     </Link> as a UI Developer.

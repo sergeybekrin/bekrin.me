@@ -11,15 +11,22 @@ const ServerRoot = ({ assets, helmet, children = '' }) => (
             <link rel="dns-prefetch" href="//fonts.googleapis.com" />
             <link rel="dns-prefetch" href="//google-analytics.com" />
             <link rel="dns-prefetch" href="//www.google-analytics.com" />
-            <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto+Mono:300,400,700" />
-            {assets.css.map((href) => <link rel="stylesheet" href={href} key={href} />)}
+            <link
+                rel="stylesheet"
+                href="//fonts.googleapis.com/css?family=Roboto+Mono:300,400,700"
+            />
+            {assets.css.map(href =>
+                <link rel="stylesheet" href={href} key={href} />
+            )}
             {helmet.title.toComponent()}
             {helmet.meta.toComponent()}
             {helmet.link.toComponent()}
         </head>
         <body {...helmet.bodyAttributes.toComponent()}>
             <div data-approot dangerouslySetInnerHTML={{ __html: children }} />
-            {assets.js.map((src) => <script async src={src} key={src} />)}
+            {assets.js.map(src =>
+                <script async src={src} key={src} />
+            )}
             {helmet.script.toComponent()}
         </body>
     </html>

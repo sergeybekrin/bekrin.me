@@ -1,10 +1,10 @@
 import FontFaceObserver from 'fontfaceobserver';
 
 /**
- * @param {Array<string>} fonts
+ * @param {Array<string>} fonts - fonts awaited to be loaded
  */
 export function waitFontsToLoad(fonts = []) {
-    fonts.forEach((font) => {
+    fonts.forEach(font => {
         const [
             family,
             style = 'normal',
@@ -23,6 +23,8 @@ export function waitFontsToLoad(fonts = []) {
                     'ready'
                 ].join('-'));
             })
-            .catch(() => {});
+            .catch(() => {
+                // Do nothing
+            });
     });
 }

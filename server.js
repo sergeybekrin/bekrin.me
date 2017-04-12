@@ -25,7 +25,7 @@ app.use(webpackHotMiddleware(compiler));
 // static html output for production build
 app.use((request, response) => {
     load(webpack(serverConfig))
-        .then((files) => {
+        .then(files => {
             const render = files[serverConfig.output.filename].default;
             const locals = {
                 path: request.url,
@@ -34,11 +34,11 @@ app.use((request, response) => {
 
             return render(locals);
         })
-        .then((output) => response.send(output))
-        .catch((error) => response.send(`Error building bundle:\n${error}`));
+        .then(output => response.send(output))
+        .catch(error => response.send(`Error building bundle:\n${error}`));
 });
 
-app.listen(PORT, HOST, (error) => {
+app.listen(PORT, HOST, error => {
     if (error) {
         console.error(error);
         return;

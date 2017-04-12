@@ -17,7 +17,7 @@ export default merge(baseConfig, {
                 }
             },
             {
-                test: /\.(json|png|jpg|jpeg|ico|ttf|eot|svg|woff(2)?)(\?[a-z0-9]+)?$/,
+                test: /\.(json|png|jpg|jpeg|ico|ttf|eot|svg|woff(2)?)(\?[a-z0-9]+)?$/, // eslint-disable-line max-len
                 loader: 'file-loader',
                 options: {
                     context: 'app',

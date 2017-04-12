@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react';
 import { OutboundLink } from 'react-ga';
 import './Link.styl';
 
-const Link = (props) => (
+const Link = props => (
     <OutboundLink
         {...props}
         className={[ props.className, 'Link' ].join(' ')}

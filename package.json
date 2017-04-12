@@ -8,7 +8,7 @@
   },
   "main": "./app/index.js",
   "scripts": {
-    "lint": "eslint app webpack",
+    "lint": "eslint server.js app webpack",
     "test": "npm run lint",
     "start": "cross-env NODE_ENV=development node -r babel-register server.js",
     "build": "cross-env NODE_ENV=production node -r babel-register ./node_modules/webpack/bin/webpack --config webpack/production.js --progress --profile --colors",
@@ -31,8 +31,9 @@
     "cross-env": "^4.0.0",
     "css-loader": "^0.28.0",
     "eslint": "^3.19.0",
-    "eslint-config-airbnb": "^14.1.0",
+    "eslint-config-sergeybekrin": "^1.0.0",
     "eslint-import-resolver-webpack": "^0.8.1",
+    "eslint-plugin-babel": "^4.1.1",
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-jsx-a11y": "^4.0.0",
     "eslint-plugin-react": "^6.10.3",
@@ -61,5 +62,44 @@
     "react-ga": "^2.1.2",
     "react-helmet": "^5.0.2",
     "react-router": "^2.5.1"
+  },
+  "babel": {
+    "presets": [
+      [
+        "env",
+        {
+          "targets": {
+            "browsers": [
+              "last 2 versions",
+              "ie >= 10"
+            ]
+          }
+        }
+      ],
+      "react"
+    ],
+    "plugins": [
+      "transform-object-rest-spread",
+      "transform-class-properties"
+    ]
+  },
+  "eslintConfig": {
+    "extends": [
+      "sergeybekrin",
+      "sergeybekrin/es6",
+      "sergeybekrin/react"
+    ],
+    "globals": {
+      "__DEV__": true,
+      "__PROD__": true,
+      "__LAST_COMMIT_DATE__": true
+    },
+    "settings": {
+      "import/resolver": {
+        "webpack": {
+          "config": "webpack/eslint.js"
+        }
+      }
+    }
   }
 }

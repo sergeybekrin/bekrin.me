@@ -6,7 +6,6 @@ import merge from 'webpack-merge';
 import baseConfig from './shared';
 
 const publicPath = process.env.PUBLIC_PATH || '/';
-
 const paths = [
     '/',
     '/projects',
@@ -34,7 +33,7 @@ export default merge(baseConfig, {
                 }
             },
             {
-                test: /\.(json|png|jpg|jpeg|ico|ttf|eot|svg|woff(2)?)(\?[a-z0-9]+)?$/,
+                test: /\.(json|png|jpg|jpeg|ico|ttf|eot|svg|woff(2)?)(\?[a-z0-9]+)?$/, // eslint-disable-line max-len
                 loader: 'file-loader',
                 options: {
                     context: 'app',
@@ -57,7 +56,7 @@ export default merge(baseConfig, {
                             loader: 'css-loader',
                             options: {
                                 importLoaders: 1,
-                                localIdentName: '[name]__[local]___[hash:base64:5]'
+                                localIdentName: '[name]__[local]___[hash:base64:5]' // eslint-disable-line max-len
                             }
                         },
                         { loader: 'stylus-loader' }
@@ -71,7 +70,7 @@ export default merge(baseConfig, {
         new StaticSiteGeneratorPlugin('server', paths, { publicPath }),
         new webpack.optimize.UglifyJsPlugin({
             compress: {
-                screw_ie8: true,
+                screw_ie8: true, // eslint-disable-line camelcase
                 warnings: false
             },
             minimize: true

@@ -19,7 +19,8 @@ const SpectroProjectCard = () => (
         />
         <p className="SpectroProjectCard-label">
             <Formatter>
-                Spectro is experimental modular content editor build in “pre-React era”
+                Spectro is experimental modular content editor build in
+                “pre-React era”
             </Formatter>
         </p>
     </Link>

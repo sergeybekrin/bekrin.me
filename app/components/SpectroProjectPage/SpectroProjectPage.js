@@ -1,8 +1,10 @@
 import React from 'react';
 import Page from 'components/Page';
 
-export default () => (
+const SpectroProjectPage = () => (
     <Page title="Spectro Project">
         <h1>Spectro</h1>
     </Page>
 );
+
+export default SpectroProjectPage;

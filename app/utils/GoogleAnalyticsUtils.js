@@ -1,7 +1,7 @@
 import { initialize, set, pageview } from 'react-ga';
 
 /**
- * @param {string} id
+ * @param {string} id - Google Analytics id
  */
 export function initializeGA(id) {
     initialize(id, {
@@ -10,7 +10,7 @@ export function initializeGA(id) {
 }
 
 /**
- * @param {string} path
+ * @param {string} path - path to send to GA
  */
 export function trackGA(path = window.location.pathname) {
     set({ page: path });

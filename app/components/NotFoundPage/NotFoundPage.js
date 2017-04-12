@@ -2,7 +2,7 @@ import React from 'react';
 import Page from 'components/Page';
 import './NotFoundPage.styl';
 
-export default () => (
+const NotFoundPage = () => (
     <Page title="404">
         <div className="NotFoundPage">
             <div>{'\ud83d\ude31'}</div>
@@ -10,3 +10,5 @@ export default () => (
         </div>
     </Page>
 );
+
+export default NotFoundPage;

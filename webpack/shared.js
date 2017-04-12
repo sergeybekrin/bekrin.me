@@ -3,7 +3,7 @@ import path from 'path';
 import moment from 'moment';
 import webpack from 'webpack';
 
-const lastCommitDate = execSync('git log -1 --date=short --pretty=format:%cd').toString();
+const lastCommitDate = execSync('git log -1 --date=short --pretty=format:%cd').toString(); // eslint-disable-line max-len
 const formattedLastCommitDate = moment(lastCommitDate).format('MMM. Do YYYY');
 
 export default {

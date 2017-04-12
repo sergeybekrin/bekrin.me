@@ -46,8 +46,11 @@ export default class Formatter extends Component {
             children.length > 1 ?
             children.reduce(
                 (previousValue, currentValue, index) => [
-                    index > 0 ? [ ...previousValue ] : null,
-                    index > 0 ? <WhitespaceCharacter key={`whitespace-${index}`} /> : null,
+                    (index > 0 ? [ ...previousValue ] : null),
+                    (index > 0 ?
+                        <WhitespaceCharacter key={`whitespace-${index}`} /> :
+                        null
+                    ),
                     this._formatIfString(currentValue)
                 ],
                 this._formatIfString(children[0])
@@ -58,8 +61,8 @@ export default class Formatter extends Component {
         // Append EOL character if required
         return (
             eol ?
-                [ result, <EOLCharacter key={`eol-${++Formatter.eolIndex}`} /> ] :
-                result
+            [ result, <EOLCharacter key={`eol-${++Formatter.eolIndex}`} /> ] :
+            result
         );
     }
 

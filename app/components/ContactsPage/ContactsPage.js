@@ -32,9 +32,12 @@ const ContactsPage = () => (
     <Page title="Contacts">
         <ContentSection title={<Formatter>Contacts</Formatter>}>
             <ul className="ContactsList">
-                {contactsData.map((item) =>
+                {contactsData.map(item =>
                     <li className="ContactsList-item" key={item.eventLabel}>
-                        <Link eventLabel={item.eventLabel} to={item.href}>{item.label}</Link>
+                        <Link
+                            eventLabel={item.eventLabel}
+                            to={item.href}
+                        >{item.label}</Link>
                     </li>
                 )}
             </ul>
