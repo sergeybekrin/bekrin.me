@@ -18,23 +18,6 @@ export default merge(baseConfig, {
                     name: '[path][name].[ext]',
                     emitFile: false
                 }
-            },
-            {
-                test: /\.css$/,
-                loader: 'css-loader/locals'
-            },
-            {
-                test: /\.styl$/,
-                use: [
-                    {
-                        loader: 'css-loader/locals',
-                        options: {
-                            modules: true,
-                            importLoaders: 1
-                        }
-                    },
-                    { loader: 'stylus-loader' }
-                ]
             }
         ]
     }

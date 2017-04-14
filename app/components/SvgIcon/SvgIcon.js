@@ -1,14 +1,15 @@
-import React, { PropTypes } from 'react';
-import iconsPath from 'assets/icons.svg';
+import React from 'react';
+import { string } from 'prop-types';
+import iconsPath from './assets/icons.svg';
 
 const Icon = ({ code, ...props }) => (
-    <svg {...props} className={`SvgIcon SvgIcon--${code}`}>
+    <svg {...props}>
         <use xlinkHref={`${iconsPath}#${code}`} />
     </svg>
 );
 
 Icon.propTypes = {
-    code: PropTypes.string.isRequired
+    code: string.isRequired
 };
 
 export default Icon;

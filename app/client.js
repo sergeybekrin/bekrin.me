@@ -1,13 +1,11 @@
 import React from 'react';
 import { render } from 'react-dom';
 import { browserHistory, Router } from 'react-router';
-import { waitFontsToLoad } from 'utils/FontUtils';
-import { initializeGA, trackGA } from 'utils/GoogleAnalyticsUtils';
+import { setStylesTarget } from 'typestyle';
+import { waitFontsToLoad } from 'helpers/FontUtils';
+import { initializeGA, trackGA } from 'helpers/GoogleAnalyticsUtils';
 import routes from 'components/Routes';
-import 'styles/global.styl';
-
-const root = document.querySelector('[data-approot]');
-const history = browserHistory;
+import 'styles/globals';
 
 waitFontsToLoad([
     'Roboto Mono:normal:300',
@@ -19,9 +17,13 @@ initializeGA('UA-19088106-7');
 
 render(
     <Router
-        history={history}
+        history={browserHistory}
         routes={routes}
         onUpdate={trackGA}
     />,
-    root
+    document.querySelector('[data-approot]')
 );
+
+if (__PROD__) {
+    setStylesTarget(document.querySelector('[data-typestyle]'));
+}

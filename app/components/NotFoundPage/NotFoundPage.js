@@ -1,12 +1,12 @@
 import React from 'react';
 import Page from 'components/Page';
-import './NotFoundPage.styl';
+import styles from './NotFoundPage.styles';
 
 const NotFoundPage = () => (
     <Page title="404">
-        <div className="NotFoundPage">
+        <div className={styles.container}>
             <div>{'\ud83d\ude31'}</div>
-            <h1 className="">404</h1>
+            <h1>404</h1>
         </div>
     </Page>
 );

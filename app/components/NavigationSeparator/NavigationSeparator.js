@@ -1,8 +1,8 @@
 import React from 'react';
-import './NavigationSeparator.styl';
+import styles from './NavigationSeparator.styles';
 
 const NavigationSeparator = () => (
-    <span className="NavigationSeparator" aria-hidden="true" />
+    <span className={styles.separator} aria-hidden="true" />
 );
 
 export default NavigationSeparator;

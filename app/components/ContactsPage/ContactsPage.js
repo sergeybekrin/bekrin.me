@@ -3,7 +3,7 @@ import Page from 'components/Page';
 import ContentSection from 'components/ContentSection';
 import Formatter from 'components/Formatter';
 import Link from 'components/Link';
-import './ContactsPage.styl';
+import styles from './ContactsPage.styles';
 
 const contactsData = [
     {
@@ -31,9 +31,9 @@ const contactsData = [
 const ContactsPage = () => (
     <Page title="Contacts">
         <ContentSection title={<Formatter>Contacts</Formatter>}>
-            <ul className="ContactsList">
+            <ul className={styles.list}>
                 {contactsData.map(item =>
-                    <li className="ContactsList-item" key={item.eventLabel}>
+                    <li className={styles.listItem} key={item.eventLabel}>
                         <Link
                             eventLabel={item.eventLabel}
                             to={item.href}

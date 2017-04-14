@@ -1,16 +1,18 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
+import { string } from 'prop-types';
 import { OutboundLink } from 'react-ga';
-import './Link.styl';
+import { classes } from 'typestyle';
+import styles from './Link.styles';
 
 const Link = props => (
     <OutboundLink
         {...props}
-        className={[ props.className, 'Link' ].join(' ')}
+        className={classes(props.className, styles.link)}
     />
 );
 
 Link.propTypes = {
-    className: PropTypes.string
+    className: string
 };
 
 Link.defaultProps = {

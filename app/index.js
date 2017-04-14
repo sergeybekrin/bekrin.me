@@ -5,7 +5,7 @@ import { renderToString, renderToStaticMarkup } from 'react-dom/server';
 import Helmet from 'react-helmet';
 import ServerRoot from 'components/ServerRoot';
 import routes from 'components/Routes';
-import { extractAssetsPath } from 'utils/WebpackUtils';
+import { extractAssetsPath } from 'helpers/WebpackUtils';
 
 // Enable client side renderer
 if (typeof global.document !== 'undefined') {
@@ -32,9 +32,10 @@ export default function render(locals) {
 
             // Render static markup wrapper
             const serverContainerMarkup = renderToStaticMarkup(
-                <ServerRoot assets={assets} helmet={Helmet.rewind()}>
-                    {applicationMarkup}
-                </ServerRoot>
+                <ServerRoot
+                    assets={assets}
+                    helmet={Helmet.rewind()}
+                >{applicationMarkup}</ServerRoot>
             );
 
             resolve(`<!doctype html>${serverContainerMarkup}`);

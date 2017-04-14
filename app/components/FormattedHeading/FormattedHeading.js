@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
+import { text } from 'prop-types';
 import Formatter from 'components/Formatter';
 
 const FormattedHeading = ({ children }) => (
@@ -6,7 +7,7 @@ const FormattedHeading = ({ children }) => (
 );
 
 FormattedHeading.propTypes = {
-    children: PropTypes.text.isRequired
+    children: text.isRequired
 };
 
 export default FormattedHeading;

@@ -1,23 +1,23 @@
 import React from 'react';
 import Link from 'components/Link';
 import Formatter from 'components/Formatter';
-import spectroLogoPath from 'assets/project-spectro-logo.svg';
-import './SpectroProjectCard.styl';
+import logoPath from './assets/logo.svg';
+import styles from './SpectroProjectCard.styles';
 
 const SpectroProjectCard = () => (
     <Link
-        className="SpectroProjectCard"
+        className={styles.card}
         eventLabel="spectro-link"
         to="//github.com/sergeybekrin/spectro"
     >
         <img
-            className="SpectroProjectCard-image"
+            className={styles.image}
             width={150}
             height={75}
-            src={spectroLogoPath}
+            src={logoPath}
             alt="Spectro"
         />
-        <p className="SpectroProjectCard-label">
+        <p className={styles.label}>
             <Formatter>
                 Spectro is experimental modular content editor build in
                 “pre-React era”

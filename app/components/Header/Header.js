@@ -1,9 +1,9 @@
 import React from 'react';
 import Navigation from 'components/Navigation';
-import './Header.styl';
+import styles from './Header.styles';
 
 const Header = () => (
-    <header className="Header">
+    <header className={styles.header}>
         <Navigation />
     </header>
 );

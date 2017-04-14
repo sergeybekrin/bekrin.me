@@ -1,10 +1,11 @@
 /* eslint-disable react/prefer-stateless-function */
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import { node } from 'prop-types';
 import Helmet from 'react-helmet';
 import Header from 'components/Header';
 import Content from 'components/Content';
 import Footer from 'components/Footer';
-import './RootContainer.styl';
+import styles from './RootContainer.styles';
 
 /**
  * This wrapper component is required to make
@@ -13,12 +14,12 @@ import './RootContainer.styl';
  */
 export default class RootContainer extends Component {
     static propTypes = {
-        children: PropTypes.node.isRequired
+        children: node.isRequired
     };
 
     render() {
         return (
-            <div className="Root">
+            <div className={styles.root}>
                 <Helmet
                     titleTemplate="%s — Sergey Bekrin"
                     defaultTitle="Sergey Bekrin, Software Engineer"

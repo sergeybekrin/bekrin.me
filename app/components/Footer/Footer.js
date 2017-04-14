@@ -1,9 +1,9 @@
 import React from 'react';
 import Link from 'components/Link';
-import './Footer.styl';
+import styles from './Footer.styles';
 
 export const Footer = () => (
-    <footer className="Footer">
+    <footer className={styles.footer}>
         Last update {__LAST_COMMIT_DATE__}<span> &bull; </span>
         <Link
             to="//github.com/sergeybekrin/bekrin.me"

@@ -1,5 +1,7 @@
-/* eslint-disable react/no-danger, react/no-unused-prop-types */
-import React, { PropTypes } from 'react';
+/* eslint-disable react/no-danger */
+import React from 'react';
+import { shape, arrayOf, string, func } from 'prop-types';
+import { getStyles } from 'typestyle';
 import manifestPath from 'assets/manifest.json';
 
 const ServerRoot = ({ assets, helmet, children = '' }) => (
@@ -21,39 +23,33 @@ const ServerRoot = ({ assets, helmet, children = '' }) => (
             {helmet.title.toComponent()}
             {helmet.meta.toComponent()}
             {helmet.link.toComponent()}
+            {__PROD__ && <style data-typestyle>{getStyles()}</style>}
         </head>
         <body {...helmet.bodyAttributes.toComponent()}>
             <div data-approot dangerouslySetInnerHTML={{ __html: children }} />
-            {assets.js.map(src =>
-                <script async src={src} key={src} />
-            )}
+            {assets.js.map(src => <script async src={src} key={src} />)}
             {helmet.script.toComponent()}
         </body>
     </html>
 );
 
-const HelmetPropType = PropTypes.shape({
-    toComponent: PropTypes.func.isRequired,
-    toString: PropTypes.func.isRequired
+const HelmetPropType = shape({
+    toComponent: func.isRequired,
+    toString: func.isRequired
 });
 
 ServerRoot.propTypes = {
-    helmet: PropTypes.shape({
+    assets: shape({
+        css: arrayOf(string),
+        js: arrayOf(string)
+    }).isRequired,
+    helmet: shape({
         htmlAttributes: HelmetPropType,
         title: HelmetPropType,
         meta: HelmetPropType,
         link: HelmetPropType
     }).isRequired,
-    children: PropTypes.string,
-    assets: PropTypes.shape({
-        css: PropTypes.arrayOf(PropTypes.string),
-        js: PropTypes.arrayOf(PropTypes.string)
-    }).isRequired
-};
-
-ServerRoot.defaultProps = {
-    head: {},
-    children: null
+    children: string
 };
 
 export default ServerRoot;

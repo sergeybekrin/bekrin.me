@@ -1,5 +1,4 @@
 import StaticSiteGeneratorPlugin from 'static-site-generator-webpack-plugin';
-import ExtractTextPlugin from 'extract-text-webpack-plugin';
 import CleanupPlugin from 'webpack-cleanup-plugin';
 import webpack from 'webpack';
 import merge from 'webpack-merge';
@@ -39,29 +38,6 @@ export default merge(baseConfig, {
                     context: 'app',
                     name: '[path][name]-[hash:6].[ext]'
                 }
-            },
-            {
-                test: /\.css$/,
-                loader: ExtractTextPlugin.extract({
-                    fallback: 'style-loader',
-                    use: 'css-loader'
-                })
-            },
-            {
-                test: /\.styl$/,
-                loader: ExtractTextPlugin.extract({
-                    fallback: 'style-loader',
-                    use: [
-                        {
-                            loader: 'css-loader',
-                            options: {
-                                importLoaders: 1,
-                                localIdentName: '[name]__[local]___[hash:base64:5]' // eslint-disable-line max-len
-                            }
-                        },
-                        { loader: 'stylus-loader' }
-                    ]
-                })
             }
         ]
     },
@@ -74,10 +50,6 @@ export default merge(baseConfig, {
                 warnings: false
             },
             minimize: true
-        }),
-        new ExtractTextPlugin({
-            filename: 'bundle-[hash:6].css',
-            allChunks: true
         })
     ]
 });

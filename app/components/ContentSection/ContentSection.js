@@ -1,16 +1,17 @@
-import React, { PropTypes } from 'react';
-import './ContentSection.styl';
+import React from 'react';
+import { node } from 'prop-types';
+import styles from './ContentSection.styles';
 
 const ContentSection = ({ title, children, ...props }) => (
-    <div className="Section" {...props}>
-        <div className="Section-aside">{title}</div>
-        <div className="Section-content">{children}</div>
+    <div className={styles.section} {...props}>
+        <div className={styles.aside}>{title}</div>
+        <div className={styles.content}>{children}</div>
     </div>
 );
 
 ContentSection.propTypes = {
-    title: PropTypes.node.isRequired,
-    children: PropTypes.node.isRequired
+    title: node.isRequired,
+    children: node.isRequired
 };
 
 export default ContentSection;

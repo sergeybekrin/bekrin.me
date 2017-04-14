@@ -1,12 +1,13 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
+import { string } from 'prop-types';
 import { Link } from 'react-router';
-import './NavigationItem.styl';
+import styles from './NavigationItem.styles';
 
 const NavigationItem = ({ to, label }) => (
-    <span className="NavigationItem">
+    <span className={styles.item}>
         <Link
-            activeClassName="NavigationItem-link--active"
-            className="NavigationItem-link"
+            activeClassName={styles.linkActive}
+            className={styles.link}
             onlyActiveOnIndex={to === '/'}
             to={to}
         >{label}</Link>
@@ -14,8 +15,8 @@ const NavigationItem = ({ to, label }) => (
 );
 
 NavigationItem.propTypes = {
-    to: PropTypes.string.isRequired,
-    label: PropTypes.string.isRequired
+    to: string.isRequired,
+    label: string.isRequired
 };
 
 export default NavigationItem;

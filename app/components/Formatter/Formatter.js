@@ -1,22 +1,21 @@
-/* eslint-disable no-plusplus, react/no-array-index-key */
-import React, { Component, PropTypes } from 'react';
-import './Formatter.styl';
+/* eslint-disable react/no-array-index-key */
+import React, { Component } from 'react';
+import { oneOfType, string, array, bool } from 'prop-types';
+import { classes } from 'typestyle';
+import styles from './Formatter.styles';
 
 const WhitespaceCharacter = () => (
-    <span className="NonPrintable NonPrintable--space">{' '}</span>
+    <span className={classes(styles.nonPrintable, styles.space)}>{' '}</span>
 );
 
 const EOLCharacter = () => (
-    <span className="NonPrintable NonPrintable--eol" />
+    <span className={classes(styles.nonPrintable, styles.eol)} />
 );
 
 export default class Formatter extends Component {
     static propTypes = {
-        children: PropTypes.oneOfType([
-            PropTypes.string,
-            PropTypes.array
-        ]).isRequired,
-        eol: PropTypes.bool
+        children: oneOfType([ string, array ]).isRequired,
+        eol: bool
     };
 
     static defaultProps = {
@@ -28,8 +27,8 @@ export default class Formatter extends Component {
     _formatIfString(input) {
         return (
             typeof input === 'string' ?
-                this._format(input, false) :
-                input
+            this._format(input, false) :
+            input
         );
     }
 
@@ -68,9 +67,7 @@ export default class Formatter extends Component {
 
     render() {
         return (
-            <span className="Formatter">
-                {this._format(this.props.children, this.props.eol)}
-            </span>
+            <span>{this._format(this.props.children, this.props.eol)}</span>
         );
     }
 }

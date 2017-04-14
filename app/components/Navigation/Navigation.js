@@ -1,10 +1,10 @@
 import React from 'react';
 import NavigationItem from 'components/NavigationItem';
 import NavigationSeparator from 'components/NavigationSeparator';
-import './Navigation.styl';
+import styles from './Navigation.styles';
 
 const Navigation = () => (
-    <nav className="Navigation">
+    <nav className={styles.navigation}>
         <NavigationItem label="About me" to="/" />
         <NavigationSeparator />
         <NavigationItem label="Projects" to="/projects" />

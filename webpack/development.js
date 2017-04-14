@@ -35,21 +35,6 @@ export default merge(baseConfig, {
                         }
                     }
                 ]
-            },
-            {
-                test: /\.styl$/,
-                use: [
-                    { loader: 'style-loader' },
-                    {
-                        loader: 'css-loader',
-                        options: {
-                            sourceMap: true,
-                            importLoaders: 1,
-                            localIdentName: '[name]__[local]___[hash:base64:5]'
-                        }
-                    },
-                    { loader: 'stylus-loader' }
-                ]
             }
         ]
     },
