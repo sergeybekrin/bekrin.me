@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import Analytics from 'react-ga';
 import FontFaceObserver from 'fontfaceobserver';
 
+const trackingCache = {};
+
 /**
  * @param {Object} data - font data object
  * @param {string} data.family - font family name
@@ -20,12 +22,21 @@ function onceFontReady({ family, style = 'normal', weight = 400 }) {
  * @returns {Object} - promise with font data
  */
 function trackFontReady({ font, delta }) {
+    const key = `${font.family}-${font.weight}`;
+
+    // Do not track already loaded fonts
+    if (trackingCache[key]) {
+        return font;
+    }
+
     Analytics.timing({
         category: 'Fonts',
         variable: 'load',
         value: delta,
         label: `${font.family} ${font.weight}`
     });
+
+    trackingCache[key] = true;
 
     return font;
 }
