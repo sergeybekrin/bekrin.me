@@ -3,7 +3,7 @@ import merge from 'webpack-merge';
 import baseConfig from './shared';
 
 export default merge(baseConfig, {
-    devtool: 'cheap-module-eval-source-map',
+    devtool: 'cheap-module-source-map',
     entry: [
         'webpack-hot-middleware/client',
         './app/client.js'
@@ -21,7 +21,7 @@ export default merge(baseConfig, {
                 loader: 'file-loader',
                 options: {
                     context: 'app',
-                    name: '[path][name].[ext]'
+                    name: '[name].[ext]'
                 }
             },
             {

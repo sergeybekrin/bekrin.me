@@ -15,7 +15,7 @@ export default merge(baseConfig, {
                 loader: 'file-loader',
                 options: {
                     context: 'app',
-                    name: '[path][name].[ext]',
+                    name: '[name].[ext]',
                     emitFile: false
                 }
             }

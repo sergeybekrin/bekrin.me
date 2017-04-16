@@ -36,7 +36,7 @@ export default merge(baseConfig, {
                 loader: 'file-loader',
                 options: {
                     context: 'app',
-                    name: '[path][name]-[hash:6].[ext]'
+                    name: '[name]-[hash:6].[ext]'
                 }
             }
         ]
