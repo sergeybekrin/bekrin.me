@@ -35,6 +35,12 @@ export default {
     linkActive: style({
         $debugName: 'item-link--active',
         color: palette('gray', '700'),
-        pointerEvents: 'none'
+        cursor: 'default',
+        // Prevent hover style for :active
+        $nest: {
+            '&&:hover': {
+                color: palette('gray', '700')
+            }
+        }
     })
 };
