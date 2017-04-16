@@ -5,7 +5,7 @@ import { renderToString, renderToStaticMarkup } from 'react-dom/server';
 import Helmet from 'react-helmet';
 import ServerRoot from 'components/ServerRoot';
 import routes from 'components/Routes';
-import { extractAssetsPath } from 'helpers/WebpackUtils';
+import extractAssetsPath from 'helpers/extractAssetsPath';
 
 // Enable client side renderer
 if (typeof global.document !== 'undefined') {

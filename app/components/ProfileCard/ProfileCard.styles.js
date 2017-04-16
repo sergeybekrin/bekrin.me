@@ -44,7 +44,6 @@ export default {
             fontWeight: 300,
             fontSize: '1.15em',
             lineHeight: 1.75
-            // roboto-mono-ready('300')
         },
         mobile({
             fontSize: '1em'

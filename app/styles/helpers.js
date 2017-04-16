@@ -32,4 +32,3 @@ export function tablet(styles) {
 export function desktop(styles) {
     return media({ minWidth: convertToEm(769) }, styles);
 }
-

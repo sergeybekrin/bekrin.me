@@ -1,12 +1,16 @@
 import React from 'react';
+import { object } from 'prop-types';
+import { classes } from 'typestyle';
+import withAsyncFonts from 'helpers/withAsyncFonts';
 import Link from 'components/Link';
 import ContentSection from 'components/ContentSection';
 import Formatter from 'components/Formatter';
 import SvgIcon from 'components/SvgIcon';
+import fonts from 'styles/fonts';
 import userpicPath from './assets/userpic.png';
 import styles from './ProfileCard.styles';
 
-const ProfileCard = () => (
+const ProfileCard = ({ roboto300 }) => (
     <ContentSection
         itemScope
         itemType="http://schema.org/Person"
@@ -27,7 +31,7 @@ const ProfileCard = () => (
                 <span itemProp="familyName">Bekrin</span>,<br />
                 a Software Engineer
             </h1>
-            <p className={styles.paragraph}>
+            <p className={classes(styles.paragraph, roboto300.styles)}>
                 <Formatter>
                     Currently working at
                     <Link
@@ -47,4 +51,10 @@ const ProfileCard = () => (
     </ContentSection>
 );
 
-export default ProfileCard;
+ProfileCard.propTypes = {
+    roboto300: object
+};
+
+export default withAsyncFonts(ProfileCard, {
+    roboto300: fonts.robotoMono300
+});

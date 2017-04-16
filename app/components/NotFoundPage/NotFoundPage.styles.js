@@ -8,6 +8,5 @@ export default {
         justifyContent: 'center',
         alignItems: 'center',
         fontSize: '3em'
-        // roboto-mono-ready('700')
     })
 };

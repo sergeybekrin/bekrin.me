@@ -2,7 +2,7 @@
  * @param {Object} locals - data object provided by webpack
  * @returns {{ css: string[], js: string[] }} - object with css and js asssets
  */
-export function extractAssetsPath(locals) {
+export default function extractAssetsPath(locals) {
     if (locals.webpackStats) {
         const { assets, outputOptions } = locals.webpackStats.compilation;
         const [ css, js ] = [ /\.css$/, /\.js$/ ].map(regex => (

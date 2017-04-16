@@ -19,10 +19,12 @@ export default {
     aside: style(
         {
             $debugName: 'aside',
-            fontWeight: 300,
-            lineHeight: '1.8em',
-            margin: 0,
-            flex: 3
+            lineHeight: 1.2,
+            marginRight: '3rem',
+            fontSize: '1.35em',
+            fontWeight: 700,
+            textTransform: 'capitalize',
+            flex: 1
         },
         desktop({
             textAlign: 'right'
