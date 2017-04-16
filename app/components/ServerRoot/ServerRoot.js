@@ -1,4 +1,4 @@
-/* eslint-disable react/no-danger */
+/* eslint-disable react/no-danger, max-len */
 import React from 'react';
 import { shape, arrayOf, string, func } from 'prop-types';
 import { getStyles } from 'typestyle';
@@ -8,18 +8,13 @@ const ServerRoot = ({ assets, helmet, children = '' }) => (
     <html {...helmet.htmlAttributes.toComponent()}>
         <head>
             <meta charSet="utf-8" />
-            <meta name="viewport" value="width=device-width, initial-scale=1" />
+            <meta name="viewport" content="width=device-width, initial-scale=1" />
             <link rel="manifest" href={manifestPath} />
             <link rel="dns-prefetch" href="//fonts.googleapis.com" />
             <link rel="dns-prefetch" href="//google-analytics.com" />
             <link rel="dns-prefetch" href="//www.google-analytics.com" />
-            <link
-                rel="stylesheet"
-                href="//fonts.googleapis.com/css?family=Roboto+Mono:300,400,700"
-            />
-            {assets.css.map(href =>
-                <link rel="stylesheet" href={href} key={href} />
-            )}
+            <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto+Mono:300,400,700" />
+            {assets.css.map(href => <link rel="stylesheet" href={href} key={href} />)}
             {helmet.title.toComponent()}
             {helmet.meta.toComponent()}
             {helmet.link.toComponent()}
