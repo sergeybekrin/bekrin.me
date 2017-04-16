@@ -40,6 +40,7 @@ export default {
             lineHeight: 1.8,
             margin: 0,
             flex: 3,
+            // Kill this one day
             $nest: {
                 'p + p': {
                     marginTop: '1.5em'
@@ -47,13 +48,15 @@ export default {
                 'ul:not([class])': {
                     listStyle: 'none',
                     margin: '1em 0',
-                    padding: '0 0 0 1em'
-                },
-                'li::before': {
-                    content: '"\\2014"',
-                    opacity: 0.25,
-                    marginLeft: '-1em',
-                    position: 'absolute'
+                    padding: '0 0 0 1em',
+                    $nest: {
+                        'li::before': {
+                            content: '"\\2014"',
+                            opacity: 0.25,
+                            marginLeft: '-1em',
+                            position: 'absolute'
+                        }
+                    }
                 }
             }
         },

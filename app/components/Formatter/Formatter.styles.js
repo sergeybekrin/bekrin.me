@@ -10,7 +10,7 @@ export default {
         speak: 'none',
         $nest: {
             '&::after': {
-                content: ' '
+                content: '" "'
             },
             '&::before': {
                 fontWeight: 400,

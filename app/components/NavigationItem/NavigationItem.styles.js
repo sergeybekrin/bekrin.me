@@ -33,7 +33,7 @@ export default {
         }
     }),
     linkActive: style({
-        $debug: 'item-link--active',
+        $debugName: 'item-link--active',
         color: palette('gray', '700'),
         pointerEvents: 'none'
     })
