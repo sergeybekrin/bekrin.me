@@ -4,6 +4,7 @@ import { browserHistory, Router } from 'react-router';
 import { setStylesTarget } from 'typestyle';
 import { initializeAnalytics, trackPageView } from 'helpers/AnalyticsTools';
 import routes from 'components/Routes';
+import 'styles/globals';
 
 initializeAnalytics('UA-19088106-7');
 

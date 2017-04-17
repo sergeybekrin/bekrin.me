@@ -19,7 +19,7 @@ const AboutPage = () => (
                 <li>AVA, Jasmine, Protractor</li>
                 <li>
                     Microdata and <abbr title="Server-side rendering">SSR</abbr>
-                    for SEO
+                    {' '} for SEO
                 </li>
                 <li>WAI-ARIA for accessibility</li>
                 <li>MongoDB, PostgreSQL &amp; MySQL</li>
