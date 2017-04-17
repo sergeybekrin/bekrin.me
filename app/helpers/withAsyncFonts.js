@@ -56,8 +56,16 @@ function trackTiming(promise) {
  * @returns {Component} - wrapped component
  */
 function withAsyncFonts(WrappedComponent, fonts) {
+    const originalName = (
+        WrappedComponent.displayName ||
+        WrappedComponent.name ||
+        'Component'
+    );
+
     return class extends Component {
         static cache = {};
+
+        displayName = `WithAsyncFonts(${originalName})`;
 
         componentWillMount() {
             // Set default state for required fonts
