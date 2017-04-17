@@ -5,7 +5,9 @@ const styles = style({
     $debugName: 'font',
     $nest: {
         // Keep priority over other styles
-        '&&': { fontFamily: '"Roboto Mono", monospace' }
+        '&&': {
+            fontFamily: "'Roboto Mono', monospace" // eslint-disable-line quotes
+        }
     }
 });
 

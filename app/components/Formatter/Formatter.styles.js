@@ -10,7 +10,7 @@ export default {
         speak: 'none',
         $nest: {
             '&::after': {
-                content: '" "'
+                content: "' '" // eslint-disable-line quotes
             },
             '&::before': {
                 fontWeight: 400,
@@ -26,7 +26,7 @@ export default {
         $debugName: 'space',
         $nest: {
             '&::before': {
-                content: '"\\2219"'
+                content: "'\\2219'" // eslint-disable-line quotes
             }
         }
     }),
@@ -34,7 +34,7 @@ export default {
         $debugName: 'eol',
         $nest: {
             '&::before': {
-                content: '"\\00AC"'
+                content: "'\\00AC'" // eslint-disable-line quotes
             }
         }
     })

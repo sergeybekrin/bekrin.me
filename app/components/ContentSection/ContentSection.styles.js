@@ -51,7 +51,7 @@ export default {
                     padding: '0 0 0 1em',
                     $nest: {
                         'li::before': {
-                            content: '"\\2014"',
+                            content: "'\\2014'", // eslint-disable-line quotes
                             opacity: 0.25,
                             marginLeft: '-1em',
                             position: 'absolute'
