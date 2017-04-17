@@ -11,23 +11,23 @@ export function convertToEm(value) {
 
 /**
  * @param {Object} styles - styles to apply for mobile breakpoint
- * @returns {Object} - built object with styles
+ * @returns {Object} - typestyle CSSProperties object
  */
 export function mobile(styles) {
     return media({ maxWidth: convertToEm(425) }, styles);
 }
 
 /**
- * @param {Object} styles
- * @returns {Object}
+ * @param {Object} styles - styles object for tablet breakpoint
+ * @returns {Object} - typestyle CSSProperties object
  */
 export function tablet(styles) {
     return media({ maxWidth: convertToEm(768) }, styles);
 }
 
 /**
- * @param {Object} styles
- * @returns {Object}
+ * @param {Object} styles - styles object for desktop breakpoint
+ * @returns {Object} - typestyle CSSProperties object
  */
 export function desktop(styles) {
     return media({ minWidth: convertToEm(769) }, styles);
