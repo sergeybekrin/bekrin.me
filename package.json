@@ -11,7 +11,7 @@
     "lint": "eslint server.js app webpack",
     "test": "npm run lint",
     "dev": "cross-env NODE_ENV=development node -r babel-register server.js",
-    "build": "cross-env NODE_ENV=production node -r babel-register ./node_modules/webpack/bin/webpack --config webpack/production.js --progress --profile --colors",
+    "build": "cross-env NODE_ENV=production node -r babel-register ./node_modules/webpack/bin/webpack --config webpack/production.js --profile --colors",
     "deploy": "gh-pages-travis"
   },
   "keywords": [],
