@@ -6,6 +6,7 @@ import Helmet from 'react-helmet';
 import ServerRoot from 'components/ServerRoot';
 import routes from 'components/Routes';
 import extractAssetsPath from 'helpers/extractAssetsPath';
+import 'styles/globals';
 
 // Enable client side renderer
 if (typeof global.document !== 'undefined') {
