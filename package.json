@@ -12,6 +12,7 @@
     "test": "npm run lint",
     "dev": "cross-env NODE_ENV=development node -r babel-register server.js",
     "build": "cross-env NODE_ENV=production node -r babel-register ./node_modules/webpack/bin/webpack --config webpack/production.js --profile --colors",
+    "stats": "npm run build --silent -- --json | webpack-bundle-size-analyzer",
     "deploy": "gh-pages-travis"
   },
   "keywords": [],
@@ -43,6 +44,7 @@
     "react-transform-hmr": "^1.0.4",
     "static-site-generator-webpack-plugin": "^3.4.1",
     "webpack": "^2.4.1",
+    "webpack-bundle-size-analyzer": "^2.6.0",
     "webpack-cleanup-plugin": "^0.5.1",
     "webpack-dev-middleware": "^1.10.1",
     "webpack-hot-middleware": "^2.18.0",

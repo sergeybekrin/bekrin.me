@@ -42,7 +42,7 @@ export default merge(baseConfig, {
         ]
     },
     plugins: [
-        new CleanupPlugin(),
+        new CleanupPlugin({ quiet: true }),
         new StaticSiteGeneratorPlugin('server', paths, { publicPath }),
         new webpack.optimize.UglifyJsPlugin({
             compress: {
