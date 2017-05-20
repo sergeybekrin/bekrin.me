@@ -3,7 +3,7 @@
 npm-debug.log*
 *.pid
 *.seed
-node_modules/
-dist/
-.npm/
-.idea/
+/node_modules
+/.npm
+/.next
+/out

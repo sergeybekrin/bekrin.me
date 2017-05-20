@@ -1,5 +1,8 @@
 import { media } from 'typestyle';
-import { rootFontSize } from 'styles/constants';
+
+const rootFontSize = 16;
+const baseFontSize = 18;
+const layoutHorizontalSpacing = '3rem';
 
 /**
  * @param {number} value - value in px

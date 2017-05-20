@@ -1,86 +1,43 @@
 {
-  "name": "bekrin",
-  "version": "0.1.1",
-  "description": "Source code of bekrin.me website",
-  "repository": {
-    "type": "git",
-    "url": "https://sbekrin@bitbucket.org/sbekrin/bekrin.me.git"
-  },
-  "main": "./app/index.js",
+  "name": "bekrin.me",
+  "version": "1.0.0",
+  "description": "Source code of bekrin.me",
+  "homepage": "http://bekrin.me",
+  "repository": "https://github.com/sergeybekrin/bekrin.me",
+  "main": "./pages/index.js",
   "scripts": {
-    "lint": "eslint server.js app webpack",
-    "test": "npm run lint",
-    "dev": "cross-env NODE_ENV=development node -r babel-register server.js",
-    "build": "cross-env NODE_ENV=production node -r babel-register ./node_modules/webpack/bin/webpack --config webpack/production.js --profile --colors",
-    "stats": "npm run build --silent -- --json | webpack-bundle-size-analyzer",
+    "start": "next start",
+    "build": "next build",
+    "export": "next export",
+    "dev": "next",
+    "lint": "eslint pages",
     "deploy": "gh-pages-travis"
   },
-  "keywords": [],
   "author": "Sergey Bekrin <sergey@bekrin.me>",
-  "license": "MIT",
+  "license": "UNLICENSED",
   "devDependencies": {
-    "babel-core": "^6.24.1",
-    "babel-eslint": "^7.2.2",
-    "babel-loader": "^6.4.1",
-    "babel-plugin-transform-class-properties": "^6.24.1",
-    "babel-plugin-transform-object-rest-spread": "^6.23.0",
-    "babel-preset-env": "^1.4.0",
-    "babel-preset-react": "^6.24.1",
-    "babel-preset-react-hmre": "^1.1.1",
-    "babel-preset-react-optimize": "^1.0.1",
+    "babel-plugin-root-import": "^5.1.0",
     "babel-register": "^6.24.1",
     "cross-env": "^4.0.0",
+    "dotenv": "^4.0.0",
     "eslint": "^3.19.0",
     "eslint-config-sergeybekrin": "^1.0.0",
-    "eslint-import-resolver-webpack": "^0.8.1",
     "eslint-plugin-babel": "^4.1.1",
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-jsx-a11y": "^4.0.0",
     "eslint-plugin-react": "^6.10.3",
-    "express": "^4.15.2",
-    "file-loader": "^0.11.1",
     "gh-pages-travis": "^1.0.4",
     "moment": "^2.18.1",
-    "react-transform-hmr": "^1.0.4",
-    "static-site-generator-webpack-plugin": "^3.4.1",
-    "webpack": "^2.4.1",
-    "webpack-bundle-size-analyzer": "^2.6.0",
-    "webpack-cleanup-plugin": "^0.5.1",
-    "webpack-dev-middleware": "^1.10.1",
-    "webpack-hot-middleware": "^2.18.0",
-    "webpack-merge": "^4.1.0",
-    "webpack-to-memory": "^1.0.0"
+    "webpack": "^2.5.1"
   },
   "dependencies": {
-    "fontfaceobserver": "^2.0.9",
-    "history": "^2.1.2",
-    "prop-types": "^15.5.8",
+    "next": "^3.0.0-beta3",
+    "prop-types": "^15.5.10",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "react-ga": "^2.2.0",
-    "react-helmet": "^5.0.3",
-    "react-router": "^2.5.1",
+    "react-with-async-fonts": "^3.0.0",
     "typestyle": "^1.3.2"
-  },
-  "babel": {
-    "presets": [
-      [
-        "env",
-        {
-          "targets": {
-            "browsers": [
-              "last 2 versions",
-              "ie >= 10"
-            ]
-          }
-        }
-      ],
-      "react"
-    ],
-    "plugins": [
-      "transform-object-rest-spread",
-      "transform-class-properties"
-    ]
   },
   "eslintConfig": {
     "extends": [
@@ -92,13 +49,6 @@
       "__DEV__": true,
       "__PROD__": true,
       "__LAST_COMMIT_DATE__": true
-    },
-    "settings": {
-      "import/resolver": {
-        "webpack": {
-          "config": "webpack/eslint.js"
-        }
-      }
     }
   }
 }

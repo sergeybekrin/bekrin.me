@@ -1,21 +1,19 @@
-import { style } from 'typestyle';
-import palette from 'styles/palette';
-import { mobile } from 'styles/helpers';
+import Link from 'next/link';
+import { string } from 'prop-types';
+import { style, classes } from 'typestyle';
+import palette from '~/styles/palette';
+import { mobile } from '~/styles/media';
 
-export default {
-    item: style(
-        {
-            $debugName: 'navigation-item',
-            alignItems: 'center',
-            display: 'flex',
-            verticalAlign: 'middle',
-            justifyContent: 'center',
-            margin: '0 1.5em'
-        },
-        mobile({
-            margin: 0
-        })
-    ),
+const styles = {
+    item: style({
+        alignItems: 'center',
+        display: 'flex',
+        verticalAlign: 'middle',
+        justifyContent: 'center',
+        margin: '0 1.5em'
+    }, mobile({
+        margin: 0
+    })),
     link: style({
         $debugName: 'item-link',
         transition: 'color 200ms ease',
@@ -36,6 +34,7 @@ export default {
         $debugName: 'item-link--active',
         color: palette('gray', '700'),
         cursor: 'default',
+
         // Prevent hover style for :active
         $nest: {
             '&&:hover': {
@@ -44,3 +43,13 @@ export default {
         }
     })
 };
+
+const NavigationItem = ({ to, label }) => (
+    <span className={styles.item}>
+        <Link href={to} prefetch>
+            <a className={styles.link}>{label}</a>
+        </Link>
+    </span>
+);
+
+export default NavigationItem;
