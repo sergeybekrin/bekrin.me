@@ -28,4 +28,5 @@ script:
 
 after_success:
 - echo "bekrin.me" > dist/CNAME # prevent gh-pages to reset custom domain
+- mv ./out/404/index.html ./out/404.html # temp. fix for custom 404
 - npm run deploy

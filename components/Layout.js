@@ -1,5 +1,4 @@
 import { Component } from 'react';
-import Head from 'next/head';
 import { style, setStylesTarget } from 'typestyle';
 import Header from '~/components/Header';
 import Content from '~/components/Content';

@@ -1,7 +1,8 @@
-import Document, { Head, Main, NextScript } from 'next/document';
+/* eslint-disable max-len */
+import Document, { Main, NextScript } from 'next/document';
 import { getStyles } from 'typestyle';
 
-export default class extends Document {
+export default class Root extends Document {
     static getInitialProps({ renderPage }) {
         return {
             ...renderPage(),

@@ -1,7 +1,9 @@
 import Layout from '~/components/Layout';
 
-export default () => (
+const Projects = () => (
     <Layout>
         Projects
     </Layout>
 );
+
+export default Projects;

@@ -13,13 +13,16 @@ module.exports = {
     exportPathMap() {
         return {
             '/': {
-                page: '/'
+                page: '/index'
             },
             '/projects': {
                 page: '/projects'
             },
             '/contacts': {
                 page: '/contacts'
+            },
+            '/404': {
+                page: '/404'
             }
         };
     },
