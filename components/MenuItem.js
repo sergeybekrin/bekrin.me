@@ -57,4 +57,4 @@ MenuItem.propTypes = {
     router: object.isRequired
 };
 
-export default withRouter()(MenuItem);
+export default withRouter(MenuItem);
