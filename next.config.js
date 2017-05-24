@@ -1,4 +1,3 @@
-const path = require('path');
 const { execSync } = require('child_process');
 const moment = require('moment');
 const webpack = require('webpack');
@@ -27,7 +26,6 @@ module.exports = {
         };
     },
     webpack(config) {
-
         // Add last update date
         config.plugins.push(
             new webpack.DefinePlugin({

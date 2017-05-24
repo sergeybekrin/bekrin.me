@@ -10,7 +10,7 @@
     "build": "next build",
     "export": "next export",
     "dev": "next",
-    "lint": "eslint pages components styles",
+    "lint": "eslint *.js pages components styles",
     "deploy": "gh-pages-travis"
   },
   "author": "Sergey Bekrin <sergey@bekrin.me>",

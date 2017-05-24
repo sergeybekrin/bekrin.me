@@ -18,7 +18,7 @@ const Menu = ({ items }) => (
     <nav className={styles.navigation}>
         {items.map(({ label, href }, index) => [
             index > 0 && <MenuSeparator />,
-            <MenuItem label={label} href={href} />
+            <MenuItem key={href} label={label} href={href} />
         ])}
     </nav>
 );
