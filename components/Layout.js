@@ -1,27 +1,20 @@
 import { Component } from 'react';
 import { any } from 'prop-types';
 import { cssRule, style, setStylesTarget } from 'typestyle';
-import { px, percent, viewHeight, viewWidth } from 'csx';
+import { setupPage } from 'csstips';
+import { px, viewHeight, viewWidth } from 'csx';
 import Header from '~/components/Header';
 import Content from '~/components/Content';
 import Footer from '~/components/Footer';
+
+setupPage('[data-approot]');
 
 cssRule(':root', {
     '-webkit-font-smoothing': 'antialiased',
     font: '18px/1.5 sans-serif',
     boxSizing: 'border-box',
     minWidth: px(320),
-    minHeight: percent(100),
-    cursor: 'default',
-    padding: 0,
-    margin: 0
-});
-
-cssRule('*, *::before, *::after', {
-    boxSizing: 'inherit',
-    fontFamily: 'inherit',
-    fontSize: 'inherit',
-    margin: 0
+    cursor: 'default'
 });
 
 cssRule('body', {
@@ -49,7 +42,7 @@ export default class Layout extends Component {
 
     render() {
         return (
-            <div className={styles.root}>
+            <div data-approot className={styles.root}>
                 <Header />
                 <Content>{this.props.children}</Content>
                 <Footer />

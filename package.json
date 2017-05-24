@@ -31,6 +31,7 @@
     "webpack": "^2.5.1"
   },
   "dependencies": {
+    "csstips": "^0.2.0",
     "csx": "^8.2.1",
     "next": "^3.0.0-beta3",
     "prop-types": "^15.5.10",
