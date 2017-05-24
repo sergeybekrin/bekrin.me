@@ -1,7 +1,7 @@
 import Layout from '~/components/Layout';
 
 const Contacts = () => (
-    <Layout>
+    <Layout title="Contacts">
         Contacts
     </Layout>
 );

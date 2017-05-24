@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { withRouter } from 'next/router';
-import { string, any, object } from 'prop-types';
+import { string, any, bool } from 'prop-types';
 import { style, classes } from 'typestyle';
 import palette from '~/styles/palette';
 import { mobile } from '~/styles/media';
@@ -43,18 +43,29 @@ const styles = {
     })
 };
 
-const MenuItem = ({ href, label, router, isActive = router.pathname === href }) => (
+const MenuItem = ({ href, label, isActive }) => (
     <span className={styles.item}>
         <Link href={href} prefetch>
-            <a className={classes(styles.link, isActive && styles.linkActive)}>{label}</a>
+            <a
+                className={classes(
+                    styles.link,
+                    isActive && styles.linkActive
+                )}
+            >{label}</a>
         </Link>
     </span>
 );
 
+/* eslint-disable react/display-name, react/prop-types */
+const withActiveFlag = Target => props => (
+    <Target {...props} isActive={props.router.pathname === props.href} />
+);
+/* eslint-enable */
+
 MenuItem.propTypes = {
     href: string.isRequired,
     label: any.isRequired,
-    router: object.isRequired
+    isActive: bool.isRequired
 };
 
-export default withRouter(MenuItem);
+export default withRouter(withActiveFlag(MenuItem));

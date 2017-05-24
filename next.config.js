@@ -13,7 +13,7 @@ module.exports = {
     exportPathMap() {
         return {
             '/': {
-                page: '/index'
+                page: '/'
             },
             '/projects': {
                 page: '/projects'

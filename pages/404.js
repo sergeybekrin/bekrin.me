@@ -2,8 +2,8 @@ import Layout from '~/components/Layout';
 import ErrorPage from '~/components/ErrorPage';
 
 const NotFound = () => (
-    <Layout>
-        <ErrorPage message={'404'} />
+    <Layout title="404">
+        <ErrorPage message="404" />
     </Layout>
 );
 
