@@ -1,4 +1,5 @@
 import { Component } from 'react';
+import { any } from 'prop-types';
 import { style, setStylesTarget } from 'typestyle';
 import Header from '~/components/Header';
 import Content from '~/components/Content';
@@ -13,6 +14,10 @@ const styles = {
 };
 
 export default class Layout extends Component {
+    static propTypes = {
+        children: any.isRequired
+    };
+
     componentDidMount() {
         setStylesTarget(document.querySelector('[data-typestyle]'));
     }

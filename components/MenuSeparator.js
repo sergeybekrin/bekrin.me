@@ -9,6 +9,8 @@ const styles = {
     })
 };
 
-export default () => (
+const MenuSeparator = () => (
     <span className={styles.separator} aria-hidden="true" />
 );
+
+export default MenuSeparator;

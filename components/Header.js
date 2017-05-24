@@ -1,5 +1,5 @@
 import { style } from 'typestyle';
-import Navigation from '~/components/Navigation';
+import Menu from '~/components/Menu';
 import palette from '~/styles/palette';
 import { mobile } from '~/styles/media';
 
@@ -13,8 +13,16 @@ const styles = {
     }))
 };
 
-export default () => (
+const Header = () => (
     <header className={styles.header}>
-        <Navigation />
+        <Menu
+            items={[
+                { label: 'About me', href: '/' },
+                { label: 'Projects', href: '/projects' },
+                { label: 'Contacts', href: '/contacts' }
+            ]}
+        />
     </header>
 );
+
+export default Header;

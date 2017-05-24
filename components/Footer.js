@@ -11,7 +11,7 @@ const styles = {
     })
 };
 
-export default () => (
+const Footer = () => (
     <footer className={styles.footer}>
         Last update {process.env.LAST_UPDATE_DATE}<span> &bull; </span>
         <Link
@@ -20,3 +20,5 @@ export default () => (
         >View source code</Link>
     </footer>
 );
+
+export default Footer;

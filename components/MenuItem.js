@@ -1,5 +1,6 @@
 import Link from 'next/link';
-import { string } from 'prop-types';
+import { withRouter } from 'next/router';
+import { string, any, object } from 'prop-types';
 import { style, classes } from 'typestyle';
 import palette from '~/styles/palette';
 import { mobile } from '~/styles/media';
@@ -15,7 +16,6 @@ const styles = {
         margin: 0
     })),
     link: style({
-        $debugName: 'item-link',
         transition: 'color 200ms ease',
         textDecoration: 'none',
         color: palette('blue'),
@@ -31,7 +31,6 @@ const styles = {
         }
     }),
     linkActive: style({
-        $debugName: 'item-link--active',
         color: palette('gray', '700'),
         cursor: 'default',
 
@@ -44,12 +43,18 @@ const styles = {
     })
 };
 
-const NavigationItem = ({ to, label }) => (
+const MenuItem = ({ href, label, router, isActive = router.pathname === href }) => (
     <span className={styles.item}>
-        <Link href={to} prefetch>
-            <a className={styles.link}>{label}</a>
+        <Link href={href} prefetch>
+            <a className={classes(styles.link, isActive && styles.linkActive)}>{label}</a>
         </Link>
     </span>
 );
 
-export default NavigationItem;
+MenuItem.propTypes = {
+    href: string.isRequired,
+    label: any.isRequired,
+    router: object.isRequired
+};
+
+export default withRouter()(MenuItem);
