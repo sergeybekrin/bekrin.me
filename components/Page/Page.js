@@ -4,18 +4,18 @@ import Helmet from 'react-helmet';
 import styles from './Page.styles';
 
 const Page = ({ children, ...props }) => (
-    <div className={styles.page}>
-        <Helmet {...props} />
-        {children}
-    </div>
+  <div className={styles.page}>
+    <Helmet {...props} />
+    {children}
+  </div>
 );
 
 Page.propTypes = {
-    children: node
+  children: node,
 };
 
 Page.defaultProps = {
-    children: null
+  children: null,
 };
 
 export default Page;

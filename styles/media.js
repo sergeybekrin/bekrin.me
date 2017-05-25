@@ -7,7 +7,7 @@ const rootFontSize = 16;
  * @returns {string} - formatted em value
  */
 export function convertToEm(value) {
-    return `${value / rootFontSize}em`;
+  return `${value / rootFontSize}em`;
 }
 
 /**
@@ -15,7 +15,7 @@ export function convertToEm(value) {
  * @returns {Object} - typestyle CSSProperties object
  */
 export function mobile(styles) {
-    return media({ maxWidth: convertToEm(425) }, styles);
+  return media({ maxWidth: convertToEm(425) }, styles);
 }
 
 /**
@@ -23,7 +23,7 @@ export function mobile(styles) {
  * @returns {Object} - typestyle CSSProperties object
  */
 export function tablet(styles) {
-    return media({ maxWidth: convertToEm(768) }, styles);
+  return media({ maxWidth: convertToEm(768) }, styles);
 }
 
 /**
@@ -31,5 +31,5 @@ export function tablet(styles) {
  * @returns {Object} - typestyle CSSProperties object
  */
 export function desktop(styles) {
-    return media({ minWidth: convertToEm(769) }, styles);
+  return media({ minWidth: convertToEm(769) }, styles);
 }

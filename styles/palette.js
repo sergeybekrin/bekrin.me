@@ -1,18 +1,18 @@
 const mappings = {
-    blue: {
-        500: '#0f58fb'
-    },
-    red: {
-        500: '#ad0051'
-    },
-    gray: {
-        700: '#333',
-        500: '#777',
-        200: '#f6f6f6'
-    },
-    white: {
-        500: '#fff'
-    }
+  blue: {
+    500: '#0f58fb',
+  },
+  red: {
+    500: '#ad0051',
+  },
+  gray: {
+    700: '#333',
+    500: '#777',
+    200: '#f6f6f6',
+  },
+  white: {
+    500: '#fff',
+  },
 };
 
 /**
@@ -22,5 +22,5 @@ const mappings = {
  * @returns {string} - css hex color format
  */
 export default function palette(color, accent = 500) {
-    return mappings[color][accent];
+  return mappings[color][accent];
 }
