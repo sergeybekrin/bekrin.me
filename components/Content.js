@@ -5,7 +5,6 @@ import palette from '~/styles/palette';
 
 const styles = {
   content: style({
-    $debugName: 'content',
     background: palette('gray', 200),
     position: 'relative',
     display: 'flex',

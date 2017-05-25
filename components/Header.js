@@ -17,9 +17,9 @@ const Header = () => (
   <header className={styles.header}>
     <Menu
       items={[
-                { label: 'About me', href: '/' },
-                { label: 'Projects', href: '/projects' },
-                { label: 'Contacts', href: '/contacts' },
+        { label: 'About me', href: '/' },
+        { label: 'Projects', href: '/projects' },
+        { label: 'Contacts', href: '/contacts' },
       ]}
     />
   </header>

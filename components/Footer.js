@@ -13,7 +13,7 @@ const styles = {
 
 const Footer = () => (
   <footer className={styles.footer}>
-        Last update {process.env.LAST_UPDATE_DATE}<span> &bull; </span>
+    Last update {process.env.LAST_UPDATE_DATE}<span> &bull; </span>
     <Link
       to="//github.com/sergeybekrin/bekrin.me"
       eventLabel="github-source"

@@ -2,8 +2,8 @@ import Layout from '~/components/Layout';
 
 const Contacts = () => (
   <Layout title="Contacts">
-        Contacts
-    </Layout>
+    Contacts
+  </Layout>
 );
 
 export default Contacts;

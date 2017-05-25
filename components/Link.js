@@ -7,7 +7,6 @@ import palette from '~/styles/palette';
 
 const styles = {
   link: style({
-    $debugName: 'link',
     color: palette('blue'),
     fontWeight: 400,
     textDecoration: 'none',

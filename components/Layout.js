@@ -42,10 +42,10 @@ export default class Layout extends Component {
 
   render() {
     const title = (
-            this.props.title ?
-            `${this.props.title} — Sergey Bekrin` :
-            'Sergey Bekrin, Software Engineer'
-        );
+      this.props.title ?
+      `${this.props.title} — Sergey Bekrin` :
+      'Sergey Bekrin, Software Engineer'
+    );
 
     return (
       <div data-approot className={styles.root}>

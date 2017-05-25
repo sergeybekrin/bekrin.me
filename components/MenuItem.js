@@ -34,7 +34,7 @@ const styles = {
     color: palette('gray', '700'),
     cursor: 'default',
 
-        // Prevent hover style for :active
+    // Prevent hover style for :active
     $nest: {
       '&&:hover': {
         color: palette('gray', '700'),
