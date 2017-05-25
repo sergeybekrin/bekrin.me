@@ -4,22 +4,22 @@ import { style } from 'typestyle';
 import palette from '~/styles/palette';
 
 const styles = {
-    content: style({
-        $debugName: 'content',
-        background: palette('gray', 200),
-        position: 'relative',
-        display: 'flex',
-        flexDirection: 'column',
-        flex: 1
-    })
+  content: style({
+    $debugName: 'content',
+    background: palette('gray', 200),
+    position: 'relative',
+    display: 'flex',
+    flexDirection: 'column',
+    flex: 1,
+  }),
 };
 
 const Content = ({ children }) => (
-    <div className={styles.content}>{children}</div>
+  <div className={styles.content}>{children}</div>
 );
 
 Content.propTypes = {
-    children: node.isRequired
+  children: node.isRequired,
 };
 
 export default Content;

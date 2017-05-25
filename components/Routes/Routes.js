@@ -9,14 +9,14 @@ import NpmkitProjectPage from 'components/NpmkitProjectPage';
 import SpectroProjectPage from 'components/SpectroProjectPage';
 
 export default (
-    <Route path="/" component={RootContainer}>
-        <IndexRoute component={AboutPage} />
-        <Route path="projects">
-            <IndexRoute component={ProjectsPage} />
-            <Route path="npmkit" component={NpmkitProjectPage} />
-            <Route path="spectro" component={SpectroProjectPage} />
-        </Route>
-        <Route path="contacts" component={ContactsPage} />
-        <Route path="*" component={NotFoundPage} />
+  <Route path="/" component={RootContainer}>
+    <IndexRoute component={AboutPage} />
+    <Route path="projects">
+      <IndexRoute component={ProjectsPage} />
+      <Route path="npmkit" component={NpmkitProjectPage} />
+      <Route path="spectro" component={SpectroProjectPage} />
     </Route>
+    <Route path="contacts" component={ContactsPage} />
+    <Route path="*" component={NotFoundPage} />
+  </Route>
 );

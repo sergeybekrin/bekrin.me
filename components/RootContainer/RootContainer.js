@@ -13,21 +13,21 @@ import styles from './RootContainer.styles';
  * stateless function components
  */
 export default class RootContainer extends Component {
-    static propTypes = {
-        children: node.isRequired
-    };
+  static propTypes = {
+    children: node.isRequired,
+  };
 
-    render() {
-        return (
-            <div className={styles.root}>
-                <Helmet
-                    titleTemplate="%s — Sergey Bekrin"
-                    defaultTitle="Sergey Bekrin, Software Engineer"
-                />
-                <Header />
-                <Content>{this.props.children}</Content>
-                <Footer />
-            </div>
-        );
-    }
+  render() {
+    return (
+      <div className={styles.root}>
+        <Helmet
+          titleTemplate="%s — Sergey Bekrin"
+          defaultTitle="Sergey Bekrin, Software Engineer"
+        />
+        <Header />
+        <Content>{this.props.children}</Content>
+        <Footer />
+      </div>
+    );
+  }
 }

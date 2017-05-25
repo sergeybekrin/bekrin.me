@@ -6,33 +6,33 @@ import { style } from 'typestyle';
 import palette from '~/styles/palette';
 
 const styles = {
-    link: style({
-        $debugName: 'link',
-        color: palette('blue'),
-        fontWeight: 400,
-        textDecoration: 'none',
-        transition: 'color 200ms ease',
-        $nest: {
-            '&:hover': {
-                color: palette('red')
-            }
-        }
-    })
+  link: style({
+    $debugName: 'link',
+    color: palette('blue'),
+    fontWeight: 400,
+    textDecoration: 'none',
+    transition: 'color 200ms ease',
+    $nest: {
+      '&:hover': {
+        color: palette('red'),
+      },
+    },
+  }),
 };
 
 const Link = props => (
-    <OutboundLink
-        {...props}
-        className={classes(props.className, styles.link)}
-    />
+  <OutboundLink
+    {...props}
+    className={classes(props.className, styles.link)}
+  />
 );
 
 Link.propTypes = {
-    className: string
+  className: string,
 };
 
 Link.defaultProps = {
-    className: null
+  className: null,
 };
 
 export default Link;
