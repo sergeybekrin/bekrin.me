@@ -1,5 +1,5 @@
 import React from 'react';
-import { string } from 'prop-types';
+import { string, bool } from 'prop-types';
 import { classes } from 'typestyle';
 import { OutboundLink } from 'react-ga';
 import { style } from 'typestyle';
@@ -8,7 +8,6 @@ import palette from '~/styles/palette';
 const styles = {
   link: style({
     color: palette('blue'),
-    fontWeight: 400,
     textDecoration: 'none',
     transition: 'color 200ms ease',
     $nest: {
@@ -17,21 +16,23 @@ const styles = {
       },
     },
   }),
+  nowrap: style({
+    whiteSpace: 'nowrap',
+  }),
 };
 
-const Link = props => (
+const Link = ({ href, className, nowrap, ...props }) => (
   <OutboundLink
     {...props}
-    className={classes(props.className, styles.link)}
+    to={href}
+    className={classes(className, styles.link, nowrap && styles.nowrap)}
   />
 );
 
 Link.propTypes = {
   className: string,
-};
-
-Link.defaultProps = {
-  className: null,
+  href: string,
+  nowrap: bool,
 };
 
 export default Link;

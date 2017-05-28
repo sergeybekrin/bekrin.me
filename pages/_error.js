@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { number } from 'prop-types';
+import Layout from '~/components/Layout';
 import ErrorPage from '~/components/ErrorPage';
 
 export default class Error extends Component {
@@ -18,6 +19,10 @@ export default class Error extends Component {
   };
 
   render() {
-    return <ErrorPage message={this.props.statusCode} />;
+    return (
+      <Layout>
+        <ErrorPage message={this.props.statusCode} />
+      </Layout>
+    );
   }
 }

@@ -1,8 +1,11 @@
 import Layout from '~/components/Layout';
+import IntroSection from '~/components/IntroSection';
+import WorkSection from '~/components/WorkSection';
 
 const Home = () => (
   <Layout>
-    Home
+    <IntroSection />
+    <WorkSection />
   </Layout>
 );
 

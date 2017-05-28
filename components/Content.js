@@ -1,16 +1,18 @@
 import React from 'react';
 import { node } from 'prop-types';
 import { style } from 'typestyle';
-import palette from '~/styles/palette';
+import { mobile } from '~/styles/media';
 
 const styles = {
   content: style({
-    background: palette('gray', 200),
     position: 'relative',
     display: 'flex',
     flexDirection: 'column',
     flex: 1,
-  }),
+    padding: '0 10vmin',
+  }, mobile({
+    padding: '0 5vmin',
+  })),
 };
 
 const Content = ({ children }) => (

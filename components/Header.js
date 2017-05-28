@@ -5,7 +5,6 @@ import { mobile } from '~/styles/media';
 
 const styles = {
   header: style({
-    fontFamily: 'Arial, Helvetica, sans-serif',
     padding: '1.5em 10vmin',
     color: palette('white'),
   }, mobile({

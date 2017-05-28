@@ -15,21 +15,12 @@ const styles = {
 };
 
 const Menu = ({ items }) => (
-<<<<<<< HEAD
-    <nav className={styles.navigation}>
-        {items.map(({ label, href }, index) => [
-            index > 0 && <MenuSeparator />,
-            <MenuItem key={href} label={label} href={href} />
-        ])}
-    </nav>
-=======
   <nav className={styles.navigation}>
     {items.map(({ label, href }, index) => [
       index > 0 && <MenuSeparator />,
       <MenuItem key={href} label={label} href={href} />,
     ])}
   </nav>
->>>>>>> a7b84ec8a9201986441e439566c34bd54d0ae2e2
 );
 
 Menu.propTypes = {
