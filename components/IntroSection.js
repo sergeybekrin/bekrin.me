@@ -1,4 +1,3 @@
-import React from 'react';
 import { style } from 'typestyle';
 import { tablet, mobile } from '~/styles/media';
 import csstips from 'csstips';

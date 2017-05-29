@@ -1,4 +1,3 @@
-import React from 'react';
 import { string, bool } from 'prop-types';
 import { classes } from 'typestyle';
 import { OutboundLink } from 'react-ga';

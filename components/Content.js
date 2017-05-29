@@ -1,4 +1,3 @@
-import React from 'react';
 import { node } from 'prop-types';
 import { style } from 'typestyle';
 import { mobile } from '~/styles/media';
