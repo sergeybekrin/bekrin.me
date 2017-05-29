@@ -1,3 +1,4 @@
+import { bool, any } from 'prop-types';
 import { classes, style } from 'typestyle';
 import { tablet } from '~/styles/media';
 
@@ -17,5 +18,10 @@ const styles = {
 const List = ({ marked, children }) => (
   <ul className={classes(styles.list, marked && styles.marked)}>{children}</ul>
 );
+
+List.propTypes = {
+  marked: bool,
+  children: any.isRequired,
+};
 
 export default List;

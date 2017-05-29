@@ -1,3 +1,4 @@
+import { any, string } from 'prop-types';
 import { classes, style } from 'typestyle';
 import { em } from 'csx';
 import { mobile } from '~/styles/media';
@@ -7,11 +8,8 @@ const styles = {
     borderTopWidth: 3,
     borderTopStyle: 'solid',
     padding: 30,
-    $nest: {
-      '&:not(:last-of-type)': {
-        marginBottom: 30,
-      },
-    },
+    marginTop: 30,
+    position: 'relative',
   }, mobile({
     padding: '20px 10px',
   })),
@@ -25,5 +23,10 @@ const Work = ({ children, className, ...props }) => (
     {children}
   </div>
 );
+
+Work.propTypes = {
+  children: any.isRequired,
+  className: string,
+};
 
 export default Work;

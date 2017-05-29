@@ -4,7 +4,6 @@ import Head from 'next/head';
 import { cssRule, style, setStylesTarget } from 'typestyle';
 import { setupPage } from 'csstips';
 import { px, viewHeight, viewWidth } from 'csx';
-import { tablet } from '~/styles/media';
 import Header from '~/components/Header';
 import Content from '~/components/Content';
 import Footer from '~/components/Footer';

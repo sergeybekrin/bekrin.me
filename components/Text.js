@@ -1,16 +1,19 @@
 import { style, classes } from 'typestyle';
 import { any, string, bool } from 'prop-types';
-import { mobile, tablet } from '~/styles/media';
+import { tablet } from '~/styles/media';
 
 const styles = {
   text: style({
     margin: '1em 0',
+    lineHeight: 1.75,
   }, tablet({
     fontSize: 18,
+    lineHeight: 1.5,
   })),
   heading: style({
     fontWeight: 500,
     fontSize: 36,
+    lineHeight: 1.5,
   }, tablet({
     fontSize: 26,
   })),

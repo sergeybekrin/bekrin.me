@@ -4,15 +4,16 @@ import { tablet, mobile } from '~/styles/media';
 import csstips from 'csstips';
 import Section from '~/components/Section';
 import Text from '~/components/Text';
-import Bomb from '~/components/Bomb';
+// import Bomb from '~/components/Bomb';
 
 const styles = {
-  card: style({
-    display: 'flex',
-    flexDirection: 'column',
-    maxWidth: 680,
-  }),
-  layout: style(csstips.horizontal, mobile(csstips.vertical)),
+  card: style(csstips.horizontal, mobile(csstips.vertical)),
+  group: style(csstips.flex1, {
+    marginLeft: 30,
+  }, mobile({
+    marginLeft: 0,
+    marginTop: 10,
+  })),
   image: style({
     pointerEvents: 'none',
     borderRadius: '50%',
@@ -35,34 +36,32 @@ const styles = {
   paragraph: style({
     lineHeight: 1.75,
     color: '#2e2e2e',
-  }, tablet({
-    fontSize: '1em',
-  })),
+  }),
 };
 
 const IntroSection = () => (
   <Section itemScope itemType="http://schema.org/Person">
     <div className={styles.card}>
-      <div className={styles.layout}>
-        <img
-          className={styles.image}
-          src="/static/userpic.png"
-          alt="Sergey Bekrin"
-          itemProp="image"
-          width={162}
-          height={162}
-        />
+      <img
+        className={styles.image}
+        src="/static/userpic.png"
+        alt="Sergey Bekrin"
+        itemProp="image"
+        width={162}
+        height={162}
+      />
+      <div className={styles.group}>
         <h1 className={styles.headline}>
           <span itemProp="givenName">Sergey</span>&nbsp;
           <span itemProp="familyName">Bekrin</span>,<br />
-          a Software Engineer <Bomb />
+          a Software Engineer
         </h1>
+        <Text className={styles.paragraph}>
+          JavaScript engineer who cares about both external project quality
+          and developer experience. Always open to support, share & learn.
+          Traveling and contributing to open source in free time.
+        </Text>
       </div>
-      <Text className={styles.paragraph}>
-        JavaScript engineer who cares about both external project quality
-        and developer experience. Always open to support, share & learn.
-        Traveling and contributing to open source in free time.
-      </Text>
     </div>
   </Section>
 );

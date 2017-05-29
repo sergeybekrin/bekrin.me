@@ -2,9 +2,8 @@ import Link from 'next/link';
 import { withRouter } from 'next/router';
 import { string, any, bool } from 'prop-types';
 import { style, classes } from 'typestyle';
-// import { em } from 'csx';
 import palette from '~/styles/palette';
-import { mobile, tablet } from '~/styles/media';
+import { mobile } from '~/styles/media';
 
 const styles = {
   item: style({
@@ -13,8 +12,8 @@ const styles = {
     verticalAlign: 'middle',
     justifyContent: 'center',
     margin: '0 1.5em',
+    fontSize: 18,
   }, mobile({
-    fontSize: 17,
     margin: 0,
   })),
   link: style({

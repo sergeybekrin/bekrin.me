@@ -1,4 +1,5 @@
 import { style } from 'typestyle';
+import { percent } from 'csx';
 import { tablet } from '~/styles/media';
 import Section from '~/components/Section';
 import Work from '~/components/Work';
@@ -30,7 +31,26 @@ const styles = {
     height: 20,
   })),
   griddynamics: style({
-    borderColor: '#f7702b',
+    border: 'none',
+    $nest: {
+      '&::before': {
+        position: 'absolute',
+        width: percent(100),
+        left: 0,
+        top: 0,
+        marginTop: -3,
+        backgroundColor: '#f79521',
+        backgroundImage: `linear-gradient(
+          to right,
+          #0172bc 0%,
+          #f26633 50%,
+          #f79521 100%
+        )`,
+        height: 3,
+        display: 'block',
+        content: '""',
+      },
+    },
   }),
   nopreset: style({
     borderColor: '#0d45c3',

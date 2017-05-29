@@ -1,14 +1,5 @@
-/* eslint-disable max-len */
+/* eslint-disable max-len, react/jsx-max-props-per-line */
 const NopresetIcon = props => (
-  <svg viewBox="0 0 400 400" {...props}>
-    <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
-      <rect fill="#0D45C3" x="0" y="0" width="400" height="400" />
-      <path d="M100,296.184 L167.285427,296.184 L167.285427,195.25586 C167.285427,183.901444 171.490766,171.705961 178.219309,165.397952 C183.686249,160.351545 192.517462,156.56674 203.03081,156.56674 C209.759352,156.56674 218.170031,157.828341 224.478039,164.556884 C233.309252,173.80863 232.888718,190.209453 232.888718,201.143335 L232.888718,296.184 L300.174144,296.184 L300.174144,176.752368 C300.174144,156.146206 298.492009,140.165917 282.51172,124.185628 C266.951965,108.625873 246.345803,104 227.001243,104 C210.60042,104 185.788919,107.364271 167.285427,131.755239 L167.285427,108.205339 L100,108.205339 L100,296.184 Z" fill="#FFFFFF" />
-    </g>
-  </svg>
-);
-
-const NopresetIcon2 = props => (
   <svg viewBox="50 40 300 300" {...props}>
     <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
       <rect fill="#0D45C3" x="0" y="0" width="400" height="400" />
@@ -17,4 +8,4 @@ const NopresetIcon2 = props => (
   </svg>
 );
 
-export default NopresetIcon2;
+export default NopresetIcon;
