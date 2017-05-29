@@ -1,6 +1,7 @@
 import React from 'react';
 import { style } from 'typestyle';
-import { tablet } from '~/styles/media';
+import { tablet, mobile } from '~/styles/media';
+import csstips from 'csstips';
 import Section from '~/components/Section';
 import Text from '~/components/Text';
 import Bomb from '~/components/Bomb';
@@ -11,6 +12,7 @@ const styles = {
     flexDirection: 'column',
     maxWidth: 680,
   }),
+  layout: style(csstips.horizontal, mobile(csstips.vertical)),
   image: style({
     pointerEvents: 'none',
     borderRadius: '50%',
@@ -36,22 +38,12 @@ const styles = {
   }, tablet({
     fontSize: '1em',
   })),
-  link: style({
-    whiteSpace: 'nowrap',
-  }),
-  gdLogo: style({
-    marginRight: '.2em',
-    marginBottom: '-.05em',
-    position: 'relative',
-    width: '.85em',
-    height: '.85em',
-  }),
 };
 
 const IntroSection = () => (
   <Section itemScope itemType="http://schema.org/Person">
     <div className={styles.card}>
-      <div>
+      <div className={styles.layout}>
         <img
           className={styles.image}
           src="/static/userpic.png"
