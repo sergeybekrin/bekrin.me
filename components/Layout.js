@@ -36,11 +36,31 @@ export default class Layout extends Component {
     title: string,
   };
 
+  state = {
+    useAltFavicon: false,
+  };
+
+  setAltFavicon = () => {
+    this.setState({ useAltFavicon: document.hidden });
+  };
+
   componentDidMount() {
     setStylesTarget(document.querySelector('[data-typestyle]'));
+    document.addEventListener('visibilitychange', this.setAltFavicon);
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener('visibilitychange', this.setAltFavicon);
+  }
+
+  renderFavicon(favicon) {
+    return (
+      <link rel="icon" type="image/png" href={`/static/${favicon}.png`} />
+    );
   }
 
   render() {
+    const { useAltFavicon } = this.state;
     const title = (
       this.props.title ?
       `${this.props.title} — Sergey Bekrin` :
@@ -55,6 +75,7 @@ export default class Layout extends Component {
           <title>{title}</title>
           <link rel="dns-prefetch" href="//google-analytics.com" />
           <link rel="dns-prefetch" href="//www.google-analytics.com" />
+          {this.renderFavicon(useAltFavicon ? 'favicon-alt' : 'favicon')}
         </Head>
         <Header />
         <Content>{this.props.children}</Content>
