@@ -51,7 +51,7 @@ const IntroSection = () => (
       <div className={styles.group}>
         <h1 className={styles.headline}>
           <span itemProp="givenName">Sergey</span>&nbsp;
-          <span itemProp="familyName">Bekrin</span>,<br />
+          <span itemProp="familyName">Bekrin</span>, <br />
           a Software Engineer
         </h1>
         <Text className={styles.paragraph}>
