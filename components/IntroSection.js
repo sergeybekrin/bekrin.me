@@ -3,7 +3,6 @@ import { tablet, mobile } from '~/styles/media';
 import csstips from 'csstips';
 import Section from '~/components/Section';
 import Text from '~/components/Text';
-// import Bomb from '~/components/Bomb';
 
 const styles = {
   card: style(csstips.horizontal, mobile(csstips.vertical)),
@@ -27,7 +26,7 @@ const styles = {
     fontSize: '3em',
     margin: 0,
     color: 'black',
-    lineHeight: 1.5,
+    lineHeight: 1.35,
   }, tablet({
     letterSpacing: '-.06em',
     fontSize: '2em',
