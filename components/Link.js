@@ -20,18 +20,24 @@ const styles = {
   }),
 };
 
-const Link = ({ href, className, nowrap, ...props }) => (
-  <OutboundLink
-    {...props}
-    to={href}
-    className={classes(className, styles.link, nowrap && styles.nowrap)}
-  />
-);
+const Link = ({ href, className, nowrap, trackAs, ...props }) => {
+  const Tag = trackAs ? OutboundLink : 'a';
+  const extra = trackAs ? { to: href, eventLabel: trackAs } : { href };
+
+  return (
+    <Tag
+      {...props}
+      {...extra}
+      className={classes(className, styles.link, nowrap && styles.nowrap)}
+    />
+  );
+};
 
 Link.propTypes = {
   className: string,
   href: string,
   nowrap: bool,
+  trackAs: string,
 };
 
 export default Link;

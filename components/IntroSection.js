@@ -2,7 +2,7 @@ import { style } from 'typestyle';
 import { tablet, mobile } from '~/styles/media';
 import csstips from 'csstips';
 import Section from '~/components/Section';
-import Text from '~/components/Text';
+import Text, { Kinds } from '~/components/Text';
 
 const styles = {
   card: style(csstips.horizontal, mobile(csstips.vertical)),
@@ -21,11 +21,7 @@ const styles = {
   })),
   headline: style({
     letterSpacing: '-.06em',
-    position: 'relative',
-    fontWeight: 700,
     fontSize: '3em',
-    margin: 0,
-    color: 'black',
     lineHeight: 1.35,
   }, tablet({
     letterSpacing: '-.06em',
@@ -49,11 +45,11 @@ const IntroSection = () => (
         height={162}
       />
       <div className={styles.group}>
-        <h1 className={styles.headline}>
+        <Text kind={Kinds.title} className={styles.headline} bold>
           <span itemProp="givenName">Sergey</span>&nbsp;
           <span itemProp="familyName">Bekrin</span>,<br />
           a Software Engineer
-        </h1>
+        </Text>
         <Text className={styles.paragraph}>
           JavaScript engineer who cares about both external project quality
           and developer experience. Always open to support, share & learn.
