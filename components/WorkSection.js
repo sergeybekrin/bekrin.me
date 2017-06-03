@@ -22,7 +22,7 @@ const styles = {
     fontSize: 14,
   })),
   icon: style({
-    verticalAlign: -1,
+    verticalAlign: -2,
     marginRight: 4,
     width: 30,
     height: 30,
@@ -105,7 +105,7 @@ const WorkSection = () => (
     </Work>
     <Work className={styles.nopreset}>
       <Text className={styles.heading} heading>
-        At {NopresetLink} agency I was playing roles of both backend and
+        At {NopresetLink} digital agency I was playing roles of both backend and
         frontend engineer <sup className={styles.sup}>June 2014 &ndash;{' '}
         Oct 2015</sup>
       </Text>
