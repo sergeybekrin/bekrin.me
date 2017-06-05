@@ -16,8 +16,10 @@ const styles = {
     fontSize: 20,
   })),
   icon: style({
+    verticalAlign: -2,
     width: 20,
   }, mobile({
+    verticalAlign: -1,
     width: 18,
   })),
 };
@@ -30,19 +32,19 @@ const EmailLink = (
 
 const GitHubLink = (
   <Link href="//github.com/sergeybekrin" trackAs="github" nowrap>
-    <GitHubIcon className={styles.icon} /> GitHub
+    <GitHubIcon className={styles.icon} />&nbsp;GitHub
   </Link>
 );
 
 const TwitterLink = (
   <Link href="//twitter.com/sergeybekrin" trackAs="twitter" nowrap>
-    <TwitterIcon className={styles.icon} /> Twitter
+    <TwitterIcon className={styles.icon} />&nbsp;Twitter
   </Link>
 );
 
 const TelegramLink = (
   <Link href="//telegram.me/sbekrin" trackAs="telegram" nowrap>
-    <TelegramIcon className={styles.icon} /> Telegram
+    <TelegramIcon className={styles.icon} />&nbsp;Telegram
   </Link>
 );
 
