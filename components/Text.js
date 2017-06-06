@@ -27,7 +27,7 @@ const styles = {
 
 export const Kinds = {
   paragraph: 'p',
-  heading: 'h3',
+  heading: 'h2',
   title: 'h1',
 };
 
