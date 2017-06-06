@@ -19,8 +19,8 @@ const Footer = () => (
     Last update {process.env.LAST_UPDATE_DATE}<span> &bull; </span>
     <Link
       href="//github.com/sergeybekrin/bekrin.me"
-      eventLabel="github-source"
-    >View source</Link>
+      trackAs="github-source"
+    >View&nbsp;source</Link>
   </footer>
 );
 

@@ -3,7 +3,7 @@ import { percent } from 'csx';
 import { tablet } from '~/styles/media';
 import Section from '~/components/Section';
 import Work from '~/components/Work';
-import Text from '~/components/Text';
+import Text, { Kinds } from '~/components/Text';
 import Link from '~/components/Link';
 import GridDynamicsIcon from '~/components/GridDynamicsIcon';
 import NopresetIcon from '~/components/NopresetIcon';
@@ -22,7 +22,7 @@ const styles = {
     fontSize: 14,
   })),
   icon: style({
-    verticalAlign: -1,
+    verticalAlign: -2,
     marginRight: 4,
     width: 30,
     height: 30,
@@ -58,14 +58,14 @@ const styles = {
 };
 
 const GDLink = (
-  <Link href="//griddynamics.com" eventLabel="griddynamics" nowrap>
+  <Link href="//griddynamics.com" trackAs="griddynamics" nowrap>
     <GridDynamicsIcon className={styles.icon} />
     Grid Dynamics
   </Link>
 );
 
 const NopresetLink = (
-  <Link href="//nopreset.ru" eventLabel="nopreset" nowrap>
+  <Link href="//nopreset.ru" trackAs="nopreset" nowrap>
     <NopresetIcon className={styles.icon} />
     nopreset
   </Link>
@@ -74,7 +74,7 @@ const NopresetLink = (
 const WorkSection = () => (
   <Section>
     <Work className={styles.griddynamics}>
-      <Text className={styles.heading} heading>
+      <Text kind={Kinds.heading} className={styles.heading}>
         Currently I work as a UI Developer at {GDLink}, an outsourcing{' '}
         company <sup className={styles.sup}>Oct 2015 &ndash; present</sup>
       </Text>
@@ -84,28 +84,28 @@ const WorkSection = () => (
         <i>cloud-based phone systems</i>{' '}
         <Link
           href="//ringcentral.com"
-          eventLabel="ringcentral"
+          trackAs="ringcentral"
         >RingCentral</Link>,{' '}
         <i>ads analysis platform</i>{' '}
         <Link
           href="//integralads.com"
-          eventLabel="integralads"
+          trackAs="integralads"
         >Integral Ad Science</Link>,{' '}
         <i>investment bank</i>{' '}
         <Link
           href="//svb.com"
-          eventLabel="svb"
+          trackAs="svb"
         >Silicon Valley Bank</Link>,{' '}
         and{' '}
         <Link
           href="//macys.com"
-          eventLabel="Macys"
+          trackAs="macys"
         >Macy&apos;s</Link> <i>retailer</i>.
       </Text>
     </Work>
     <Work className={styles.nopreset}>
-      <Text className={styles.heading} heading>
-        At {NopresetLink} agency I was playing roles of both backend and
+      <Text kind={Kinds.heading} className={styles.heading}>
+        At {NopresetLink} digital agency I was playing roles of both backend and
         frontend engineer <sup className={styles.sup}>June 2014 &ndash;{' '}
         Oct 2015</sup>
       </Text>
@@ -113,15 +113,21 @@ const WorkSection = () => (
         We did lots of websites for local businesses of any size and kind.
         As part of small and dynamic team I worked on projects like{' '}
         <i>agricultural machinery dealer</i>{' '}
-        <Link href="//mirtech.ru" eventLabel="mirtech">Mirtech</Link>{' '}
+        <Link
+          href="//mirtech.ru"
+          trackAs="mirtech"
+        >Mirtech</Link>{' '}
         <i>(2015)</i>,{' '}
         <i>security systems solutions provider</i>{' '}
-        <Link href="//centrsb.ru" eventLabel="csb">CSB</Link>{' '}
+        <Link
+          href="//centrsb.ru"
+          trackAs="csb"
+        >CSB</Link>{' '}
         <i>(2015)</i>, and{' '}
         <i>power systems engineering company</i>{' '}
         <Link
           href="//energoin.com"
-          eventLabel="energoinvest"
+          trackAs="energoinvest"
         >Energoinvest</Link> <i>(2014)</i>.
       </Text>
     </Work>
