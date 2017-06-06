@@ -27,6 +27,10 @@ script:
 - npm run export
 
 after_success:
-- echo "bekrin.me" > dist/CNAME # prevent gh-pages to reset custom domain
-- mv ./out/404/index.html ./out/404.html # temp. fix for custom 404
+# prevent gh-pages to reset custom domain
+- echo "bekrin.me" > out/CNAME
+# prevent gh-pages to ignore _next directory
+- echo "" > out/.nojekyll
+# temp. fix for custom 404
+- mv ./out/404/index.html ./out/404.html && rm -rf ./out/404
 - npm run deploy
