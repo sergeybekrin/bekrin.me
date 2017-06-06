@@ -5,7 +5,6 @@ import csstips from 'csstips';
 const styles = {
   container: style(
     csstips.horizontal,
-    csstips.flex,
     csstips.centerJustified,
   ),
   content: style(csstips.flex1, {

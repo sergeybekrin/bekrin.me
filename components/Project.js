@@ -1,18 +1,33 @@
-import { arrayOf, string, any } from 'prop-types';
+import { arrayOf, string, any, func } from 'prop-types';
 import { style } from 'typestyle';
+import { mobile } from '~/styles/media';
 import Text from '~/components/Text';
 import Link from '~/components/Link';
 
+const block = style({ display: 'block' });
 const styles = {
   project: style({
-    marginBottom: 30,
+    marginBottom: 40,
+    marginTop: 40,
   }),
-  link: style({
+  icon: style({
+    display: 'inline-block',
+    verticalAlign: 'middle',
+    marginRight: 10,
+    marginBottom: 5,
+    width: 35,
+    height: 35,
+  }, mobile({
+    width: 30,
+    height: 30,
+  })),
+  content: block,
+  name: block,
+  descritpion: style({
     display: 'block',
+    color: '#333',
   }),
-  tags: style({
-    display: 'block',
-  }),
+  tags: block,
   tag: style({
     background: '#eee',
     lineHeight: 1,
@@ -25,10 +40,14 @@ const styles = {
   }),
 };
 
-const Project = ({ tags, href, trackAs, children }) => (
+const Project = ({ name, icon: Icon, tags, href, trackAs, children }) => (
   <Text className={styles.project}>
-    <Link className={styles.link} href={href} trackAs={trackAs}>
-      {children}
+    <Link href={href} trackAs={trackAs}>
+      <b className={styles.name}>
+        {Icon && <Icon className={styles.icon} />}
+        {name}
+      </b>
+      <span className={styles.descritpion}>{children}</span>
       <span className={styles.tags}>
         {tags.map(tag =>
           <span key={tag} className={styles.tag}>{tag}</span>
@@ -39,6 +58,8 @@ const Project = ({ tags, href, trackAs, children }) => (
 );
 
 Project.propTypes = {
+  name: string.isRequired,
+  icon: func,
   tags: arrayOf(string),
   href: string.isRequired,
   trackAs: string.isRequired,
