@@ -1,17 +1,19 @@
 import { arrayOf, object } from 'prop-types';
+import csstips from 'csstips';
 import { style } from 'typestyle';
 import MenuItem from '~/components/MenuItem';
 import MenuSeparator from '~/components/MenuSeparator';
 import { mobile } from '~/styles/media';
 
 const styles = {
-  navigation: style({
-    justifyContent: 'center',
-    display: 'flex',
-  }, mobile({
-    justifyContent: 'space-between',
-    padding: '0 5vmin',
-  })),
+  navigation: style(
+    csstips.horizontal,
+    csstips.centerJustified,
+    mobile({
+      justifyContent: 'space-between',
+      padding: '0 5vmin',
+    })
+  ),
 };
 
 const Menu = ({ items }) => (

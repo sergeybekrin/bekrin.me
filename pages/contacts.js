@@ -1,3 +1,4 @@
+import { withPageView } from 'react-ga';
 import Layout from '~/components/Layout';
 import ContactsSection from '~/components/ContactsSection';
 
@@ -7,4 +8,4 @@ const Contacts = () => (
   </Layout>
 );
 
-export default Contacts;
+export default withPageView(Contacts);

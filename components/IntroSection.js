@@ -5,19 +5,22 @@ import Section from '~/components/Section';
 import Text, { Kinds } from '~/components/Text';
 
 const styles = {
-  card: style(csstips.horizontal, mobile(csstips.vertical)),
-  group: style(csstips.flex1, {
-    marginLeft: 30,
-  }, mobile({
-    marginLeft: 0,
-    marginTop: 10,
-  })),
+  group: style(
+    csstips.horizontal,
+    csstips.betweenJustified,
+    mobile(csstips.vertical)
+  ),
   image: style({
-    pointerEvents: 'none',
     borderRadius: '50%',
+    marginLeft: 30,
   }, tablet({
-    width: 82,
-    height: 82,
+    width: 108,
+    height: 108,
+  }), mobile({
+    order: -1,
+    marginLeft: 0,
+    marginRight: 30,
+    marginBottom: 10,
   })),
   headline: style({
     letterSpacing: '-.06em',
@@ -35,7 +38,12 @@ const styles = {
 
 const IntroSection = () => (
   <Section itemScope itemType="http://schema.org/Person">
-    <div className={styles.card}>
+    <div className={styles.group}>
+      <Text kind={Kinds.title} className={styles.headline} bold>
+        <span itemProp="givenName">Sergey</span>&nbsp;
+        <span itemProp="familyName">Bekrin</span>, <br />
+        a Software Engineer
+      </Text>
       <img
         className={styles.image}
         src="/static/userpic.png"
@@ -44,19 +52,12 @@ const IntroSection = () => (
         width={162}
         height={162}
       />
-      <div className={styles.group}>
-        <Text kind={Kinds.title} className={styles.headline} bold>
-          <span itemProp="givenName">Sergey</span>&nbsp;
-          <span itemProp="familyName">Bekrin</span>, <br />
-          a Software Engineer
-        </Text>
-        <Text className={styles.paragraph}>
-          JavaScript engineer who cares about both external project quality
-          and developer experience. Always open to support, share & learn.
-          Traveling and contributing to open source in free time.
-        </Text>
-      </div>
     </div>
+    <Text className={styles.paragraph}>
+      JavaScript engineer who cares about both external project quality
+      and developer experience. Always open to support, share & learn.
+      Traveling and contributing to open source in free time.
+    </Text>
   </Section>
 );
 

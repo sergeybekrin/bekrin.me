@@ -3,12 +3,14 @@ import { any, string } from 'prop-types';
 import Head from 'next/head';
 import { cssRule, style, setStylesTarget } from 'typestyle';
 import { setupPage } from 'csstips';
+import { initialize } from 'react-ga';
 import { px, viewHeight, viewWidth } from 'csx';
 import Header from '~/components/Header';
 import Content from '~/components/Content';
 import Footer from '~/components/Footer';
 
-setupPage('[data-approot]');
+const client = typeof window !== 'undefined';
+const debug = process.env.NODE_ENV === 'production';
 
 cssRule(':root', {
   '-webkit-font-smoothing': 'antialiased',
@@ -19,6 +21,11 @@ cssRule(':root', {
   minWidth: px(320),
   cursor: 'default',
 });
+
+if (client) {
+  initialize('UA-19088106-7', { debug });
+  setupPage('[data-approot]');
+}
 
 const styles = {
   root: style({

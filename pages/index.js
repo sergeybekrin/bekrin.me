@@ -1,3 +1,4 @@
+import { withPageView } from 'react-ga';
 import Layout from '~/components/Layout';
 import IntroSection from '~/components/IntroSection';
 import WorkSection from '~/components/WorkSection';
@@ -9,4 +10,4 @@ const Home = () => (
   </Layout>
 );
 
-export default Home;
+export default withPageView(Home);

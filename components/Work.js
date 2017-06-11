@@ -11,7 +11,7 @@ const styles = {
     marginTop: 30,
     position: 'relative',
   }, mobile({
-    padding: '20px 10px',
+    padding: '20px 0',
   })),
   meta: style({
     fontSize: em(0.75),
