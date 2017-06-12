@@ -12,6 +12,7 @@ import Footer from '~/components/Footer';
 const client = typeof window !== 'undefined';
 const debug = process.env.NODE_ENV === 'production';
 
+setupPage('[data-approot]');
 cssRule(':root', {
   '-webkit-font-smoothing': 'antialiased',
   fontFamily: 'Helvetica, Arial, sans-serif',
@@ -24,7 +25,6 @@ cssRule(':root', {
 
 if (client) {
   initialize('UA-19088106-7', { debug });
-  setupPage('[data-approot]');
 }
 
 const styles = {
