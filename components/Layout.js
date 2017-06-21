@@ -1,5 +1,6 @@
 import { Component } from 'react';
 import { any, string } from 'prop-types';
+import ReactGA from 'react-ga';
 import Head from 'next/head';
 import { cssRule, style, setStylesTarget } from 'typestyle';
 import { setupPage } from 'csstips';
@@ -8,9 +9,6 @@ import { px, viewHeight, viewWidth } from 'csx';
 import Header from '~/components/Header';
 import Content from '~/components/Content';
 import Footer from '~/components/Footer';
-
-const client = typeof window !== 'undefined';
-const debug = process.env.NODE_ENV === 'production';
 
 setupPage('[data-approot]');
 cssRule(':root', {
@@ -22,10 +20,6 @@ cssRule(':root', {
   minWidth: px(320),
   cursor: 'default',
 });
-
-if (client) {
-  initialize('UA-19088106-7', { debug });
-}
 
 const styles = {
   root: style({
@@ -51,9 +45,22 @@ export default class Layout extends Component {
     this.setState({ useAltFavicon: document.hidden });
   };
 
+  triggerPageView = () => {
+    if (!window.IS_GA_INITIALIZED) {
+      window.IS_GA_INITIALIZED = true;
+      initialize('UA-19088106-7', {
+        debug: process.env.NODE_ENV === 'development',
+      });
+    }
+
+    ReactGA.set({ page: window.location.pathname });
+    ReactGA.pageview(window.location.pathname);
+  };
+
   componentDidMount() {
     setStylesTarget(document.querySelector('[data-typestyle]'));
     document.addEventListener('visibilitychange', this.setAltFavicon);
+    this.triggerPageView();
   }
 
   componentWillUnmount() {

@@ -1,4 +1,5 @@
 import { string, bool } from 'prop-types';
+import NextLink from 'next/link';
 import { classes } from 'typestyle';
 import { OutboundLink } from 'react-ga';
 import { style } from 'typestyle';
@@ -21,16 +22,17 @@ const styles = {
 };
 
 const Link = ({ href, className, nowrap, trackAs, ...props }) => {
-  const Tag = trackAs ? OutboundLink : 'a';
   const extra = trackAs ? { to: href, eventLabel: trackAs } : { href };
-
-  return (
+  const Tag = trackAs ? OutboundLink : 'a';
+  const child = (
     <Tag
       {...props}
       {...extra}
       className={classes(className, styles.link, nowrap && styles.nowrap)}
     />
   );
+
+  return trackAs ? child : <NextLink href={href}>{child}</NextLink>;
 };
 
 Link.propTypes = {

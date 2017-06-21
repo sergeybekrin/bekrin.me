@@ -25,13 +25,22 @@ module.exports = {
       },
     };
   },
-  webpack(config) {
+  webpack(config, { dev }) {
     // Add last update date
     config.plugins.push(
       new webpack.DefinePlugin({
         'process.env.LAST_UPDATE_DATE': JSON.stringify(lastUpdateDate),
       })
     );
+
+    // Use preact in production for smaller bundle size
+    if (!dev) {
+      const preact = require.resolve('preact-compat/dist/preact-compat');
+      config.resolve.alias = {
+        react: preact,
+        'react-dom': preact,
+      };
+    }
 
     return config;
   },

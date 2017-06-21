@@ -69,4 +69,4 @@ MenuItem.propTypes = {
   isActive: bool.isRequired,
 };
 
-export default withRouter(withActiveFlag(MenuItem));
+export default withRouter()(withActiveFlag(MenuItem));

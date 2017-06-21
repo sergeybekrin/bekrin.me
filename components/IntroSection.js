@@ -12,7 +12,7 @@ const styles = {
   ),
   image: style({
     borderRadius: '50%',
-    marginLeft: 30,
+    marginLeft: 20,
   }, tablet({
     width: 108,
     height: 108,
