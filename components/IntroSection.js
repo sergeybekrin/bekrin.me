@@ -1,6 +1,6 @@
 import { style } from 'typestyle';
 import { tablet, mobile } from '~/styles/media';
-import csstips from 'csstips';
+import * as csstips from 'csstips';
 import Section from '~/components/Section';
 import Text, { Kinds } from '~/components/Text';
 

@@ -1,5 +1,5 @@
 import { arrayOf, object } from 'prop-types';
-import csstips from 'csstips';
+import * as csstips from 'csstips';
 import { style } from 'typestyle';
 import MenuItem from '~/components/MenuItem';
 import MenuSeparator from '~/components/MenuSeparator';

@@ -1,6 +1,6 @@
 import { any, string } from 'prop-types';
 import { style, classes } from 'typestyle';
-import csstips from 'csstips';
+import * as csstips from 'csstips';
 
 const styles = {
   container: style(

@@ -1,5 +1,5 @@
 import { style, classes } from 'typestyle';
-import csstips from 'csstips';
+import * as csstips from 'csstips';
 import { desktop } from '~/styles/media';
 import Link from '~/components/Link';
 import Text, { Kinds } from '~/components/Text';

@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { withRouter } from 'next/router';
+import { withRoute } from 'next/router';
 import { string, any, bool } from 'prop-types';
 import { style, classes } from 'typestyle';
 import palette from '~/styles/palette';
@@ -59,7 +59,7 @@ const MenuItem = ({ href, label, isActive }) => (
 
 /* eslint-disable react/display-name, react/prop-types */
 const withActiveFlag = Target => props => (
-  <Target {...props} isActive={props.router.pathname === props.href} />
+  <Target {...props} isActive={props.route.pathname === props.href} />
 );
 /* eslint-enable */
 
@@ -69,4 +69,4 @@ MenuItem.propTypes = {
   isActive: bool.isRequired,
 };
 
-export default withRouter()(withActiveFlag(MenuItem));
+export default withRoute(withActiveFlag(MenuItem));

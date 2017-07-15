@@ -1,6 +1,6 @@
 import { string } from 'prop-types';
 import { style } from 'typestyle';
-import csstips from 'csstips';
+import * as csstips from 'csstips';
 import Layout from '~/components/Layout';
 import Text, { Kinds } from '~/components/Text';
 
