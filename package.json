@@ -1,16 +1,16 @@
 {
   "name": "bekrin.me",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Source code of bekrin.me",
   "homepage": "http://bekrin.me",
   "repository": "https://github.com/sergeybekrin/bekrin.me",
-  "main": "./pages/index.js",
+  "main": "./src/pages/index.js",
   "scripts": {
-    "start": "next start",
-    "build": "next build",
-    "export": "next export",
-    "dev": "next",
-    "lint": "eslint *.js pages components styles",
+    "start": "next start ./src",
+    "build": "next build ./src",
+    "export": "next export ./src",
+    "dev": "next ./src",
+    "lint": "eslint src",
     "deploy": "gh-pages-travis"
   },
   "author": "Sergey Bekrin <sergey@bekrin.me>",
@@ -37,6 +37,7 @@
     "preact": "^8.2.1",
     "preact-compat": "^3.16.0",
     "react-ga": "^2.2.0",
+    "styled-components": "^2.1.1",
     "typestyle": "^1.3.7"
   },
   "babel": {
@@ -47,7 +48,7 @@
       [
         "babel-plugin-root-import",
         {
-          "rootPathSuffix": "./"
+          "rootPathSuffix": "./src"
         }
       ]
     ]
