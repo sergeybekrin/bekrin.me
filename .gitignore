@@ -2,7 +2,7 @@
 *.log
 *.pid
 *.seed
-/node_modules
-/.npm
-/.next
-/out
+node_modules/
+.npm/
+.next/
+out/
