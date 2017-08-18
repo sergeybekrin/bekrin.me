@@ -7,23 +7,6 @@ import GitHubIcon from '~/components/GitHubIcon';
 import TwitterIcon from '~/components/TwitterIcon';
 import TelegramIcon from '~/components/TelegramIcon';
 
-// const styles = {
-//   section: style({
-//     fontSize: 24,
-//   }, tablet({
-//     fontSize: 22,
-//   }), mobile({
-//     fontSize: 20,
-//   })),
-//   icon: style({
-//     verticalAlign: -2,
-//     width: 20,
-//   }, mobile({
-//     verticalAlign: -1,
-//     width: 18,
-//   })),
-// };
-
 const EmailLink = (
   <Link href="mailto:sergey@bekrin.me" trackAs="email">
     sergey@bekrin.me
