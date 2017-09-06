@@ -1,8 +1,8 @@
 /* eslint-disable max-len */
-import SvgIcon from '~/components/SvgIcon';
+import Icon from '~/components/icon';
 
 const SpectroIcon = props => (
-  <SvgIcon viewBox="0 0 70 70" {...props}>
+  <Icon viewBox="0 0 70 70" {...props}>
     <clipPath id="_clip">
       <rect width={70} height={70} />
     </clipPath>
@@ -12,7 +12,7 @@ const SpectroIcon = props => (
         fill="#4281f3"
       />
     </g>
-  </SvgIcon>
+  </Icon>
 );
 
 export default SpectroIcon;

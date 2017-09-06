@@ -3,7 +3,7 @@ import { css } from 'styled-components';
 function createFromTemplate(maxWidth) {
   return styles => css`
     @media (max-width: ${maxWidth / 16}em) {
-      ${css(...styles)}
+      ${css(...styles)};
     }
   `;
 }

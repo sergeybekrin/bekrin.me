@@ -1,7 +1,5 @@
-import ErrorSection from '~/components/ErrorSection';
+import ErrorSection from '~/components/error';
 
-const NotFound = () => (
-  <ErrorSection message="404" />
-);
+const NotFound = () => <ErrorSection message="404" />;
 
 export default NotFound;

@@ -1,8 +1,8 @@
 /* eslint-disable max-len */
-import SvgIcon from '~/components/SvgIcon';
+import Icon from '~/components/icon';
 
 const TelegramIcon = props => (
-  <SvgIcon viewBox="0 0 240 240" {...props}>
+  <Icon viewBox="0 0 240 240" {...props}>
     <circle cx="120" cy="120" r="120" fill="#1e96c8" />
     <path
       d="M98,175c-3.888,0 -3.227,-1.468 -4.568,-5.169l-11.432,-37.625l88,-52.206"
@@ -16,7 +16,7 @@ const TelegramIcon = props => (
       d="M100.04,144.41l48.36,35.729c5.518,3.045 9.501,1.468 10.876,-5.124l19.685,-92.763c2.015,-8.08 -3.08,-11.745 -8.359,-9.348l-115.59,44.571c-7.89,3.165 -7.844,7.567 -1.439,9.528l29.663,9.259l68.673,-43.325c3.242,-1.966 6.218,-0.909 3.776,1.258"
       fill="#fff"
     />
-  </SvgIcon>
+  </Icon>
 );
 
 export default TelegramIcon;

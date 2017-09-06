@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 import { bool, any } from 'prop-types';
-import media from '~/styles/media';
+import media from '~/media';
 
 const Text = styled.p`
   line-height: 1.75;
@@ -8,19 +8,15 @@ const Text = styled.p`
 
   ${media.phone`
     line-height: 1.5;
-  `}
+  `} ${props => props.hero && css`color: #2e2e2e;`} ${props =>
+      props.intro &&
+      css`
+        font-size: 1.25rem;
 
-  ${props => props.hero && css`
-    color: #2e2e2e;
-  `}
-
-  ${props => props.intro && css`
-    font-size: 1.25rem;
-
-    ${media.tablet`
+        ${media.tablet`
       font-size: 1rem;
-    `}
-  `}
+    `};
+      `};
 `;
 
 Text.propTypes = {

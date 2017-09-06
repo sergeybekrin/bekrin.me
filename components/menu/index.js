@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import media from '~/styles/media';
+import media from '~/media';
 
 const Menu = styled.nav`
   display: flex;
@@ -7,7 +7,7 @@ const Menu = styled.nav`
 
   ${media.phone`
     justify-content: space-between;
-  `}
+  `};
 `;
 
 export default Menu;

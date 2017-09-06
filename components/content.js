@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import media from '~/styles/media';
+import media from '~/media';
 
 const Content = styled.div`
   position: relative;
@@ -10,7 +10,7 @@ const Content = styled.div`
 
   ${media.phone`
     padding: 0 5vmin;
-  `}
+  `};
 `;
 
 export default Content;

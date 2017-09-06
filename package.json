@@ -1,11 +1,11 @@
 {
   "name": "bekrin.me",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "Source code of bekrin.me",
   "homepage": "http://bekrin.me",
   "repository": "https://github.com/sergeybekrin/bekrin.me",
   "main": "./src/pages/index.js",
-  "author": "Sergey Bekrin <sergey@bekrin.me> http://bekrin.me",
+  "author": "Sergey Bekrin <sergey@bekrin.me>",
   "license": "UNLICENSED",
   "scripts": {
     "start": "next start",
@@ -16,31 +16,31 @@
     "deploy": "gh-pages-travis"
   },
   "devDependencies": {
+    "babel-eslint": "^7.2.3",
     "babel-plugin-root-import": "^5.1.0",
     "eslint": "^3.2.0",
-    "eslint-config-sergeybekrin": "^1.2.0",
     "eslint-plugin-babel": "^4.1.2",
     "eslint-plugin-import": "^2.7.0",
     "eslint-plugin-jsx-a11y": "^6.0.2",
-    "eslint-plugin-react": "^7.1.0",
+    "eslint-plugin-prettier": "^2.2.0",
+    "eslint-plugin-react": "^7.3.0",
     "gh-pages-travis": "^1.0.4",
     "moment": "^2.18.1",
+    "prettier": "^1.6.1",
     "prop-types": "^15.5.10",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
-    "webpack": "^3.5.2"
+    "webpack": "^3.5.5"
   },
   "dependencies": {
-    "next": "^3.0.3",
-    "preact": "^8.2.1",
+    "next": "^3.2.1",
+    "preact": "^8.2.5",
     "preact-compat": "^3.17.0",
     "react-ga": "^2.2.0",
     "styled-components": "^2.1.2"
   },
   "babel": {
-    "presets": [
-      "next/babel"
-    ],
+    "presets": ["next/babel"],
     "plugins": [
       [
         "babel-plugin-root-import",
@@ -51,12 +51,16 @@
     ]
   },
   "eslintConfig": {
-    "extends": [
-      "sergeybekrin",
-      "sergeybekrin/es6",
-      "sergeybekrin/react"
-    ],
+    "parser": "babel-eslint",
+    "plugins": ["prettier"],
     "rules": {
+      "prettier/prettier": [
+        "error",
+        {
+          "singleQuote": true,
+          "trailingComma": "es5"
+        }
+      ],
       "react/react-in-jsx-scope": "off"
     }
   }

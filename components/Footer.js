@@ -1,16 +1,14 @@
-import styled from 'styled-components';
-import media from '~/styles/media';
-import palette from '~/styles/palette';
+import styled, { withTheme } from 'styled-components';
+import media from '~/media';
 
 const Footer = styled.footer`
   text-align: center;
   padding: 5vmin 10vmin;
-  background-color: ${palette('white')};
-  color: ${palette('gray', '500')};
+  color: ${props => props.theme.gray};
 
   ${media.tablet`
     font-size: 18px;
-  `}
+  `};
 `;
 
-export default Footer;
+export default withTheme(Footer);

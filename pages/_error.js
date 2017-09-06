@@ -1,14 +1,11 @@
 import { Component } from 'react';
 import { number } from 'prop-types';
-import ErrorSection from '~/components/ErrorSection';
+import ErrorSection from '~/components/error';
 
 export default class Error extends Component {
   static getInitialProps({ res, jsonPageRes }) {
-    const statusCode = (
-      (res && res.statusCode) ||
-      (jsonPageRes && jsonPageRes.status) ||
-      404
-    );
+    const statusCode =
+      (res && res.statusCode) || (jsonPageRes && jsonPageRes.status) || 404;
 
     return { statusCode };
   }

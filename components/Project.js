@@ -1,25 +1,21 @@
 import styled from 'styled-components';
 import { arrayOf, string, any, func } from 'prop-types';
-import Text from '~/components/Text';
-import Link from '~/components/Link';
+import Text from '~/components/text';
+import ExternalLink from '~/components/link/external';
 
 const Card = styled(Text)`
   margin-bottom: 40px;
   margin-top: 40px;
 `;
 
-const Label = styled.b`
-  display: block;
-`;
+const Label = styled.b`display: block;`;
 
 const Description = styled.span`
   display: block;
   color: #333;
 `;
 
-const Tags = styled.span`
-  display: block;
-`;
+const Tags = styled.span`display: block;`;
 
 const Tag = styled.span`
   background-color: #eee;
@@ -34,15 +30,14 @@ const Tag = styled.span`
 
 const Project = ({ name, icon: Icon, tags, href, trackAs, children }) => (
   <Card>
-    <Link href={href} trackAs={trackAs}>
-      <Label>{Icon && <Icon inline />} {name}</Label>
+    <ExternalLink href={href} trackAs={trackAs}>
+      <Label>
+        {Icon && <Icon inline />}
+        {name}
+      </Label>
       <Description>{children}</Description>
-      <Tags>
-        {tags.map(tag =>
-          <Tag key={tag}>{tag}</Tag>
-        )}
-      </Tags>
-    </Link>
+      <Tags>{tags.map(tag => <Tag key={tag}>{tag}</Tag>)}</Tags>
+    </ExternalLink>
   </Card>
 );
 

@@ -4,9 +4,13 @@ import ReactGA from 'react-ga';
 import Head from 'next/head';
 import styled, { injectGlobal, ThemeProvider } from 'styled-components';
 import { initialize } from 'react-ga';
-import Header from '~/containers/Header';
-import Content from '~/containers/Content';
-import Footer from '~/containers/Footer';
+import Header from '~/components/header';
+import Content from '~/components/content';
+import Footer from '~/components/footer';
+import Section from '~/components/section';
+import Menu from '~/components/menu';
+import MenuItem from '~/components/menu/item';
+import Link from '~/components/link/external';
 
 injectGlobal`
   html {
@@ -31,6 +35,12 @@ class Layout extends Component {
   };
 
   theme = {
+    blue: '#0f58fb',
+    red: '#ad0051',
+    white: '#fff',
+    gray: '#777',
+    lightGray: 'f6f6f6',
+    darkGray: '#333',
   };
 
   state = {
@@ -62,19 +72,15 @@ class Layout extends Component {
   }
 
   renderFavicon(favicon) {
-    return (
-      <link rel="icon" type="image/png" href={`/static/${favicon}.png`} />
-    );
+    return <link rel="icon" type="image/png" href={`/static/${favicon}.png`} />;
   }
 
   render() {
     const { useAltFavicon } = this.state;
     const { title, children, ...props } = this.props;
-    const formattedTitle = (
-      title ?
-      `${title} — Sergey Bekrin` :
-      'Sergey Bekrin, a Software Engineer'
-    );
+    const formattedTitle = title
+      ? `${title} — Sergey Bekrin`
+      : 'Sergey Bekrin, a Software Engineer';
 
     return (
       <ThemeProvider theme={this.theme}>
@@ -83,9 +89,26 @@ class Layout extends Component {
             <title>{formattedTitle}</title>
             {this.renderFavicon(useAltFavicon ? 'favicon-alt' : 'favicon')}
           </Head>
-          <Header />
+          <Header>
+            <Section>
+              <Menu>
+                <MenuItem href="/">About me</MenuItem>
+                <MenuItem href="/projects">Projects</MenuItem>
+                <MenuItem href="/contacts">Contacts</MenuItem>
+              </Menu>
+            </Section>
+          </Header>
           <Content>{children}</Content>
-          <Footer />
+          <Footer>
+            Last update {process.env.LAST_UPDATE_DATE}
+            <span> &bull; </span>
+            <Link
+              href="//github.com/sergeybekrin/bekrin.me"
+              trackAs="github-source"
+            >
+              View&nbsp;source
+            </Link>
+          </Footer>
         </div>
       </ThemeProvider>
     );
