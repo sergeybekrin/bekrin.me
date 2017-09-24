@@ -22,15 +22,14 @@ before_install:
 - ssh-add deploy_key
 
 script:
-- npm run lint
-- npm run build
+- npm test
 - npm run export
 
 after_success:
 # prevent gh-pages to reset custom domain
 - echo "bekrin.me" > out/CNAME
 # prevent gh-pages to ignore _next directory
-- echo "" > out/.nojekyll
+- touch out/.nojekyll
 # temp. fix for custom 404
 - mv ./out/404/index.html ./out/404.html && rm -rf ./out/404
 - npm run deploy

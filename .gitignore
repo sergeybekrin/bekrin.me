@@ -1,7 +1,5 @@
 .DS_Store
 *.log
-*.pid
-*.seed
 node_modules/
 .npm/
 .next/

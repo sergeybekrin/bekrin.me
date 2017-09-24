@@ -10,30 +10,35 @@
   "scripts": {
     "start": "next start",
     "build": "next build",
+    "preexport": "npm run build",
     "export": "next export",
     "dev": "next",
-    "lint": "eslint *.js components containers pages styles",
+    "lint": "eslint *.js components pages media",
+    "test": "npm run lint",
+    "precommit": "lint-staged",
     "deploy": "gh-pages-travis"
   },
+  "lint-staged": {
+    "*.{js,json,css}": ["prettier --write", "git add"]
+  },
   "devDependencies": {
-    "babel-eslint": "^7.2.3",
+    "babel-eslint": "^8.0.0",
     "babel-plugin-root-import": "^5.1.0",
-    "eslint": "^3.2.0",
-    "eslint-plugin-babel": "^4.1.2",
-    "eslint-plugin-import": "^2.7.0",
-    "eslint-plugin-jsx-a11y": "^6.0.2",
-    "eslint-plugin-prettier": "^2.2.0",
-    "eslint-plugin-react": "^7.3.0",
+    "eslint": "^4.7.2",
+    "eslint-config-prettier": "^2.6.0",
+    "eslint-plugin-prettier": "^2.3.1",
     "gh-pages-travis": "^1.0.4",
+    "husky": "^0.14.3",
+    "lint-staged": "^4.2.2",
     "moment": "^2.18.1",
-    "prettier": "^1.6.1",
+    "prettier": "^1.7.0",
     "prop-types": "^15.5.10",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
-    "webpack": "^3.5.5"
+    "webpack": "^3.6.0"
   },
   "dependencies": {
-    "next": "^3.2.1",
+    "next": "^3.2.2",
     "preact": "^8.2.5",
     "preact-compat": "^3.17.0",
     "react-ga": "^2.2.0",
@@ -52,16 +57,10 @@
   },
   "eslintConfig": {
     "parser": "babel-eslint",
+    "extends": "prettier",
     "plugins": ["prettier"],
     "rules": {
-      "prettier/prettier": [
-        "error",
-        {
-          "singleQuote": true,
-          "trailingComma": "es5"
-        }
-      ],
-      "react/react-in-jsx-scope": "off"
+      "prettier/prettier": "error"
     }
   }
 }
