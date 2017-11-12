@@ -1,9 +1,7 @@
 .DS_Store
 *.log
-npm-debug.log*
-*.pid
-*.seed
 node_modules/
-dist/
+.vscode/
 .npm/
-.idea/
+.next/
+out/

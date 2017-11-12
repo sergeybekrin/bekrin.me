@@ -12,7 +12,7 @@ env:
   - SSH_KEY="deploy_key"
   - GIT_NAME="Travis CI"
   - GIT_EMAIL="sergey@bekrin.me"
-  - SOURCE_DIR="dist"
+  - SOURCE_DIR="out"
   - DEPLOY_BRANCH="master"
 
 before_install:
@@ -22,9 +22,14 @@ before_install:
 - ssh-add deploy_key
 
 script:
-- npm run lint
-- npm run build
+- npm test
+- npm run export
 
 after_success:
-- echo "bekrin.me" > dist/CNAME # prevent gh-pages to reset custom domain
+# prevent gh-pages to reset custom domain
+- echo "bekrin.me" > out/CNAME
+# prevent gh-pages to ignore _next directory
+- touch out/.nojekyll
+# move 404 page to 404.html
+- mv ./out/404/index.html ./out/404.html && rm -rf ./out/404
 - npm run deploy
