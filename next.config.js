@@ -1,6 +1,7 @@
 const { execSync } = require('child_process');
 const moment = require('moment');
 const webpack = require('webpack');
+const CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin');
 
 const script = 'git log -1 --date=short --pretty=format:%cd';
 const lastCommitTimestamp = execSync(script).toString();
@@ -32,6 +33,8 @@ module.exports = {
         'process.env.LAST_UPDATE_DATE': JSON.stringify(lastUpdateDate),
       })
     );
+    // Make sure path to module is case-sensetive
+    config.plugins.push(new CaseSensitivePathsPlugin());
 
     return config;
   },
