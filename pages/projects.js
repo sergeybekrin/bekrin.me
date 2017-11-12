@@ -24,33 +24,41 @@ const Column = styled.div`
   flex-direction: column;
   flex: 1;
 
-  ${props => props.right && css`margin-right: 10px;`};
-  ${props => props.left && css`margin-left: 10px;`};
+  ${props =>
+    props.right &&
+    css`
+      margin-left: 2rem;
+    `};
+  ${props =>
+    props.left &&
+    css`
+      margin-right: 2rem;
+    `};
   ${media.phone`
     margin: 0;
   `};
 `;
 
-const Projects = () => (
+export default () => (
   <Layout title="Projects">
     <Section>
       <Heading bold>
         Open-source &amp;<br />non&#8209;commercial projects
       </Heading>
       <Text>
-        I contribute to open-source in free time, as well have personal projects
-        available. If you need help with open-source or non-commercial project,
-        feel free to <Link href="/contacts">reach me out</Link> for an advice or
-        support 👋.
+        I contribute to open-source in free time, as well have personal
+        side-projects. If you need help with open-source or non-commercial
+        project, feel free to <Link href="/contacts">reach me out</Link> for an
+        advice or support 👋.
       </Text>
       <Row>
         <Column left>
           <Project
-            name="Spectro"
+            name="Canvaz"
             icon={SpectroIcon}
-            href="//github.com/sergeybekrin/spectro"
-            trackAs="github-spectro"
-            tags={['React', 'Flow']}
+            href="//github.com/sergeybekrin/canvaz"
+            trackAs="github-canvaz"
+            tags={['React', 'TypeScript']}
           >
             Component-based visual content editor for React
           </Project>
@@ -87,5 +95,3 @@ const Projects = () => (
     </Section>
   </Layout>
 );
-
-export default Projects;

@@ -2,7 +2,7 @@ import { string } from 'prop-types';
 import styled from 'styled-components';
 import media from '~/media';
 
-const Icon = styled.svg`
+const Icon = styled.svg.attrs({ 'aria-hidden': true })`
   vertical-align: -0.25em;
   width: 1.25em;
   height: 1.25em;

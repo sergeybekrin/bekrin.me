@@ -12,8 +12,8 @@ const Picture = styled.img`
 
   ${media.phone`
     order: -1;
-    margin-right: 30;
-    margin-bottom: 10;
+    margin-right: 30px;
+    margin-bottom: 10px;
   `};
 `;
 

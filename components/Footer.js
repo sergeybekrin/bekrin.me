@@ -1,4 +1,4 @@
-import styled, { withTheme } from 'styled-components';
+import styled from 'styled-components';
 import media from '~/media';
 
 const Footer = styled.footer`
@@ -11,4 +11,4 @@ const Footer = styled.footer`
   `};
 `;
 
-export default withTheme(Footer);
+export default Footer;

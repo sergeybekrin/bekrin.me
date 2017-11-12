@@ -2,10 +2,10 @@ import styled from 'styled-components';
 import media from '~/media';
 
 const Header = styled.header`
-  padding: 1.5rem 10vmin;
+  padding: 1rem 10vmin;
 
   ${media.phone`
-    padding: 0.75rem 5vmin;
+    padding: 0.5rem 5vmin;
   `};
 `;
 

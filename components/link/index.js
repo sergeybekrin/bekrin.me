@@ -1,16 +1,15 @@
 import { bool, any } from 'prop-types';
-import styled, { css, withTheme } from 'styled-components';
+import styled, { css } from 'styled-components';
 
 const Link = styled.a`
   color: ${props => props.theme.blue};
   text-decoration: none;
   transition: color 200ms ease;
+  white-space: ${props => (props.nowrap ? 'nowrap' : 'normal')};
 
   &:hover {
     color: ${props => props.theme.red};
   }
-
-  ${props => props.nowrap && css`white-space: nowrap;`};
 `;
 
 Link.propTypes = {
@@ -18,4 +17,4 @@ Link.propTypes = {
   children: any,
 };
 
-export default withTheme(Link);
+export default Link;
