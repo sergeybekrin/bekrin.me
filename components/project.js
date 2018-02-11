@@ -5,12 +5,13 @@ import ExternalLink from '~/components/link/external';
 import media from '~/media';
 
 const Card = styled(Text)`
-  margin-bottom: 2rem;
-  margin-top: 2rem;
+  box-sizing: border-box;
+  margin: 2rem 0;
+  flex: 0 50%;
 
   ${media.phone`
-    margin-top: 1rem;
-    margin-bottom: 1rem;
+    flex: 0 100%;
+    margin: 1rem 0;
   `};
 `;
 
