@@ -29,6 +29,14 @@ export default () => (
       </Text>
       <Grid>
         <Project
+          name="🤖💬 react-converse"
+          href="//github.com/react-converse/react-converse"
+          trackAs="github-react-converse"
+          tags={['React', 'Flow']}
+        >
+          Toolkit for creating declarative chatbots with React
+        </Project>
+        <Project
           name="🔠 react-with-async-fonts"
           href="//github.com/sergeybekrin/react-with-async-fonts"
           trackAs="github-rwaf"
