@@ -41,6 +41,8 @@ class Layout extends Component {
     gray: '#777',
     lightGray: 'f6f6f6',
     darkGray: '#333',
+    almostBlack: '#111',
+    almostWhite: '#eee',
   };
 
   state = {

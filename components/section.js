@@ -11,16 +11,11 @@ const Content = styled.div`
   ${props =>
     props.hero &&
     css`
-      background-color: ${props.theme.blue};
-      background-image: linear-gradient(
-        to right bottom,
-        ${props.theme.blue},
-        ${props.theme.red}
-      );
+      background-color: ${props.theme.almostBlack};
+      color: ${props.theme.almostWhite};
       border-radius: 0.25rem;
       padding: 5vmin;
       margin: 0 -5vmin;
-      color: white;
 
       ${media.phone`
         border-radius: 0;
