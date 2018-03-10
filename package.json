@@ -22,7 +22,6 @@
     "babel-eslint": "^8.2.1",
     "babel-plugin-root-import": "^5.1.0",
     "babel-plugin-styled-components": "^1.5.0",
-    "case-sensitive-paths-webpack-plugin": "^2.1.1",
     "eslint": "^4.17.0",
     "eslint-config-prettier": "^2.9.0",
     "eslint-plugin-prettier": "^2.6.0",
@@ -46,9 +45,18 @@
     "plugins": [
       [
         "babel-plugin-styled-components",
-        { "ssr": true, "displayName": true, "preprocess": false }
+        {
+          "ssr": true,
+          "displayName": true,
+          "preprocess": false
+        }
       ],
-      ["babel-plugin-root-import", { "rootPathSuffix": "./" }]
+      [
+        "babel-plugin-root-import",
+        {
+          "rootPathSuffix": "./"
+        }
+      ]
     ]
   },
   "eslintConfig": {

@@ -33,9 +33,6 @@ module.exports = {
         'process.env.LAST_UPDATE_DATE': JSON.stringify(lastUpdateDate),
       })
     );
-    // Make sure path to module is case-sensetive
-    config.plugins.push(new CaseSensitivePathsPlugin());
-
     return config;
   },
 };
