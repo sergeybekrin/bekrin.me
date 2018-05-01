@@ -21,9 +21,12 @@ before_install:
 - eval `ssh-agent -s`
 - ssh-add deploy_key
 
+install:
+- yarn
+
 script:
-- npm test
-- npm run export
+- yarn test
+- yarn export
 
 after_success:
 # prevent gh-pages to reset custom domain
@@ -32,4 +35,4 @@ after_success:
 - touch out/.nojekyll
 # move 404 page to 404.html
 - mv ./out/404/index.html ./out/404.html && rm -rf ./out/404
-- npm run deploy
+- yarn deploy
