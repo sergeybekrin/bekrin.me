@@ -1,38 +1,28 @@
 language: node_js
-
-node_js:
-- stable
-
-branches:
-  only:
-  - master
-
-env:
-  global:
-  - SSH_KEY="deploy_key"
-  - GIT_NAME="Travis CI"
-  - GIT_EMAIL="sergey@bekrin.me"
-  - SOURCE_DIR="out"
-  - DEPLOY_BRANCH="master"
-
+node_js: 10
 before_install:
-- openssl aes-256-cbc -K $encrypted_bfc1d62ee170_key -iv $encrypted_bfc1d62ee170_iv -in travis.enc -out deploy_key -d
-- chmod 600 deploy_key
-- eval `ssh-agent -s`
-- ssh-add deploy_key
-
+  - yarn global add greenkeeper-lockfile@1
 install:
-- yarn
-
+  - yarn
+before_script:
+  - greenkeeper-lockfile-update
 script:
-- yarn test
-- yarn export
-
+  - yarn test
+  - yarn export
+after_script:
+  - greenkeeper-lockfile-upload
 after_success:
-# prevent gh-pages to reset custom domain
-- echo "bekrin.me" > out/CNAME
-# prevent gh-pages to ignore _next directory
-- touch out/.nojekyll
-# move 404 page to 404.html
-- mv ./out/404/index.html ./out/404.html && rm -rf ./out/404
-- yarn deploy
+  # prevent gh-pages to reset custom domain
+  - echo "bekrin.me" > out/CNAME
+  # prevent gh-pages to ignore _next directory
+  - touch out/.nojekyll
+  # move 404 page to 404.html
+  - mv ./out/404/index.html ./out/404.html && rm -rf ./out/404
+deploy:
+  provider: pages
+  skip-cleanup: true
+  github-token: $GITHUB_TOKEN
+  local-dir: out
+  fqdn: bekrin.me
+  on:
+    branch: master

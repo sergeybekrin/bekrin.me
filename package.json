@@ -15,8 +15,7 @@
     "dev": "next",
     "lint": "eslint *.js components pages media",
     "test": "yarn lint",
-    "precommit": "lint-staged",
-    "deploy": "gh-pages-travis"
+    "precommit": "lint-staged"
   },
   "devDependencies": {
     "babel-eslint": "^8.2.2",
@@ -25,7 +24,6 @@
     "eslint": "^4.19.1",
     "eslint-config-prettier": "^2.9.0",
     "eslint-plugin-prettier": "^2.6.0",
-    "gh-pages-travis": "^1.0.4",
     "husky": "^0.14.3",
     "lint-staged": "^7.0.5",
     "moment": "^2.22.1",
