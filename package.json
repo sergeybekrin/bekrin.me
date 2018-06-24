@@ -20,9 +20,9 @@
   },
   "devDependencies": {
     "babel-eslint": "^8.2.2",
-    "babel-plugin-root-import": "^5.1.0",
+    "babel-plugin-root-import": "^6.1.0",
     "babel-plugin-styled-components": "^1.5.1",
-    "eslint": "^4.19.1",
+    "eslint": "^5.0.0",
     "eslint-config-prettier": "^2.9.0",
     "eslint-plugin-prettier": "^2.6.0",
     "gh-pages-travis": "^1.0.4",
@@ -31,7 +31,7 @@
     "moment": "^2.22.1",
     "prettier": "^1.12.1",
     "prop-types": "^15.6.1",
-    "webpack": "^3.11.0"
+    "webpack": "^4.12.1"
   },
   "dependencies": {
     "next": "^6.0.0",
