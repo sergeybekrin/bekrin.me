@@ -29,6 +29,15 @@ export default () => (
       </Text>
       <Grid>
         <Project
+          name="npmkit"
+          icon={NpmkitIcon}
+          href="//github.com/npmkit/npmkit"
+          trackAs="github-npmkit"
+          tags={['React', 'Electron']}
+        >
+          Tray app for quick access to all your projects
+        </Project>
+        <Project
           name="🤖💬 react-converse"
           href="//github.com/react-converse/react-converse"
           trackAs="github-react-converse"
@@ -69,15 +78,6 @@ export default () => (
           tags={['Transpiler', 'Babel', 'AVA']}
         >
           Proof-of-concept ClojureScript compiler without binary dependencies
-        </Project>
-        <Project
-          name="npmkit"
-          icon={NpmkitIcon}
-          href="//github.com/sergeybekrin/npmkit"
-          trackAs="github-npmkit"
-          tags={['React', 'Redux', 'Electron']}
-        >
-          Cross-platform desktop app for working with npm packages
         </Project>
       </Grid>
     </Section>
