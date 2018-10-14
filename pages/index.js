@@ -1,5 +1,3 @@
-import styled from 'styled-components';
-import media from '~/media';
 import Heading from '~/components/heading';
 import Section from '~/components/section';
 import Work from '~/components/work';
@@ -9,122 +7,102 @@ import ResearchGateIcon from '~/components/icon/researchgate';
 import GridDynamicsIcon from '~/components/icon/griddynamics';
 import NopresetIcon from '~/components/icon/nopreset';
 import Layout from '~/components/layout';
-import Profile from '~/components/profile';
 import Sup from '~/components/sup';
 import Nowrap from '~/components/nowrap';
+import Profile from '~/components/profile';
 
 export default () => (
   <Layout itemScope itemType="http://schema.org/Person">
-    <Section hero>
-      <Profile.Card>
-        <Profile.Headline>
-          <span itemProp="givenName">Sergey</span>{' '}
-          <span itemProp="familyName">Bekrin</span>, <br />
-          a&nbsp;Software Engineer
-        </Profile.Headline>
-        <Profile.Picture
-          src="/static/userpic.png"
-          alt="Sergey Bekrin"
-          itemProp="image"
-          width={150}
-          height={150}
-        />
-      </Profile.Card>
-      <Text intro>
-        JavaScript engineer who cares about both external project quality and
-        developer experience. Always open to support, share &amp; learn.
-        Traveling and contributing to open source in free time.
-      </Text>
-    </Section>
     <Section>
-      <Work>
+      <Profile.Card>
         <Heading bold>
-          I work as <span itemProp="jobTitle">UX Engineer</span> at{' '}
-          <span
-            itemProp="worksFor"
-            itemScope
-            itemType="http://schema.org/Organization"
-          >
-            <Link
-              href="//researchgate.net"
-              trackAs="researchgate"
-              itemProp="url"
-              nowrap
-            >
-              <ResearchGateIcon /> <span itemProp="name">ResearchGate</span>
-            </Link>, a{' '}
-            <span itemProp="description">
-              social network for scientists and researchers
-            </span>{' '}
-          </span>
-          <Sup>
-            <Nowrap>Berlin, Germany</Nowrap> &bull;{' '}
-            <Nowrap>Sep 2017 &ndash; present</Nowrap>
-          </Sup>
+          👋 Hey, I'm Sergey Bekrin{' '}
+          <Profile.Picture
+            src="/static/userpic.png"
+            alt="Sergey's photo"
+            width={40}
+            height={40}
+          />
         </Heading>
-        <Text>
-          In <i>Design System Team</i> we take care of technology behind
-          internal design systems, tooling around it, communication with product
-          teams, and R&amp;D.
+        <Text intro>
+          JavaScript engineer who appreciates thoughtful products and great
+          developer experience. Aside of code, I love to travel, explore urban
+          neighborhoods, and try new food.
         </Text>
+      </Profile.Card>
+      <Work>
+        <Sup>
+          <Nowrap>Berlin, Germany</Nowrap> &#xb7;{' '}
+          <Nowrap>Sep 2017 &ndash; present</Nowrap>
+        </Sup>
+        I work as a <span itemProp="jobTitle">Senior Software Engineer</span> at{' '}
+        <Link
+          href="//researchgate.net"
+          trackAs="researchgate"
+          itemProp="url"
+          nowrap
+        >
+          <ResearchGateIcon /> <span itemProp="name">ResearchGate</span>
+        </Link>
+        . As part of <i>Frontend Infrastructure</i> team, we enable company to
+        effectively ship great product. Before that, I was helping with
+        technology behind internal design system and tooling around it in{' '}
+        <i>Design Systems</i> team.
       </Work>
       <Work>
-        <Heading bold>
-          In an outsourcing company{' '}
-          <Link href="//griddynamics.com" trackAs="griddynamics" nowrap>
-            <GridDynamicsIcon /> Grid Dynamics
-          </Link>{' '}
-          I worked as UI Developer{' '}
-          <Sup>
-            <Nowrap>Oct 2015 &ndash; Aug 2017 &bull; </Nowrap>
-            <Nowrap>Saratov, Russia</Nowrap> &amp;{' '}
-            <Nowrap>San Francisco, CA, US</Nowrap>
-          </Sup>
-        </Heading>
-        <Text>
-          At there I worked with wide variety of projects for companies such as{' '}
-          <i>cloud-based phone systems</i>{' '}
-          <Link href="//ringcentral.com" trackAs="ringcentral">
-            RingCentral
-          </Link>, <i>ads analysis platform</i>{' '}
-          <Link href="//integralads.com" trackAs="integralads">
-            Integral Ad Science
-          </Link>, <i>investment bank</i>{' '}
-          <Link href="//svb.com" trackAs="svb">
-            Silicon Valley Bank
-          </Link>, and{' '}
-          <Link href="//macys.com" trackAs="macys">
-            Macy&apos;s
-          </Link>{' '}
-          <i>retailer</i>.
-        </Text>
+        <Sup>
+          <Nowrap>San Francisco, CA, US</Nowrap> &#xb7;{' '}
+          <Nowrap>Saratov, Russia</Nowrap> &#xb7;{' '}
+          <Nowrap>Oct 2015 &ndash; Aug 2017</Nowrap>
+        </Sup>
+        In the outsourcing company{' '}
+        <Link href="//griddynamics.com" trackAs="griddynamics" nowrap>
+          <GridDynamicsIcon /> Grid Dynamics
+        </Link>
+        , <Nowrap>I worked</Nowrap> as UI Developer . At there I worked on wide
+        variety of projects for companies such as{' '}
+        <i>cloud-based phone systems</i>{' '}
+        <Link href="//ringcentral.com" trackAs="ringcentral">
+          RingCentral
+        </Link>
+        , <i>ads analysis platform</i>{' '}
+        <Link href="//integralads.com" trackAs="integralads">
+          Integral Ad Science
+        </Link>
+        , <i>investment bank</i>{' '}
+        <Link href="//svb.com" trackAs="svb">
+          Silicon Valley Bank
+        </Link>
+        , and{' '}
+        <Link href="//macys.com" trackAs="macys">
+          Macy&apos;s
+        </Link>{' '}
+        <i>retailer</i>.
       </Work>
       <Work>
-        <Heading bold>
-          At{' '}
-          <Link href="//nopreset.ru" trackAs="nopreset" nowrap>
-            <NopresetIcon /> nopreset
-          </Link>{' '}
-          digital agency I was playing roles of both backend and frontend
-          engineer <Sup>Saratov, Russia &bull; June 2014 &ndash; Oct 2015</Sup>
-        </Heading>
-        <Text>
-          We did lots of websites for local businesses of any size and kind. As
-          part of small and dynamic team I worked on projects like{' '}
-          <i>agricultural machinery dealer</i>{' '}
-          <Link href="//mirtech.ru" trackAs="mirtech">
-            Mirtech
-          </Link>{' '}
-          <i>(2015)</i>, <i>security systems solutions provider</i>{' '}
-          <Link href="//centrsb.ru" trackAs="csb">
-            CSB
-          </Link>{' '}
-          <i>(2015)</i>, and <i>power systems engineering company</i>{' '}
-          <Link href="//energoin.com" trackAs="energoinvest">
-            Energoinvest
-          </Link>{' '}
-          <i>(2014)</i>.
-        </Text>
+        <Sup>
+          <Nowrap>Saratov, Russia</Nowrap> &#xb7;{' '}
+          <Nowrap>June 2014 &ndash; Oct 2015</Nowrap>
+        </Sup>
+        At{' '}
+        <Link href="//nopreset.ru" trackAs="nopreset" nowrap>
+          <NopresetIcon /> nopreset
+        </Link>{' '}
+        digital agency I was playing roles of both backend and frontend
+        engineer. As part of small and dynamic team, I worked on projects like{' '}
+        <i>agricultural machinery dealer</i>{' '}
+        <Link href="//mirtech.ru" trackAs="mirtech">
+          Mirtech
+        </Link>
+        , <i>security systems solutions provider</i>{' '}
+        <Link href="//centrsb.ru" trackAs="csb">
+          CSB
+        </Link>
+        , and <i>power systems engineering company</i>{' '}
+        <Link href="//energoin.com" trackAs="energoinvest">
+          Energoinvest
+        </Link>
+        .
       </Work>
     </Section>
   </Layout>

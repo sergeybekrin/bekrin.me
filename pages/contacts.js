@@ -3,30 +3,33 @@ import Heading from '~/components/heading';
 import Section from '~/components/section';
 import Link from '~/components/link';
 import Text from '~/components/text';
-import GitHubIcon from '~/components/icon/github';
-import TwitterIcon from '~/components/icon/twitter';
-import TelegramIcon from '~/components/icon/telegram';
 
 export default () => (
   <Layout title="Contacts">
     <Section>
       <Heading bold>Social &amp; contacts</Heading>
       <Text intro>
-        Want to discuss something or go out for a coffee? Feel free to drop an
-        email to{' '}
+        Whether you want to discuss something or just say hi, feel free to{' '}
         <Link href="mailto:sergey@bekrin.me" trackAs="email">
-          sergey@bekrin.me
-        </Link>. You can follow my open-source activity on{' '}
-        <Link href="//github.com/sergeybekrin" trackAs="github" nowrap>
-          <GitHubIcon />&nbsp;GitHub
-        </Link>, check funny dev stuff I retweet on{' '}
-        <Link href="//twitter.com/sergeybekrin" trackAs="twitter" nowrap>
-          <TwitterIcon />&nbsp;Twitter
-        </Link>, and chat on{' '}
-        <Link href="//telegram.me/sbekrin" trackAs="telegram" nowrap>
-          <TelegramIcon />&nbsp;Telegram
+          drop an email
         </Link>{' '}
-        messenger.
+        or start a{' '}
+        <Link href="//telegram.me/sbekrin" trackAs="telegram" nowrap>
+          chat in Telegram
+        </Link>{' '}
+        messenger. I occasinally share (mostly urban) photos{' '}
+        <Link href="//www.instagram.com/sbekrin/" trackAs="instagram" nowrap>
+          on Instagram
+        </Link>{' '}
+        and retweet non-serius stuff{' '}
+        <Link href="//twitter.com/sergeybekrin" trackAs="twitter" nowrap>
+          on Twitter
+        </Link>
+        . I don't have a SoundCloud, but you can follow me{' '}
+        <Link href="//github.com/sergeybekrin" trackAs="github" nowrap>
+          on GitHub
+        </Link>
+        .
       </Text>
     </Section>
   </Layout>

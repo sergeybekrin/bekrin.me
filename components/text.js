@@ -5,6 +5,8 @@ import media from '~/media';
 const Text = styled.p`
   line-height: 1.75;
   margin: 1rem 0 0 0;
+  hyphens: auto;
+  color: ${props => props.theme.almostBlack};
 
   ${media.phone`
     line-height: 1.5;

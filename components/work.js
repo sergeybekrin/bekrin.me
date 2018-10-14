@@ -1,19 +1,12 @@
 import styled from 'styled-components';
-import Heading from '~/components/heading';
+import Text from '~/components/text';
 import media from '~/media';
 
-const Work = styled.div`
+const Work = styled(Text).attrs({ intro: true })`
   margin-top: 2rem;
-  margin-bottom: 2rem;
-  position: relative;
-
-  ${Heading} {
-    color: ${props => props.theme.darkGray};
-  }
 
   ${media.phone`
     margin-top: 1rem;
-    margin-bottom: 1rem;
   `};
 `;
 
