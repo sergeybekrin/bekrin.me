@@ -6,7 +6,7 @@ import media from '~/media';
 
 const Card = styled(Text)`
   box-sizing: border-box;
-  margin: 2rem 0;
+  margin: 2rem 0 0 0;
   flex: 0 50%;
 
   ${media.phone`
@@ -24,34 +24,19 @@ const Description = styled.span`
   color: ${props => props.theme.darkGray};
 `;
 
-const Tags = styled.span`
-  display: block;
-`;
-
-const Tag = styled.span`
-  background-color: #eee;
-  line-height: 1;
-  color: ${props => props.theme.darkGray};
-  border-radius: 4;
-  font-size: 0.7rem;
-  display: inline-block;
-  margin-right: 5px;
-  padding: 4px 6px;
-`;
-
-const Project = ({ name, icon: Icon, tags, href, trackAs, children }) => (
+const Project = ({ name, icon: Icon, href, trackAs, children }) => (
   <Card>
     <ExternalLink href={href} trackAs={trackAs}>
       <Label>
         {Icon && (
           <span>
-            <Icon inline />&nbsp;
+            <Icon inline />
+            &nbsp;
           </span>
         )}
         {name}
       </Label>
       <Description>{children}</Description>
-      <Tags>{tags.map(tag => <Tag key={tag}>{tag}</Tag>)}</Tags>
     </ExternalLink>
   </Card>
 );
