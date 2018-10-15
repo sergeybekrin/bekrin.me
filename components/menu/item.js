@@ -21,7 +21,7 @@ const Container = styled.span`
     text-decoration: none;
     font-weight: bold;
     white-space: nowrap;
-    color: ${props => (props.active ? props.theme.darkGray : props.theme.blue)};
+    color: ${props => (props.active ? props.theme.darkGrey : props.theme.blue)};
     cursor: ${props => (props.active ? 'default' : 'pointer')};
     pointer-events: ${props => (props.active ? 'none' : 'initial')};
 
@@ -31,7 +31,7 @@ const Container = styled.span`
 
     &:hover {
       color: ${props =>
-        props.active ? props.theme.darkGray : props.theme.red};
+        props.active ? props.theme.darkGrey : props.theme.red};
     }
   }
 `;

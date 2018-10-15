@@ -21,7 +21,7 @@ const Label = styled.b`
 
 const Description = styled.span`
   display: block;
-  color: ${props => props.theme.darkGray};
+  color: ${props => props.theme.darkGrey};
 `;
 
 const Project = ({ name, icon: Icon, href, trackAs, children }) => (

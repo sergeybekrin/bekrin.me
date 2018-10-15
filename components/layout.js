@@ -38,9 +38,9 @@ class Layout extends Component {
     blue: '#0f58fb',
     red: '#ad0051',
     white: '#fff',
-    gray: '#777',
-    lightGray: 'f6f6f6',
-    darkGray: '#333',
+    lightGrey: 'f6f6f6',
+    grey: '#666',
+    darkGrey: '#333',
     almostBlack: '#111',
     almostWhite: '#eee',
   };
@@ -102,8 +102,7 @@ class Layout extends Component {
           </Header>
           <Content>{children}</Content>
           <Footer>
-            Last update {process.env.LAST_UPDATE_DATE}
-            <span> &bull; </span>
+            Last update {process.env.LAST_UPDATE_DATE} &#xb7;{' '}
             <Link
               href="//github.com/sergeybekrin/bekrin.me"
               trackAs="github-source"

@@ -59,7 +59,7 @@ export default () => (
         <Link href="//griddynamics.com" trackAs="griddynamics" nowrap>
           <GridDynamicsIcon /> Grid Dynamics
         </Link>
-        , <Nowrap>I worked</Nowrap> as UI Developer . At there I worked on wide
+        , <Nowrap>I worked</Nowrap> as UI Developer. At there I worked on wide
         variety of projects for companies such as{' '}
         <i>cloud-based phone systems</i>{' '}
         <Link href="//ringcentral.com" trackAs="ringcentral">
