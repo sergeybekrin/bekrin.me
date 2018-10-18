@@ -25,9 +25,9 @@ export default () => (
           />
         </Heading>
         <Text intro>
-          JavaScript engineer who appreciates thoughtful products and great
-          developer experience. Aside of code, I love to travel, explore urban
-          neighborhoods, and try new food.
+          I'm a JavaScript engineer who appreciates thoughtful products and
+          great developer experience. Aside of code, I love to travel, explore
+          urban neighborhoods, and try new food.
         </Text>
       </Profile.Card>
       <Work>
