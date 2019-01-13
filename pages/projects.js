@@ -34,7 +34,7 @@ export default () => (
         </Project>
         <Project
           name="💌 styled-email-components"
-          href="//github.com/sergeybekrin/styled-email-components"
+          href="//github.com/sbekrin/styled-email-components"
           trackAs="github-sec"
         >
           Extension of styled-components for building email-first components
@@ -42,14 +42,14 @@ export default () => (
         <Project
           name="cljs-babel"
           icon={CljsIcon}
-          href="//github.com/sergeybekrin/cljs-babel"
+          href="//github.com/sbekrin/cljs-babel"
           trackAs="github-cljs"
         >
           Proof-of-concept ClojureScript compiler without binary dependencies
         </Project>
         <Project
           name="🔠 react-with-async-fonts"
-          href="//github.com/sergeybekrin/react-with-async-fonts"
+          href="//github.com/sbekrin/react-with-async-fonts"
           trackAs="github-rwaf"
         >
           Handy module for working with custom fonts
@@ -72,7 +72,7 @@ export default () => (
         <Project
           name="Canvaz"
           icon={SpectroIcon}
-          href="//github.com/sergeybekrin/canvaz"
+          href="//github.com/sbekrin/canvaz"
           trackAs="github-canvaz"
         >
           Component-based visual content editor for React

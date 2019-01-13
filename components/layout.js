@@ -103,10 +103,7 @@ class Layout extends Component {
           <Content>{children}</Content>
           <Footer>
             Last update {process.env.LAST_UPDATE_DATE} &#xb7;{' '}
-            <Link
-              href="//github.com/sergeybekrin/bekrin.me"
-              trackAs="github-source"
-            >
+            <Link href="//github.com/sbekrin/bekrin.me" trackAs="github-source">
               View&nbsp;source
             </Link>
           </Footer>

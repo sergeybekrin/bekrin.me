@@ -3,7 +3,7 @@
   "version": "2.1.0",
   "description": "Source code of bekrin.me",
   "homepage": "http://bekrin.me",
-  "repository": "https://github.com/sergeybekrin/bekrin.me",
+  "repository": "https://github.com/sbekrin/bekrin.me",
   "author": "Sergey Bekrin <sergey@bekrin.me>",
   "license": "UNLICENSED",
   "scripts": {

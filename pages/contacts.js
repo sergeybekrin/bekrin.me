@@ -18,15 +18,15 @@ export default () => (
           chat in Telegram
         </Link>{' '}
         messenger. I occasinally share (mostly urban) photos{' '}
-        <Link href="//www.instagram.com/sbekrin/" trackAs="instagram" nowrap>
+        <Link href="//www.instagram.com/sbekrin" trackAs="instagram" nowrap>
           on Instagram
         </Link>{' '}
         and retweet non-serius stuff{' '}
-        <Link href="//twitter.com/sergeybekrin" trackAs="twitter" nowrap>
+        <Link href="//twitter.com/sbekrin" trackAs="twitter" nowrap>
           on Twitter
         </Link>
         . I don't have a SoundCloud, but you can follow me{' '}
-        <Link href="//github.com/sergeybekrin" trackAs="github" nowrap>
+        <Link href="//github.com/sbekrin" trackAs="github" nowrap>
           on GitHub
         </Link>
         .
