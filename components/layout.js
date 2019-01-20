@@ -11,22 +11,7 @@ import Section from '~/components/section';
 import Menu from '~/components/menu';
 import MenuItem from '~/components/menu/item';
 import Link from '~/components/link/external';
-
-injectGlobal`
-  html {
-    -webkit-font-smoothing: antialiased;
-    font-family: Helvetica, Arial, sans-serif;
-    font-size: 20px;
-    line-height: 1.5;
-    box-sizing: border-box;
-    min-width: 320px;
-    cursor: default;
-  }
-
-  body {
-    margin: 0;
-  }
-`;
+import GlobalStyles from '~/components/global-styles';
 
 class Layout extends Component {
   static propTypes = {
@@ -87,6 +72,7 @@ class Layout extends Component {
     return (
       <ThemeProvider theme={this.theme}>
         <div {...props}>
+          <GlobalStyles />
           <Head>
             <title>{formattedTitle}</title>
             {this.renderFavicon(useAltFavicon ? 'favicon-alt' : 'favicon')}

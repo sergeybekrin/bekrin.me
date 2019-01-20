@@ -1,11 +1,8 @@
-const { execSync } = require('child_process');
 const moment = require('moment');
 const webpack = require('webpack');
 
-const script = 'git log -1 --date=short --pretty=format:%cd';
-const lastCommitTimestamp = execSync(script).toString();
-const lastUpdateDate = moment(lastCommitTimestamp).format('MMM. Do YYYY');
-
+const lastCommitDate = process.env.LAST_COMMIT_DATE;
+const lastUpdateDate = moment(lastCommitDate).format('MMM. Do YYYY');
 process.env.LAST_UPDATE_DATE = lastUpdateDate;
 
 module.exports = {
