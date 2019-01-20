@@ -1,6 +1,6 @@
 node_modules/
 .vscode/
 .next/
-out/
+dist/
 *.log
 .DS_Store

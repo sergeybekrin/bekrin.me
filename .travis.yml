@@ -1,28 +1,8 @@
 language: node_js
 node_js: 10
+cache: yarn
 before_install:
-  - yarn global add greenkeeper-lockfile@1
-install:
-  - yarn
-before_script:
-  - greenkeeper-lockfile-update
+  - yarn global add now
 script:
-  - yarn test
-  - yarn export
-after_script:
-  - greenkeeper-lockfile-upload
-after_success:
-  # prevent gh-pages to reset custom domain
-  - echo "bekrin.me" > out/CNAME
-  # prevent gh-pages to ignore _next directory
-  - touch out/.nojekyll
-  # move 404 page to 404.html
-  - mv ./out/404/index.html ./out/404.html && rm -rf ./out/404
-deploy:
-  provider: pages
-  skip-cleanup: true
-  github-token: $GITHUB_TOKEN
-  local-dir: out
-  fqdn: bekrin.me
-  on:
-    branch: master
+  - now --build-env LAST_COMMIT_DATE=$(git log -1 --date=short --pretty=format:%cd) --token $NOW_TOKEN
+  - if [ "$TRAVIS_BRANCH" = "master" ]; then now alias; fi
