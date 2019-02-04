@@ -23,7 +23,7 @@
     "moment": "^2.23.0",
     "prettier": "^1.16.0",
     "prop-types": "^15.6.2",
-    "webpack": "4.28.4"
+    "webpack": "4.29.1"
   },
   "dependencies": {
     "next": "^7.0.2",
