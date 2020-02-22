@@ -44,11 +44,9 @@ const MenuItem = ({ href, children, active }) => (
   </Container>
 );
 
-/* eslint-disable react/display-name, react/prop-types */
 const withActiveFlag = Target => props => (
   <Target {...props} active={props.router.pathname === props.href} />
 );
-/* eslint-enable */
 
 MenuItem.propTypes = {
   href: string.isRequired,

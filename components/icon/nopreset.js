@@ -1,4 +1,4 @@
-/* eslint-disable max-len, react/jsx-max-props-per-line */
+/* eslint-disable max-len */
 import Icon from '~/components/icon';
 
 const NopresetIcon = props => (

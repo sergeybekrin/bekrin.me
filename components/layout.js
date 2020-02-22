@@ -88,7 +88,7 @@ class Layout extends Component {
           </Header>
           <Content>{children}</Content>
           <Footer>
-            Last update {process.env.LAST_UPDATE_DATE} &#xb7;{' '}
+            Last updated {process.env.LAST_UPDATE_DATE} &#xb7;{' '}
             <Link href="//github.com/sbekrin/bekrin.me" trackAs="github-source">
               View&nbsp;source
             </Link>

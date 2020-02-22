@@ -3,6 +3,7 @@ import Section from '~/components/section';
 import Work from '~/components/work';
 import Text from '~/components/text';
 import Link from '~/components/link/external';
+import CirculaIcon from '~/components/icon/circula';
 import ResearchGateIcon from '~/components/icon/researchgate';
 import GridDynamicsIcon from '~/components/icon/griddynamics';
 import NopresetIcon from '~/components/icon/nopreset';
@@ -16,7 +17,7 @@ export default () => (
     <Section>
       <Profile.Card>
         <Heading bold>
-          👋 Hey, I'm Sergey Bekrin{' '}
+          👋 Hey, I'm Sergey{' '}
           <Profile.Picture
             src="/static/userpic.png"
             alt="Sergey's photo"
@@ -25,28 +26,43 @@ export default () => (
           />
         </Heading>
         <Text intro>
-          I'm a JavaScript engineer who appreciates thoughtful products and
-          great developer experience. Aside of code, I love to travel, explore
-          urban neighborhoods, and try new food.
+          I'm a <span itemProp="jobTitle">JavaScript engineer</span> who
+          appreciates thoughtful products and great developer experience. Aside
+          from code, I love to travel, cooking, and to explore urban
+          neighborhoods.
         </Text>
       </Profile.Card>
       <Work>
         <Sup>
           <Nowrap>Berlin, Germany</Nowrap> &#xb7;{' '}
-          <Nowrap>Sep 2017 &ndash; present</Nowrap>
+          <Nowrap>Jul 2019 &ndash; present</Nowrap>
         </Sup>
-        I work as a <span itemProp="jobTitle">Senior Software Engineer</span> at{' '}
+        Currently, I'm taking care of the web product at{' '}
+        <Link href="//circula.com" trackAs="circula" itemProp="url" nowrap>
+          <CirculaIcon /> <span itemProp="name">Circula</span>
+        </Link>{' '}
+        and helping the team with building the most effortless{' '}
+        <i>expense management solution</i>, ensuring the best User Experience
+        and supporting all departments within the company as a Lead Frontend
+        Engineer.
+      </Work>
+      <Work>
+        <Sup>
+          <Nowrap>Berlin, Germany</Nowrap> &#xb7;{' '}
+          <Nowrap>Sep 2017 &ndash; Jun 2019</Nowrap>
+        </Sup>
+        I worked as a Senior Software Engineer at{' '}
         <Link
           href="//researchgate.net"
           trackAs="researchgate"
           itemProp="url"
           nowrap
         >
-          <ResearchGateIcon /> <span itemProp="name">ResearchGate</span>
+          <ResearchGateIcon /> ResearchGate
         </Link>
-        . As part of <i>Frontend Infrastructure</i> team, we enable company to
-        effectively ship great product. Before that, I was helping with
-        technology behind internal design system and tooling around it in{' '}
+        . As part of <i>Frontend Infrastructure</i> team, we enabled the company
+        to effectively ship a great product. Before that, I was helping with the
+        technology behind internal design system and tooling around it in the{' '}
         <i>Design Systems</i> team.
       </Work>
       <Work>
@@ -59,8 +75,8 @@ export default () => (
         <Link href="//griddynamics.com" trackAs="griddynamics" nowrap>
           <GridDynamicsIcon /> Grid Dynamics
         </Link>
-        , <Nowrap>I worked</Nowrap> as UI Developer. At there I worked on wide
-        variety of projects for companies such as{' '}
+        , <Nowrap>I worked</Nowrap> as a UI Developer. At there I worked on a
+        wide variety of projects for companies such as{' '}
         <i>cloud-based phone systems</i>{' '}
         <Link href="//ringcentral.com" trackAs="ringcentral">
           RingCentral
@@ -88,8 +104,8 @@ export default () => (
         <Link href="//nopreset.ru" trackAs="nopreset" nowrap>
           <NopresetIcon /> nopreset
         </Link>{' '}
-        digital agency I was playing roles of both backend and frontend
-        engineer. As part of small and dynamic team, I worked on projects like{' '}
+        digital agency, I was playing roles of both backend and frontend
+        engineer. As part of a small and dynamic team, I worked on projects like{' '}
         <i>agricultural machinery dealer</i>{' '}
         <Link href="//mirtech.ru" trackAs="mirtech">
           Mirtech
